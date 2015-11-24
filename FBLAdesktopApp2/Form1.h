@@ -114,6 +114,8 @@ namespace FormProjectFix {
 
 	private: System::Windows::Forms::ToolStripMenuItem^  logOutToolStripMenuItem;
 	private: System::Windows::Forms::Panel^  pnlHome;
+private: System::Windows::Forms::ToolStripButton^  btnHome;
+private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator6;
 
 
 
@@ -196,6 +198,8 @@ namespace FormProjectFix {
 			this->lblFirstName = (gcnew System::Windows::Forms::Label());
 			this->txtFirstName = (gcnew System::Windows::Forms::TextBox());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
+			this->btnHome = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripSeparator6 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->btnNew = (gcnew System::Windows::Forms::ToolStripButton());
 			this->btnSave = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
@@ -712,11 +716,11 @@ namespace FormProjectFix {
 			// 
 			// toolStrip1
 			// 
-			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(17) {
-				this->btnNew, this->btnSave,
-					this->toolStripSeparator1, this->btnCut, this->btnCopy, this->btnPaste, this->btnUndo, this->btnClear, this->toolStripSeparator2,
-					this->btnPrintPreview, this->btnPrint, this->toolStripSeparator3, this->txtSearch, this->toolStripSeparator4, this->cmbSearchBy,
-					this->btnSearch, this->toolStripSeparator5
+			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(19) {
+				this->btnHome, this->toolStripSeparator6,
+					this->btnNew, this->btnSave, this->toolStripSeparator1, this->btnCut, this->btnCopy, this->btnPaste, this->btnUndo, this->btnClear,
+					this->toolStripSeparator2, this->btnPrintPreview, this->btnPrint, this->toolStripSeparator3, this->txtSearch, this->toolStripSeparator4,
+					this->cmbSearchBy, this->btnSearch, this->toolStripSeparator5
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 24);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -724,9 +728,26 @@ namespace FormProjectFix {
 			this->toolStrip1->TabIndex = 6;
 			this->toolStrip1->Text = L"toolStrip1";
 			// 
+			// btnHome
+			// 
+			this->btnHome->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnHome->Enabled = false;
+			this->btnHome->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnHome.Image")));
+			this->btnHome->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->btnHome->Name = L"btnHome";
+			this->btnHome->Size = System::Drawing::Size(23, 22);
+			this->btnHome->Text = L"Home";
+			this->btnHome->Click += gcnew System::EventHandler(this, &Form1::btnHome_Click);
+			// 
+			// toolStripSeparator6
+			// 
+			this->toolStripSeparator6->Name = L"toolStripSeparator6";
+			this->toolStripSeparator6->Size = System::Drawing::Size(6, 25);
+			// 
 			// btnNew
 			// 
 			this->btnNew->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnNew->Enabled = false;
 			this->btnNew->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnNew.Image")));
 			this->btnNew->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->btnNew->Name = L"btnNew";
@@ -737,6 +758,7 @@ namespace FormProjectFix {
 			// btnSave
 			// 
 			this->btnSave->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnSave->Enabled = false;
 			this->btnSave->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSave.Image")));
 			this->btnSave->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->btnSave->Name = L"btnSave";
@@ -751,6 +773,7 @@ namespace FormProjectFix {
 			// btnCut
 			// 
 			this->btnCut->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnCut->Enabled = false;
 			this->btnCut->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCut.Image")));
 			this->btnCut->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->btnCut->Name = L"btnCut";
@@ -761,6 +784,7 @@ namespace FormProjectFix {
 			// btnCopy
 			// 
 			this->btnCopy->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnCopy->Enabled = false;
 			this->btnCopy->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCopy.Image")));
 			this->btnCopy->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->btnCopy->Name = L"btnCopy";
@@ -771,6 +795,7 @@ namespace FormProjectFix {
 			// btnPaste
 			// 
 			this->btnPaste->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnPaste->Enabled = false;
 			this->btnPaste->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnPaste.Image")));
 			this->btnPaste->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->btnPaste->Name = L"btnPaste";
@@ -781,6 +806,7 @@ namespace FormProjectFix {
 			// btnUndo
 			// 
 			this->btnUndo->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnUndo->Enabled = false;
 			this->btnUndo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUndo.Image")));
 			this->btnUndo->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->btnUndo->Name = L"btnUndo";
@@ -791,6 +817,7 @@ namespace FormProjectFix {
 			// btnClear
 			// 
 			this->btnClear->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnClear->Enabled = false;
 			this->btnClear->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnClear.Image")));
 			this->btnClear->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->btnClear->Name = L"btnClear";
@@ -805,6 +832,7 @@ namespace FormProjectFix {
 			// btnPrintPreview
 			// 
 			this->btnPrintPreview->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnPrintPreview->Enabled = false;
 			this->btnPrintPreview->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnPrintPreview.Image")));
 			this->btnPrintPreview->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->btnPrintPreview->Name = L"btnPrintPreview";
@@ -814,6 +842,7 @@ namespace FormProjectFix {
 			// btnPrint
 			// 
 			this->btnPrint->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnPrint->Enabled = false;
 			this->btnPrint->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnPrint.Image")));
 			this->btnPrint->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->btnPrint->Name = L"btnPrint";
@@ -827,6 +856,7 @@ namespace FormProjectFix {
 			// 
 			// txtSearch
 			// 
+			this->txtSearch->Enabled = false;
 			this->txtSearch->Name = L"txtSearch";
 			this->txtSearch->Size = System::Drawing::Size(125, 25);
 			// 
@@ -838,6 +868,7 @@ namespace FormProjectFix {
 			// cmbSearchBy
 			// 
 			this->cmbSearchBy->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cmbSearchBy->Enabled = false;
 			this->cmbSearchBy->Items->AddRange(gcnew cli::array< System::Object^  >(7) {
 				L"Last Name", L"First Name", L"Has Fees", L"Year Joined",
 					L"Member #", L"Email", L"School"
@@ -848,6 +879,7 @@ namespace FormProjectFix {
 			// btnSearch
 			// 
 			this->btnSearch->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnSearch->Enabled = false;
 			this->btnSearch->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSearch.Image")));
 			this->btnSearch->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->btnSearch->Name = L"btnSearch";
@@ -898,6 +930,27 @@ namespace FormProjectFix {
 		Double feeDbl;
 		// ********************************
 
+		// ********************** User Declared Functions **********************
+		void toolStripButtons(bool x) {
+			btnHome->Enabled = x;
+			btnNew->Enabled = x;
+			btnSave->Enabled = x;
+			btnCut->Enabled = x;
+			btnCopy->Enabled = x;
+			btnPaste->Enabled = x;
+			btnUndo->Enabled = x;
+			btnClear->Enabled = x;
+			btnPrintPreview->Enabled = x;
+			btnPrint->Enabled = x;
+			btnSearch->Enabled = x;
+			txtSearch->Enabled = x;
+			cmbSearchBy->Enabled = x;
+		}
+
+
+
+		// *********************************************************************
+
 		// *********** On Form Load **********
 	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
 		feeDbl = 0.00;
@@ -942,14 +995,28 @@ namespace FormProjectFix {
 	private: System::Void btnUndo_Click(System::Object^  sender, System::EventArgs^  e) {
 		SendKeys::Send("^z");
 	}
+
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		gbStudent->Text = "Home";
 		pnlHome->BringToFront();
+		toolStripButtons(1);
 	}
+
 	private: System::Void logOutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		// Add later: if not saved, request save function
+		gbStudent->Text = "Logon Screen";
 		pnlLogin->BringToFront();
+		toolStripButtons(0);
 	}
+
 	private: System::Void btnNew_Click(System::Object^  sender, System::EventArgs^  e) {
+		// Add later: if not saved, request save function
 		pnlStudent->BringToFront();
+	}
+
+	private: System::Void btnHome_Click(System::Object^  sender, System::EventArgs^  e) {
+		// Add later: if not saved, request save function
+		pnlHome->BringToFront();
 	}
 };
 }

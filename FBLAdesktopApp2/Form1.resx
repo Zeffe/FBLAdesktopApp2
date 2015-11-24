@@ -127,6 +127,17 @@
     <value>681, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEWSURBVDhPY2CgMSgBmn8YiHlItYcFqGEyEH8G4vNQLAE1
+        xAFINwCxAC5DQbatB+LnQGwFxHpAvB2IrwOxBhAXAPF/IFbAZgDIluNAfBqIDaE2gwwyB+LFUENLgfRv
+        bAaATL8NtT0WSJ+E2gSy7QYQJwBxNxCDvFUGxDAvgR1iAzW9HUjnAPEDJM0gA0AY5JJ8IC4A4u9AHALW
+        CWW8B9JZQNwMlYRpQqe/AeXrgDgCqi4DZEAKEBsA8XIstuIyqAKoFuRluCtABt0nwYD5MOcj06D4xmUj
+        ujgomjEAugv2A1U4ALELFtcR5YJ+JCtANiK7gigXNCAZAHINsgFYXQBKqsiKSDZAAGiAAhIG8WEAlOqQ
+        5eC5EwCX5Xe1oXtHdQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
