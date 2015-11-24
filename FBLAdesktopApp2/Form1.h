@@ -69,7 +69,8 @@ namespace FormProjectFix {
 	private: System::Windows::Forms::GroupBox^  gbGrade;
 	private: System::Windows::Forms::Label^  lblState;
 	private: System::Windows::Forms::GroupBox^  gbStudent;
-	private: System::Windows::Forms::Panel^  panel1;
+	private: System::Windows::Forms::Panel^  pnlStudent;
+
 	private: System::Windows::Forms::GroupBox^  gbActive;
 	private: System::Windows::Forms::ComboBox^  cmbState;
 	private: System::Windows::Forms::GroupBox^  gbSex;
@@ -100,6 +101,19 @@ namespace FormProjectFix {
 
 	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator4;
 	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator5;
+	private: System::Windows::Forms::Panel^  pnlLogin;
+	private: System::Windows::Forms::GroupBox^  gbLogon;
+
+
+	private: System::Windows::Forms::Button^  btnLogon;
+
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::TextBox^  txtPass;
+
+	private: System::Windows::Forms::TextBox^  txtUser;
+
+	private: System::Windows::Forms::ToolStripMenuItem^  logOutToolStripMenuItem;
+	private: System::Windows::Forms::Panel^  pnlHome;
 
 
 
@@ -154,6 +168,7 @@ namespace FormProjectFix {
 			this->txtSchool = (gcnew System::Windows::Forms::TextBox());
 			this->menuStrip2 = (gcnew System::Windows::Forms::MenuStrip());
 			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->logOutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->editToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->viewToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->studentToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -163,7 +178,13 @@ namespace FormProjectFix {
 			this->gbGrade = (gcnew System::Windows::Forms::GroupBox());
 			this->lblState = (gcnew System::Windows::Forms::Label());
 			this->gbStudent = (gcnew System::Windows::Forms::GroupBox());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pnlLogin = (gcnew System::Windows::Forms::Panel());
+			this->gbLogon = (gcnew System::Windows::Forms::GroupBox());
+			this->btnLogon = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->txtPass = (gcnew System::Windows::Forms::TextBox());
+			this->txtUser = (gcnew System::Windows::Forms::TextBox());
+			this->pnlStudent = (gcnew System::Windows::Forms::Panel());
 			this->gbActive = (gcnew System::Windows::Forms::GroupBox());
 			this->cmbState = (gcnew System::Windows::Forms::ComboBox());
 			this->gbSex = (gcnew System::Windows::Forms::GroupBox());
@@ -187,14 +208,17 @@ namespace FormProjectFix {
 			this->btnPrint = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator3 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->txtSearch = (gcnew System::Windows::Forms::ToolStripTextBox());
+			this->toolStripSeparator4 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->cmbSearchBy = (gcnew System::Windows::Forms::ToolStripComboBox());
 			this->btnSearch = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripSeparator4 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->toolStripSeparator5 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->pnlHome = (gcnew System::Windows::Forms::Panel());
 			this->menuStrip2->SuspendLayout();
 			this->gbGrade->SuspendLayout();
 			this->gbStudent->SuspendLayout();
-			this->panel1->SuspendLayout();
+			this->pnlLogin->SuspendLayout();
+			this->gbLogon->SuspendLayout();
+			this->pnlStudent->SuspendLayout();
 			this->gbActive->SuspendLayout();
 			this->gbSex->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
@@ -419,9 +443,17 @@ namespace FormProjectFix {
 			// 
 			// fileToolStripMenuItem
 			// 
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->logOutToolStripMenuItem });
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
 			this->fileToolStripMenuItem->Size = System::Drawing::Size(37, 20);
 			this->fileToolStripMenuItem->Text = L"File";
+			// 
+			// logOutToolStripMenuItem
+			// 
+			this->logOutToolStripMenuItem->Name = L"logOutToolStripMenuItem";
+			this->logOutToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->logOutToolStripMenuItem->Text = L"Log Out";
+			this->logOutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::logOutToolStripMenuItem_Click);
 			// 
 			// editToolStripMenuItem
 			// 
@@ -486,47 +518,104 @@ namespace FormProjectFix {
 			// 
 			// gbStudent
 			// 
-			this->gbStudent->Controls->Add(this->panel1);
+			this->gbStudent->Controls->Add(this->pnlLogin);
+			this->gbStudent->Controls->Add(this->pnlHome);
+			this->gbStudent->Controls->Add(this->pnlStudent);
 			this->gbStudent->Location = System::Drawing::Point(12, 58);
 			this->gbStudent->Name = L"gbStudent";
 			this->gbStudent->Size = System::Drawing::Size(671, 438);
 			this->gbStudent->TabIndex = 5;
 			this->gbStudent->TabStop = false;
-			this->gbStudent->Text = L"#StudentName - #MembershipNum";
+			this->gbStudent->Text = L"Logon Screen";
 			// 
-			// panel1
+			// pnlLogin
 			// 
-			this->panel1->AutoScroll = true;
-			this->panel1->BackColor = System::Drawing::SystemColors::Control;
-			this->panel1->Controls->Add(this->lblOptional);
-			this->panel1->Controls->Add(this->lblComment);
-			this->panel1->Controls->Add(this->txtJoined);
-			this->panel1->Controls->Add(this->txtComment);
-			this->panel1->Controls->Add(this->textBox1);
-			this->panel1->Controls->Add(this->lblMemNum);
-			this->panel1->Controls->Add(this->lblJoined);
-			this->panel1->Controls->Add(this->lblOwed);
-			this->panel1->Controls->Add(this->txtOwed);
-			this->panel1->Controls->Add(this->lblEmail);
-			this->panel1->Controls->Add(this->txtEmail);
-			this->panel1->Controls->Add(this->lblSchool);
-			this->panel1->Controls->Add(this->txtSchool);
-			this->panel1->Controls->Add(this->lblHR);
-			this->panel1->Controls->Add(this->gbGrade);
-			this->panel1->Controls->Add(this->gbActive);
-			this->panel1->Controls->Add(this->lblState);
-			this->panel1->Controls->Add(this->cmbState);
-			this->panel1->Controls->Add(this->gbSex);
-			this->panel1->Controls->Add(this->lblLastName);
-			this->panel1->Controls->Add(this->txtLastName);
-			this->panel1->Controls->Add(this->lblMI);
-			this->panel1->Controls->Add(this->txtMI);
-			this->panel1->Controls->Add(this->lblFirstName);
-			this->panel1->Controls->Add(this->txtFirstName);
-			this->panel1->Location = System::Drawing::Point(6, 19);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(657, 413);
-			this->panel1->TabIndex = 0;
+			this->pnlLogin->Controls->Add(this->gbLogon);
+			this->pnlLogin->Location = System::Drawing::Point(6, 19);
+			this->pnlLogin->Name = L"pnlLogin";
+			this->pnlLogin->Size = System::Drawing::Size(659, 413);
+			this->pnlLogin->TabIndex = 24;
+			// 
+			// gbLogon
+			// 
+			this->gbLogon->Controls->Add(this->btnLogon);
+			this->gbLogon->Controls->Add(this->label1);
+			this->gbLogon->Controls->Add(this->txtPass);
+			this->gbLogon->Controls->Add(this->txtUser);
+			this->gbLogon->Location = System::Drawing::Point(168, 87);
+			this->gbLogon->Name = L"gbLogon";
+			this->gbLogon->Size = System::Drawing::Size(359, 218);
+			this->gbLogon->TabIndex = 0;
+			this->gbLogon->TabStop = false;
+			this->gbLogon->Text = L"FBLA";
+			// 
+			// btnLogon
+			// 
+			this->btnLogon->Location = System::Drawing::Point(121, 157);
+			this->btnLogon->Name = L"btnLogon";
+			this->btnLogon->Size = System::Drawing::Size(115, 21);
+			this->btnLogon->TabIndex = 3;
+			this->btnLogon->Text = L"Logon";
+			this->btnLogon->UseVisualStyleBackColor = true;
+			this->btnLogon->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(62, 50);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(72, 13);
+			this->label1->TabIndex = 2;
+			this->label1->Text = L"Please Log In";
+			// 
+			// txtPass
+			// 
+			this->txtPass->Location = System::Drawing::Point(65, 119);
+			this->txtPass->Name = L"txtPass";
+			this->txtPass->PasswordChar = '*';
+			this->txtPass->Size = System::Drawing::Size(238, 20);
+			this->txtPass->TabIndex = 1;
+			// 
+			// txtUser
+			// 
+			this->txtUser->Location = System::Drawing::Point(65, 82);
+			this->txtUser->Name = L"txtUser";
+			this->txtUser->Size = System::Drawing::Size(238, 20);
+			this->txtUser->TabIndex = 0;
+			// 
+			// pnlStudent
+			// 
+			this->pnlStudent->AutoScroll = true;
+			this->pnlStudent->BackColor = System::Drawing::SystemColors::Control;
+			this->pnlStudent->Controls->Add(this->lblOptional);
+			this->pnlStudent->Controls->Add(this->lblComment);
+			this->pnlStudent->Controls->Add(this->txtJoined);
+			this->pnlStudent->Controls->Add(this->txtComment);
+			this->pnlStudent->Controls->Add(this->textBox1);
+			this->pnlStudent->Controls->Add(this->lblMemNum);
+			this->pnlStudent->Controls->Add(this->lblJoined);
+			this->pnlStudent->Controls->Add(this->lblOwed);
+			this->pnlStudent->Controls->Add(this->txtOwed);
+			this->pnlStudent->Controls->Add(this->lblEmail);
+			this->pnlStudent->Controls->Add(this->txtEmail);
+			this->pnlStudent->Controls->Add(this->lblSchool);
+			this->pnlStudent->Controls->Add(this->txtSchool);
+			this->pnlStudent->Controls->Add(this->lblHR);
+			this->pnlStudent->Controls->Add(this->gbGrade);
+			this->pnlStudent->Controls->Add(this->gbActive);
+			this->pnlStudent->Controls->Add(this->lblState);
+			this->pnlStudent->Controls->Add(this->cmbState);
+			this->pnlStudent->Controls->Add(this->gbSex);
+			this->pnlStudent->Controls->Add(this->lblLastName);
+			this->pnlStudent->Controls->Add(this->txtLastName);
+			this->pnlStudent->Controls->Add(this->lblMI);
+			this->pnlStudent->Controls->Add(this->txtMI);
+			this->pnlStudent->Controls->Add(this->lblFirstName);
+			this->pnlStudent->Controls->Add(this->txtFirstName);
+			this->pnlStudent->Location = System::Drawing::Point(6, 19);
+			this->pnlStudent->Name = L"pnlStudent";
+			this->pnlStudent->Size = System::Drawing::Size(657, 413);
+			this->pnlStudent->TabIndex = 0;
 			// 
 			// gbActive
 			// 
@@ -733,6 +822,11 @@ namespace FormProjectFix {
 			this->txtSearch->Name = L"txtSearch";
 			this->txtSearch->Size = System::Drawing::Size(125, 25);
 			// 
+			// toolStripSeparator4
+			// 
+			this->toolStripSeparator4->Name = L"toolStripSeparator4";
+			this->toolStripSeparator4->Size = System::Drawing::Size(6, 25);
+			// 
 			// cmbSearchBy
 			// 
 			this->cmbSearchBy->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
@@ -752,15 +846,17 @@ namespace FormProjectFix {
 			this->btnSearch->Size = System::Drawing::Size(23, 22);
 			this->btnSearch->Text = L"Search";
 			// 
-			// toolStripSeparator4
-			// 
-			this->toolStripSeparator4->Name = L"toolStripSeparator4";
-			this->toolStripSeparator4->Size = System::Drawing::Size(6, 25);
-			// 
 			// toolStripSeparator5
 			// 
 			this->toolStripSeparator5->Name = L"toolStripSeparator5";
 			this->toolStripSeparator5->Size = System::Drawing::Size(6, 25);
+			// 
+			// pnlHome
+			// 
+			this->pnlHome->Location = System::Drawing::Point(6, 19);
+			this->pnlHome->Name = L"pnlHome";
+			this->pnlHome->Size = System::Drawing::Size(659, 413);
+			this->pnlHome->TabIndex = 1;
 			// 
 			// Form1
 			// 
@@ -779,8 +875,11 @@ namespace FormProjectFix {
 			this->gbGrade->ResumeLayout(false);
 			this->gbGrade->PerformLayout();
 			this->gbStudent->ResumeLayout(false);
-			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
+			this->pnlLogin->ResumeLayout(false);
+			this->gbLogon->ResumeLayout(false);
+			this->gbLogon->PerformLayout();
+			this->pnlStudent->ResumeLayout(false);
+			this->pnlStudent->PerformLayout();
 			this->gbActive->ResumeLayout(false);
 			this->gbActive->PerformLayout();
 			this->gbSex->ResumeLayout(false);
@@ -803,6 +902,7 @@ namespace FormProjectFix {
 		feeDbl = 0.00;
 		ttOptional->SetToolTip(lblMI, "Optional");
 		ttOptional->SetToolTip(lblComment, "Optional");
+		pnlLogin->BringToFront();
 	}
 			 // ***********************************
 
@@ -840,6 +940,12 @@ namespace FormProjectFix {
 	}
 	private: System::Void btnUndo_Click(System::Object^  sender, System::EventArgs^  e) {
 		SendKeys::Send("^z");
+	}
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		pnlHome->BringToFront();
+	}
+	private: System::Void logOutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		pnlLogin->BringToFront();
 	}
 };
 }
