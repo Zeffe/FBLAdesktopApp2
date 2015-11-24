@@ -184,6 +184,7 @@ namespace FormProjectFix {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->txtPass = (gcnew System::Windows::Forms::TextBox());
 			this->txtUser = (gcnew System::Windows::Forms::TextBox());
+			this->pnlHome = (gcnew System::Windows::Forms::Panel());
 			this->pnlStudent = (gcnew System::Windows::Forms::Panel());
 			this->gbActive = (gcnew System::Windows::Forms::GroupBox());
 			this->cmbState = (gcnew System::Windows::Forms::ComboBox());
@@ -212,7 +213,6 @@ namespace FormProjectFix {
 			this->cmbSearchBy = (gcnew System::Windows::Forms::ToolStripComboBox());
 			this->btnSearch = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator5 = (gcnew System::Windows::Forms::ToolStripSeparator());
-			this->pnlHome = (gcnew System::Windows::Forms::Panel());
 			this->menuStrip2->SuspendLayout();
 			this->gbGrade->SuspendLayout();
 			this->gbStudent->SuspendLayout();
@@ -451,7 +451,7 @@ namespace FormProjectFix {
 			// logOutToolStripMenuItem
 			// 
 			this->logOutToolStripMenuItem->Name = L"logOutToolStripMenuItem";
-			this->logOutToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->logOutToolStripMenuItem->Size = System::Drawing::Size(117, 22);
 			this->logOutToolStripMenuItem->Text = L"Log Out";
 			this->logOutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::logOutToolStripMenuItem_Click);
 			// 
@@ -582,6 +582,13 @@ namespace FormProjectFix {
 			this->txtUser->Name = L"txtUser";
 			this->txtUser->Size = System::Drawing::Size(238, 20);
 			this->txtUser->TabIndex = 0;
+			// 
+			// pnlHome
+			// 
+			this->pnlHome->Location = System::Drawing::Point(6, 19);
+			this->pnlHome->Name = L"pnlHome";
+			this->pnlHome->Size = System::Drawing::Size(659, 413);
+			this->pnlHome->TabIndex = 1;
 			// 
 			// pnlStudent
 			// 
@@ -725,6 +732,7 @@ namespace FormProjectFix {
 			this->btnNew->Name = L"btnNew";
 			this->btnNew->Size = System::Drawing::Size(23, 22);
 			this->btnNew->Text = L"New";
+			this->btnNew->Click += gcnew System::EventHandler(this, &Form1::btnNew_Click);
 			// 
 			// btnSave
 			// 
@@ -851,13 +859,6 @@ namespace FormProjectFix {
 			this->toolStripSeparator5->Name = L"toolStripSeparator5";
 			this->toolStripSeparator5->Size = System::Drawing::Size(6, 25);
 			// 
-			// pnlHome
-			// 
-			this->pnlHome->Location = System::Drawing::Point(6, 19);
-			this->pnlHome->Name = L"pnlHome";
-			this->pnlHome->Size = System::Drawing::Size(659, 413);
-			this->pnlHome->TabIndex = 1;
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -946,6 +947,9 @@ namespace FormProjectFix {
 	}
 	private: System::Void logOutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		pnlLogin->BringToFront();
+	}
+	private: System::Void btnNew_Click(System::Object^  sender, System::EventArgs^  e) {
+		pnlStudent->BringToFront();
 	}
 };
 }
