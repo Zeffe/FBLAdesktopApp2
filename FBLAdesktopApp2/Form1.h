@@ -118,6 +118,9 @@ namespace FormProjectFix {
 private: System::Windows::Forms::ToolStripButton^  btnHome;
 private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator6;
 private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
+private: System::Windows::Forms::Label^  label2;
+private: System::Windows::Forms::Label^  lblLog;
+private: System::Windows::Forms::TextBox^  txtLog;
 
 
 
@@ -200,6 +203,9 @@ private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
 			this->txtPass = (gcnew System::Windows::Forms::TextBox());
 			this->txtUser = (gcnew System::Windows::Forms::TextBox());
 			this->pnlHome = (gcnew System::Windows::Forms::Panel());
+			this->lblLog = (gcnew System::Windows::Forms::Label());
+			this->txtLog = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->btnHome = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator6 = (gcnew System::Windows::Forms::ToolStripSeparator());
@@ -228,6 +234,7 @@ private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
 			this->gbSex->SuspendLayout();
 			this->pnlLogin->SuspendLayout();
 			this->gbLogon->SuspendLayout();
+			this->pnlHome->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -723,10 +730,47 @@ private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
 			// 
 			// pnlHome
 			// 
+			this->pnlHome->Controls->Add(this->lblLog);
+			this->pnlHome->Controls->Add(this->txtLog);
+			this->pnlHome->Controls->Add(this->label2);
 			this->pnlHome->Location = System::Drawing::Point(6, 19);
 			this->pnlHome->Name = L"pnlHome";
 			this->pnlHome->Size = System::Drawing::Size(659, 413);
 			this->pnlHome->TabIndex = 1;
+			// 
+			// lblLog
+			// 
+			this->lblLog->AutoSize = true;
+			this->lblLog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblLog->Location = System::Drawing::Point(308, 8);
+			this->lblLog->Name = L"lblLog";
+			this->lblLog->Size = System::Drawing::Size(39, 20);
+			this->lblLog->TabIndex = 2;
+			this->lblLog->Text = L"Log";
+			// 
+			// txtLog
+			// 
+			this->txtLog->BackColor = System::Drawing::SystemColors::Window;
+			this->txtLog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtLog->Location = System::Drawing::Point(308, 31);
+			this->txtLog->Multiline = true;
+			this->txtLog->Name = L"txtLog";
+			this->txtLog->ReadOnly = true;
+			this->txtLog->Size = System::Drawing::Size(345, 374);
+			this->txtLog->TabIndex = 1;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 265, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(300, 3);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(2, 402);
+			this->label2->TabIndex = 0;
 			// 
 			// toolStrip1
 			// 
@@ -837,6 +881,7 @@ private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
 			this->btnClear->Name = L"btnClear";
 			this->btnClear->Size = System::Drawing::Size(23, 22);
 			this->btnClear->Text = L"Clear All";
+			this->btnClear->Click += gcnew System::EventHandler(this, &Form1::btnClear_Click);
 			// 
 			// toolStripSeparator2
 			// 
@@ -931,6 +976,8 @@ private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
 			this->pnlLogin->ResumeLayout(false);
 			this->gbLogon->ResumeLayout(false);
 			this->gbLogon->PerformLayout();
+			this->pnlHome->ResumeLayout(false);
+			this->pnlHome->PerformLayout();
 			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -1014,12 +1061,19 @@ private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
 	private: System::Void btnUndo_Click(System::Object^  sender, System::EventArgs^  e) {
 		SendKeys::Send("^z");
 	}
+	private: System::Void btnClear_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (MessageBox::Show("Are you sure that you want to clear ALL information?", "Clear All", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			txtFirstName->Text = ""; txtLastName->Text = ""; txtMI->Text = ""; cmbState->Text = "MO"; txtSchool->Text = ""; txtEmail->Text = "";
+			txtComment->Text = ""; txtOwed->Text = ""; txtJoined->Text = ""; txtMemberNum->Text = ""; rbGrade9->Checked = true; rbMale->Checked = true; rbActive->Checked = true;
+		}
+	}
 			 //*************************************************************************************************************
 
 			 // ********************** These buttons handle the movement of panels and renaming of group boxes **********************
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		gbStudent->Text = "Home";
 		pnlHome->BringToFront();
+		txtLog->Text = "Date\t\tChanged\t\tClient ID\r\n";
 		toolStripButtons(1);
 	}
 
@@ -1059,5 +1113,7 @@ private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
 		}
 	}
 			 // **********************************************************************************************
+
+
 };
 }
