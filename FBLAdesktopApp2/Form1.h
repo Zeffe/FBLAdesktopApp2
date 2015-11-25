@@ -119,14 +119,21 @@ private: System::Windows::Forms::ToolStripButton^  btnHome;
 private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator6;
 private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
 private: System::Windows::Forms::Label^  label2;
-private: System::Windows::Forms::Label^  lblLog;
-private: System::Windows::Forms::TextBox^  txtLog;
+
+
 private: System::Windows::Forms::PictureBox^  pictureBox1;
 private: System::Windows::Forms::Button^  btnLogon;
 
 private: System::Windows::Forms::Label^  label3;
 private: System::Windows::Forms::TextBox^  txtPass;
 private: System::Windows::Forms::TextBox^  txtUser;
+private: System::Windows::Forms::TabControl^  tabLogs;
+private: System::Windows::Forms::TabPage^  tabPage1;
+private: System::Windows::Forms::TextBox^  txtLog;
+private: System::Windows::Forms::TabPage^  tabPage2;
+private: System::Windows::Forms::TextBox^  txtClientIDs;
+private: System::Windows::Forms::TabPage^  tabPage3;
+private: System::Windows::Forms::TextBox^  txtStudents;
 
 
 
@@ -192,15 +199,14 @@ private: System::Windows::Forms::TextBox^  txtUser;
 			this->gbGrade = (gcnew System::Windows::Forms::GroupBox());
 			this->lblState = (gcnew System::Windows::Forms::Label());
 			this->gbStudent = (gcnew System::Windows::Forms::GroupBox());
-			this->pnlLogin = (gcnew System::Windows::Forms::Panel());
-			this->btnLogon = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->txtPass = (gcnew System::Windows::Forms::TextBox());
-			this->txtUser = (gcnew System::Windows::Forms::TextBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pnlHome = (gcnew System::Windows::Forms::Panel());
-			this->lblLog = (gcnew System::Windows::Forms::Label());
+			this->tabLogs = (gcnew System::Windows::Forms::TabControl());
+			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->txtLog = (gcnew System::Windows::Forms::TextBox());
+			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->txtClientIDs = (gcnew System::Windows::Forms::TextBox());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->txtStudents = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->pnlStudent = (gcnew System::Windows::Forms::Panel());
 			this->gbActive = (gcnew System::Windows::Forms::GroupBox());
@@ -212,6 +218,12 @@ private: System::Windows::Forms::TextBox^  txtUser;
 			this->txtMI = (gcnew System::Windows::Forms::TextBox());
 			this->lblFirstName = (gcnew System::Windows::Forms::Label());
 			this->txtFirstName = (gcnew System::Windows::Forms::TextBox());
+			this->pnlLogin = (gcnew System::Windows::Forms::Panel());
+			this->btnLogon = (gcnew System::Windows::Forms::Button());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->txtPass = (gcnew System::Windows::Forms::TextBox());
+			this->txtUser = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->btnHome = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator6 = (gcnew System::Windows::Forms::ToolStripSeparator());
@@ -235,12 +247,16 @@ private: System::Windows::Forms::TextBox^  txtUser;
 			this->menuStrip2->SuspendLayout();
 			this->gbGrade->SuspendLayout();
 			this->gbStudent->SuspendLayout();
-			this->pnlLogin->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->pnlHome->SuspendLayout();
+			this->tabLogs->SuspendLayout();
+			this->tabPage1->SuspendLayout();
+			this->tabPage2->SuspendLayout();
+			this->tabPage3->SuspendLayout();
 			this->pnlStudent->SuspendLayout();
 			this->gbActive->SuspendLayout();
 			this->gbSex->SuspendLayout();
+			this->pnlLogin->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -557,101 +573,81 @@ private: System::Windows::Forms::TextBox^  txtUser;
 			this->gbStudent->TabStop = false;
 			this->gbStudent->Text = L"Logon Screen";
 			// 
-			// pnlLogin
-			// 
-			this->pnlLogin->Controls->Add(this->btnLogon);
-			this->pnlLogin->Controls->Add(this->label3);
-			this->pnlLogin->Controls->Add(this->txtPass);
-			this->pnlLogin->Controls->Add(this->txtUser);
-			this->pnlLogin->Controls->Add(this->pictureBox1);
-			this->pnlLogin->Location = System::Drawing::Point(6, 19);
-			this->pnlLogin->Name = L"pnlLogin";
-			this->pnlLogin->Size = System::Drawing::Size(659, 413);
-			this->pnlLogin->TabIndex = 24;
-			// 
-			// btnLogon
-			// 
-			this->btnLogon->Location = System::Drawing::Point(281, 289);
-			this->btnLogon->Name = L"btnLogon";
-			this->btnLogon->Size = System::Drawing::Size(115, 21);
-			this->btnLogon->TabIndex = 7;
-			this->btnLogon->Text = L"Log In";
-			this->btnLogon->UseVisualStyleBackColor = true;
-			this->btnLogon->Click += gcnew System::EventHandler(this, &Form1::btnLogon_Click);
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(222, 192);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(72, 13);
-			this->label3->TabIndex = 6;
-			this->label3->Text = L"Please Log In";
-			// 
-			// txtPass
-			// 
-			this->txtPass->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->txtPass->Location = System::Drawing::Point(225, 251);
-			this->txtPass->Name = L"txtPass";
-			this->txtPass->Size = System::Drawing::Size(238, 20);
-			this->txtPass->TabIndex = 5;
-			this->txtPass->Text = L"Password";
-			this->txtPass->Enter += gcnew System::EventHandler(this, &Form1::txtPass_Enter);
-			this->txtPass->Leave += gcnew System::EventHandler(this, &Form1::txtPass_Leave);
-			// 
-			// txtUser
-			// 
-			this->txtUser->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->txtUser->Location = System::Drawing::Point(225, 214);
-			this->txtUser->Name = L"txtUser";
-			this->txtUser->Size = System::Drawing::Size(238, 20);
-			this->txtUser->TabIndex = 4;
-			this->txtUser->Text = L"Client ID";
-			this->txtUser->Enter += gcnew System::EventHandler(this, &Form1::txtUser_Enter);
-			this->txtUser->Leave += gcnew System::EventHandler(this, &Form1::txtUser_Leave);
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(239, 16);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(208, 135);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 1;
-			this->pictureBox1->TabStop = false;
-			// 
 			// pnlHome
 			// 
-			this->pnlHome->Controls->Add(this->lblLog);
-			this->pnlHome->Controls->Add(this->txtLog);
+			this->pnlHome->Controls->Add(this->tabLogs);
 			this->pnlHome->Controls->Add(this->label2);
 			this->pnlHome->Location = System::Drawing::Point(6, 19);
 			this->pnlHome->Name = L"pnlHome";
 			this->pnlHome->Size = System::Drawing::Size(659, 413);
 			this->pnlHome->TabIndex = 1;
 			// 
-			// lblLog
+			// tabLogs
 			// 
-			this->lblLog->AutoSize = true;
-			this->lblLog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lblLog->Location = System::Drawing::Point(308, 8);
-			this->lblLog->Name = L"lblLog";
-			this->lblLog->Size = System::Drawing::Size(39, 20);
-			this->lblLog->TabIndex = 2;
-			this->lblLog->Text = L"Log";
+			this->tabLogs->Controls->Add(this->tabPage1);
+			this->tabLogs->Controls->Add(this->tabPage2);
+			this->tabLogs->Controls->Add(this->tabPage3);
+			this->tabLogs->Location = System::Drawing::Point(308, 7);
+			this->tabLogs->Name = L"tabLogs";
+			this->tabLogs->SelectedIndex = 0;
+			this->tabLogs->Size = System::Drawing::Size(346, 398);
+			this->tabLogs->TabIndex = 3;
+			// 
+			// tabPage1
+			// 
+			this->tabPage1->Controls->Add(this->txtLog);
+			this->tabPage1->Location = System::Drawing::Point(4, 22);
+			this->tabPage1->Name = L"tabPage1";
+			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage1->Size = System::Drawing::Size(338, 372);
+			this->tabPage1->TabIndex = 0;
+			this->tabPage1->Text = L"Log";
+			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
 			// txtLog
 			// 
-			this->txtLog->BackColor = System::Drawing::SystemColors::Window;
-			this->txtLog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->txtLog->Location = System::Drawing::Point(308, 31);
+			this->txtLog->Location = System::Drawing::Point(1, 1);
 			this->txtLog->Multiline = true;
 			this->txtLog->Name = L"txtLog";
-			this->txtLog->ReadOnly = true;
-			this->txtLog->Size = System::Drawing::Size(345, 374);
-			this->txtLog->TabIndex = 1;
+			this->txtLog->Size = System::Drawing::Size(336, 370);
+			this->txtLog->TabIndex = 0;
+			// 
+			// tabPage2
+			// 
+			this->tabPage2->Controls->Add(this->txtClientIDs);
+			this->tabPage2->Location = System::Drawing::Point(4, 22);
+			this->tabPage2->Name = L"tabPage2";
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage2->Size = System::Drawing::Size(338, 372);
+			this->tabPage2->TabIndex = 1;
+			this->tabPage2->Text = L"Client IDs";
+			this->tabPage2->UseVisualStyleBackColor = true;
+			// 
+			// txtClientIDs
+			// 
+			this->txtClientIDs->Location = System::Drawing::Point(0, 1);
+			this->txtClientIDs->Multiline = true;
+			this->txtClientIDs->Name = L"txtClientIDs";
+			this->txtClientIDs->Size = System::Drawing::Size(337, 370);
+			this->txtClientIDs->TabIndex = 0;
+			// 
+			// tabPage3
+			// 
+			this->tabPage3->Controls->Add(this->txtStudents);
+			this->tabPage3->Location = System::Drawing::Point(4, 22);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Size = System::Drawing::Size(338, 372);
+			this->tabPage3->TabIndex = 2;
+			this->tabPage3->Text = L"Students";
+			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// txtStudents
+			// 
+			this->txtStudents->Location = System::Drawing::Point(1, 1);
+			this->txtStudents->Multiline = true;
+			this->txtStudents->Name = L"txtStudents";
+			this->txtStudents->Size = System::Drawing::Size(336, 370);
+			this->txtStudents->TabIndex = 0;
 			// 
 			// label2
 			// 
@@ -785,6 +781,69 @@ private: System::Windows::Forms::TextBox^  txtUser;
 			this->txtFirstName->Size = System::Drawing::Size(202, 20);
 			this->txtFirstName->TabIndex = 1;
 			this->txtFirstName->TextChanged += gcnew System::EventHandler(this, &Form1::txtFirstName_TextChanged);
+			// 
+			// pnlLogin
+			// 
+			this->pnlLogin->Controls->Add(this->btnLogon);
+			this->pnlLogin->Controls->Add(this->label3);
+			this->pnlLogin->Controls->Add(this->txtPass);
+			this->pnlLogin->Controls->Add(this->txtUser);
+			this->pnlLogin->Controls->Add(this->pictureBox1);
+			this->pnlLogin->Location = System::Drawing::Point(6, 19);
+			this->pnlLogin->Name = L"pnlLogin";
+			this->pnlLogin->Size = System::Drawing::Size(659, 413);
+			this->pnlLogin->TabIndex = 24;
+			// 
+			// btnLogon
+			// 
+			this->btnLogon->Location = System::Drawing::Point(281, 289);
+			this->btnLogon->Name = L"btnLogon";
+			this->btnLogon->Size = System::Drawing::Size(115, 21);
+			this->btnLogon->TabIndex = 7;
+			this->btnLogon->Text = L"Log In";
+			this->btnLogon->UseVisualStyleBackColor = true;
+			this->btnLogon->Click += gcnew System::EventHandler(this, &Form1::btnLogon_Click);
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(222, 192);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(72, 13);
+			this->label3->TabIndex = 6;
+			this->label3->Text = L"Please Log In";
+			// 
+			// txtPass
+			// 
+			this->txtPass->ForeColor = System::Drawing::SystemColors::WindowFrame;
+			this->txtPass->Location = System::Drawing::Point(225, 251);
+			this->txtPass->Name = L"txtPass";
+			this->txtPass->Size = System::Drawing::Size(238, 20);
+			this->txtPass->TabIndex = 5;
+			this->txtPass->Text = L"Password";
+			this->txtPass->Enter += gcnew System::EventHandler(this, &Form1::txtPass_Enter);
+			this->txtPass->Leave += gcnew System::EventHandler(this, &Form1::txtPass_Leave);
+			// 
+			// txtUser
+			// 
+			this->txtUser->ForeColor = System::Drawing::SystemColors::WindowFrame;
+			this->txtUser->Location = System::Drawing::Point(225, 214);
+			this->txtUser->Name = L"txtUser";
+			this->txtUser->Size = System::Drawing::Size(238, 20);
+			this->txtUser->TabIndex = 4;
+			this->txtUser->Text = L"Client ID";
+			this->txtUser->Enter += gcnew System::EventHandler(this, &Form1::txtUser_Enter);
+			this->txtUser->Leave += gcnew System::EventHandler(this, &Form1::txtUser_Leave);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(239, 16);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(208, 135);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 1;
+			this->pictureBox1->TabStop = false;
 			// 
 			// toolStrip1
 			// 
@@ -981,17 +1040,24 @@ private: System::Windows::Forms::TextBox^  txtUser;
 			this->gbGrade->ResumeLayout(false);
 			this->gbGrade->PerformLayout();
 			this->gbStudent->ResumeLayout(false);
-			this->pnlLogin->ResumeLayout(false);
-			this->pnlLogin->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->pnlHome->ResumeLayout(false);
 			this->pnlHome->PerformLayout();
+			this->tabLogs->ResumeLayout(false);
+			this->tabPage1->ResumeLayout(false);
+			this->tabPage1->PerformLayout();
+			this->tabPage2->ResumeLayout(false);
+			this->tabPage2->PerformLayout();
+			this->tabPage3->ResumeLayout(false);
+			this->tabPage3->PerformLayout();
 			this->pnlStudent->ResumeLayout(false);
 			this->pnlStudent->PerformLayout();
 			this->gbActive->ResumeLayout(false);
 			this->gbActive->PerformLayout();
 			this->gbSex->ResumeLayout(false);
 			this->gbSex->PerformLayout();
+			this->pnlLogin->ResumeLayout(false);
+			this->pnlLogin->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -1007,7 +1073,7 @@ private: System::Windows::Forms::TextBox^  txtUser;
 		// ********************************
 
 		// ********************** User Declared Functions **********************
-		void toolStripButtons(bool x) { //Faster way to enable and disable toolstirp buttons
+		void toolStripButtons(bool x) { //Faster way to enable and disable toolstrip buttons
 			btnHome->Enabled = x;
 			btnNew->Enabled = x;
 			btnCut->Enabled = x;
@@ -1088,7 +1154,9 @@ private: System::Windows::Forms::TextBox^  txtUser;
 	private: System::Void btnLogon_Click(System::Object^  sender, System::EventArgs^  e) {
 		gbStudent->Text = "Home";
 		pnlHome->BringToFront();
-		txtLog->Text = "Date\t\tChanged\t\tClient ID\r\n";
+		txtLog->Text = "Date\t\tChanged\t\t\tClient ID\r\n";
+		txtClientIDs->Text = "Client ID\t\tNick\t\t\tChanges";
+		txtStudents->Text = "Member #\tFirst Name\t\tLast Name";
 		toolStripButtons(1);
 	}
 
