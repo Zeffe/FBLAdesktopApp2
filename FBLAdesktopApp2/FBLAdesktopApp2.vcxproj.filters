@@ -66,5 +66,8 @@
     <Image Include="..\..\..\..\..\Desktop\Icons\home-black.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="..\..\..\..\..\Desktop\Icons\FBLAicon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

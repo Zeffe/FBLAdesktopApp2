@@ -161,6 +161,7 @@
     <Image Include="..\..\..\..\..\Desktop\Icons\clear-black.png" />
     <Image Include="..\..\..\..\..\Desktop\Icons\copy-black.png" />
     <Image Include="..\..\..\..\..\Desktop\Icons\cut-black.png" />
+    <Image Include="..\..\..\..\..\Desktop\Icons\FBLAicon.png" />
     <Image Include="..\..\..\..\..\Desktop\Icons\home-black.png" />
     <Image Include="..\..\..\..\..\Desktop\Icons\new-black.png" />
     <Image Include="..\..\..\..\..\Desktop\Icons\new-grey.png" />
