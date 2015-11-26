@@ -1497,7 +1497,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 	}
 			 // **************** CREDITS PAGE ****************
 	private: System::Void creditsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-		MessageBox::Show("Seth Dixon - Programmer\r\nMichael Blades - Programmer\r\n\r\nIcons by:\r\nFreepik @ Flaticons.com\r\nYannik @ Flaticons.com\r\nGoogle @ Flaticons.com", "Credits");
+		MessageBox::Show("Seth Dixon - Programmer\r\nMichael Blades - Programmer\r\n\r\nIcons by:\r\nFreepik @ Flaticon.com\r\nYannik @ Flaticon.com\r\nGoogle @ Flaticon.com", "Credits");
 	}
 			 // **********************************************
 };
