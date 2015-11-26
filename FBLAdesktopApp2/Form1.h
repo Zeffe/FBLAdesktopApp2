@@ -171,6 +171,8 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnProgramSettings;
 
 
 private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
+private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
+
 
 
 
@@ -248,6 +250,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 			this->mbtnHome = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->mbtnAccountDetails = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->mbtnProgramSettings = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->creditsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->lblHR = (gcnew System::Windows::Forms::Label());
 			this->gbGrade = (gcnew System::Windows::Forms::GroupBox());
 			this->lblState = (gcnew System::Windows::Forms::Label());
@@ -635,20 +638,20 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 			// 
 			this->mbtnUndo->Enabled = false;
 			this->mbtnUndo->Name = L"mbtnUndo";
-			this->mbtnUndo->Size = System::Drawing::Size(152, 22);
+			this->mbtnUndo->Size = System::Drawing::Size(118, 22);
 			this->mbtnUndo->Text = L"Undo";
 			this->mbtnUndo->Click += gcnew System::EventHandler(this, &Form1::mbtnUndo_Click);
 			// 
 			// toolStripSeparator7
 			// 
 			this->toolStripSeparator7->Name = L"toolStripSeparator7";
-			this->toolStripSeparator7->Size = System::Drawing::Size(149, 6);
+			this->toolStripSeparator7->Size = System::Drawing::Size(115, 6);
 			// 
 			// mbtnCut
 			// 
 			this->mbtnCut->Enabled = false;
 			this->mbtnCut->Name = L"mbtnCut";
-			this->mbtnCut->Size = System::Drawing::Size(152, 22);
+			this->mbtnCut->Size = System::Drawing::Size(118, 22);
 			this->mbtnCut->Text = L"Cut";
 			this->mbtnCut->Click += gcnew System::EventHandler(this, &Form1::mbtnCut_Click);
 			// 
@@ -656,7 +659,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 			// 
 			this->mbtnCopy->Enabled = false;
 			this->mbtnCopy->Name = L"mbtnCopy";
-			this->mbtnCopy->Size = System::Drawing::Size(152, 22);
+			this->mbtnCopy->Size = System::Drawing::Size(118, 22);
 			this->mbtnCopy->Text = L"Copy";
 			this->mbtnCopy->Click += gcnew System::EventHandler(this, &Form1::mbtnCopy_Click);
 			// 
@@ -664,7 +667,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 			// 
 			this->mbtnPaste->Enabled = false;
 			this->mbtnPaste->Name = L"mbtnPaste";
-			this->mbtnPaste->Size = System::Drawing::Size(152, 22);
+			this->mbtnPaste->Size = System::Drawing::Size(118, 22);
 			this->mbtnPaste->Text = L"Paste";
 			this->mbtnPaste->Click += gcnew System::EventHandler(this, &Form1::mbtnPaste_Click);
 			// 
@@ -672,15 +675,15 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 			// 
 			this->mbtnClearAll->Enabled = false;
 			this->mbtnClearAll->Name = L"mbtnClearAll";
-			this->mbtnClearAll->Size = System::Drawing::Size(152, 22);
+			this->mbtnClearAll->Size = System::Drawing::Size(118, 22);
 			this->mbtnClearAll->Text = L"Clear All";
 			this->mbtnClearAll->Click += gcnew System::EventHandler(this, &Form1::mbtnClearAll_Click);
 			// 
 			// viewToolStripMenuItem
 			// 
-			this->viewToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->viewToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->mbtnHome,
-					this->mbtnAccountDetails, this->mbtnProgramSettings
+					this->mbtnAccountDetails, this->mbtnProgramSettings, this->creditsToolStripMenuItem
 			});
 			this->viewToolStripMenuItem->Name = L"viewToolStripMenuItem";
 			this->viewToolStripMenuItem->Size = System::Drawing::Size(44, 20);
@@ -707,6 +710,13 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 			this->mbtnProgramSettings->Name = L"mbtnProgramSettings";
 			this->mbtnProgramSettings->Size = System::Drawing::Size(165, 22);
 			this->mbtnProgramSettings->Text = L"Program Settings";
+			// 
+			// creditsToolStripMenuItem
+			// 
+			this->creditsToolStripMenuItem->Name = L"creditsToolStripMenuItem";
+			this->creditsToolStripMenuItem->Size = System::Drawing::Size(165, 22);
+			this->creditsToolStripMenuItem->Text = L"Credits";
+			this->creditsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::creditsToolStripMenuItem_Click);
 			// 
 			// lblHR
 			// 
@@ -1212,7 +1222,8 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 			this->MaximumSize = System::Drawing::Size(711, 540);
 			this->MinimumSize = System::Drawing::Size(711, 540);
 			this->Name = L"Form1";
-			this->Text = L"Form1";
+			this->Text = L"FBLA";
+			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->menuStrip2->ResumeLayout(false);
 			this->menuStrip2->PerformLayout();
 			this->gbGrade->ResumeLayout(false);
@@ -1247,6 +1258,8 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 		// Variable or array initialization
 		String^ feeStr;
 		Double feeDbl;
+		array <String^>^ temp = gcnew array <String^>(6);
+		DateTime now = DateTime::Now;
 		bool newForm;
 		// ********************************
 
@@ -1281,16 +1294,19 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 				if (txtMemberNum->Text != "") {
 					gbStudent->Text += " - " + txtMemberNum->Text;
 				}
+				this->Text = "FBLA - " + gbStudent->Text;
 			}
 		}
 
 		// *********************************************************************
 
 		// *********** On Form Load **********
-	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
 		feeDbl = 0.00;
 		ttOptional->SetToolTip(lblMI, "Optional");
 		ttOptional->SetToolTip(lblComment, "Optional");
+		this->Text = "Form - Login Screen";
+		cmbSearchBy->SelectedIndex = 0;
 	}
 			 // ***********************************
 
@@ -1301,12 +1317,14 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 		if (!txtOwed->Text->Contains("$")) {
 			txtOwed->Text = "$" + txtOwed->Text;
 		}
-		if (!feeDbl.ToString()->Contains(".")) {
+		if (!txtOwed->Text->Contains(".")) {
 			txtOwed->Text += ".00";
-		} else {
-			txtOwed->Text = feeStr;
 		}
-		feeStr = txtOwed->Text;
+		temp = txtOwed->Text->Split('.');
+		if (temp[1]->Length == 1) {
+			temp[1] += "0";
+			txtOwed->Text = temp[0]+"."+temp[1];
+		}
 	}
 	private: System::Void txtOwed_Enter(System::Object^  sender, System::EventArgs^  e) {
 		if (txtOwed->Text->Contains("$")) {
@@ -1342,14 +1360,14 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 	}
 	private: System::Void btnClear_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (MessageBox::Show("Are you sure that you want to clear ALL information?", "Clear All", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-			txtFirstName->Text = ""; txtLastName->Text = ""; txtMI->Text = ""; cmbState->Text = "MO"; txtSchool->Text = ""; txtEmail->Text = "";
-			txtComment->Text = ""; txtOwed->Text = ""; txtJoined->Text = ""; txtMemberNum->Text = ""; rbGrade9->Checked = true; rbMale->Checked = true; rbActive->Checked = true;
+			txtFirstName->Text = ""; txtLastName->Text = ""; txtMI->Text = ""; cmbState->Text = "MO"; txtSchool->Text = ""; txtEmail->Text = ""; gbStudent->Text = "";
+			txtComment->Text = ""; txtOwed->Text = "$0.00"; txtJoined->Text = now.Year.ToString(); txtMemberNum->Text = ""; rbGrade9->Checked = true; rbMale->Checked = true; rbActive->Checked = true;
 		}
 	}
 	private: System::Void mbtnClearAll_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (MessageBox::Show("Are you sure that you want to clear ALL information?", "Clear All", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-			txtFirstName->Text = ""; txtLastName->Text = ""; txtMI->Text = ""; cmbState->Text = "MO"; txtSchool->Text = ""; txtEmail->Text = "";
-			txtComment->Text = ""; txtOwed->Text = ""; txtJoined->Text = ""; txtMemberNum->Text = ""; rbGrade9->Checked = true; rbMale->Checked = true; rbActive->Checked = true;
+			txtFirstName->Text = ""; txtLastName->Text = ""; txtMI->Text = ""; cmbState->Text = "MO"; txtSchool->Text = ""; txtEmail->Text = ""; gbStudent->Text = "";
+			txtComment->Text = ""; txtOwed->Text = "$0.00"; txtJoined->Text = now.Year.ToString(); txtMemberNum->Text = ""; rbGrade9->Checked = true; rbMale->Checked = true; rbActive->Checked = true;
 		}
 	}
 			 //*************************************************************************************************************
@@ -1358,14 +1376,17 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 
 	private: System::Void btnLogon_Click(System::Object^  sender, System::EventArgs^  e) {
 		gbStudent->Text = "Home";
+		this->Text = "FBLA - Home";
 		pnlHome->BringToFront();
 		txtLog->Text = "Date\t\tChanged\t\t\tClient ID\r\n";
 		txtClientIDs->Text = "Client ID\t\tNick\t\t\tChanges";
 		txtStudents->Text = "Member #\tFirst Name\t\tLast Name";
+		txtJoined->Text = now.Year.ToString();
 		toolStripButtons(1);
 	}
 	private: System::Void mbtnHome_Click(System::Object^  sender, System::EventArgs^  e) {
 		gbStudent->Text = "Home";
+		this->Text = "FBLA - Home";
 		pnlHome->BringToFront();
 		txtLog->Text = "Date\t\tChanged\t\t\tClient ID\r\n";
 		txtClientIDs->Text = "Client ID\t\tNick\t\t\tChanges";
@@ -1376,6 +1397,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 	private: System::Void logOutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		// Add later: if not saved, request save function
 		gbStudent->Text = "Logon Screen";
+		this->Text = "FBLA - Login Screen";
 		pnlLogin->BringToFront();
 		toolStripButtons(0);
 	}
@@ -1383,6 +1405,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 	private: System::Void mbtnNew_Click(System::Object^  sender, System::EventArgs^  e) {
 		// Add later: if not saved, request save function
 		mbtnPrint->Enabled = 1;
+		this->Text = "FBLA";
 		mbtnClearAll->Enabled = 1;
 		mbtnPrintPreview->Enabled = 1;
 		mbtnSave->Enabled = 0;
@@ -1401,6 +1424,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 		mbtnClearAll->Enabled = 1;
 		mbtnPrintPreview->Enabled = 1;
 		mbtnSave->Enabled = 0;
+		this->Text = "FBLA";
 		btnSave->Enabled = 0;
 		btnClear->Enabled = 1;
 		btnPrint->Enabled = 1;
@@ -1413,6 +1437,8 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 	private: System::Void btnHome_Click(System::Object^  sender, System::EventArgs^  e) {
 		// Add later: if not saved, request save function
 		pnlHome->BringToFront();
+		gbStudent->Text = "Home";
+		this->Text = "FBLA - Home";
 	}
 			 //**********************************************************************************************************************
 
@@ -1469,5 +1495,10 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 			Application::Exit();
 		}
 	}
+			 // **************** CREDITS PAGE ****************
+	private: System::Void creditsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		MessageBox::Show("Seth Dixon - Programmer\r\nMichael Blades - Programmer\r\n\r\nIcons by:\r\nFreepik @ Flaticons.com\r\nYannik @ Flaticons.com\r\nGoogle @ Flaticons.com", "Credits");
+	}
+			 // **********************************************
 };
 }
