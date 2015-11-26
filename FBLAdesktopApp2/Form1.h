@@ -63,9 +63,9 @@ namespace FormProjectFix {
 	private: System::Windows::Forms::ToolStripMenuItem^  fileToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  editToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  viewToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  studentToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  toolsToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  helpToolStripMenuItem;
+
+
+
 	private: System::Windows::Forms::Label^  lblHR;
 	private: System::Windows::Forms::GroupBox^  gbGrade;
 	private: System::Windows::Forms::Label^  lblState;
@@ -103,6 +103,7 @@ namespace FormProjectFix {
 	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator4;
 	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator5;
 	private: System::Windows::Forms::Panel^  pnlLogin;
+	private: System::Windows::Forms::ToolStripMenuItem^  mbtnLogout;
 
 
 
@@ -113,11 +114,11 @@ namespace FormProjectFix {
 
 
 
-	private: System::Windows::Forms::ToolStripMenuItem^  logOutToolStripMenuItem;
+
 	private: System::Windows::Forms::Panel^  pnlHome;
 private: System::Windows::Forms::ToolStripButton^  btnHome;
 private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator6;
-private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
+
 private: System::Windows::Forms::Label^  label2;
 
 
@@ -134,6 +135,43 @@ private: System::Windows::Forms::TabPage^  tabPage2;
 private: System::Windows::Forms::TextBox^  txtClientIDs;
 private: System::Windows::Forms::TabPage^  tabPage3;
 private: System::Windows::Forms::TextBox^  txtStudents;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnNew;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnSave;
+
+
+
+private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator8;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnPrintPreview;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnPrint;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnExport;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnAsTxt;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnAsXls;
+
+
+
+
+
+
+private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator9;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnUndo;
+
+private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnCut;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnCopy;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnPaste;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnClearAll;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnHome;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnAccountDetails;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnProgramSettings;
+
+
+
+
+
+
+
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
+
 
 
 
@@ -188,17 +226,38 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			this->txtSchool = (gcnew System::Windows::Forms::TextBox());
 			this->menuStrip2 = (gcnew System::Windows::Forms::MenuStrip());
 			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->logOutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->toolStripSeparator7 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->mbtnNew = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnSave = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->toolStripSeparator8 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->mbtnPrintPreview = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnPrint = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnExport = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnAsTxt = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnAsXls = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->toolStripSeparator9 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->mbtnLogout = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnExit = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->editToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnUndo = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->toolStripSeparator7 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->mbtnCut = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnCopy = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnPaste = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnClearAll = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->viewToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->studentToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->toolsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnHome = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnAccountDetails = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnProgramSettings = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->lblHR = (gcnew System::Windows::Forms::Label());
 			this->gbGrade = (gcnew System::Windows::Forms::GroupBox());
 			this->lblState = (gcnew System::Windows::Forms::Label());
 			this->gbStudent = (gcnew System::Windows::Forms::GroupBox());
+			this->pnlLogin = (gcnew System::Windows::Forms::Panel());
+			this->btnLogon = (gcnew System::Windows::Forms::Button());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->txtPass = (gcnew System::Windows::Forms::TextBox());
+			this->txtUser = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pnlHome = (gcnew System::Windows::Forms::Panel());
 			this->tabLogs = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
@@ -218,12 +277,6 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			this->txtMI = (gcnew System::Windows::Forms::TextBox());
 			this->lblFirstName = (gcnew System::Windows::Forms::Label());
 			this->txtFirstName = (gcnew System::Windows::Forms::TextBox());
-			this->pnlLogin = (gcnew System::Windows::Forms::Panel());
-			this->btnLogon = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->txtPass = (gcnew System::Windows::Forms::TextBox());
-			this->txtUser = (gcnew System::Windows::Forms::TextBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->btnHome = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator6 = (gcnew System::Windows::Forms::ToolStripSeparator());
@@ -247,6 +300,8 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			this->menuStrip2->SuspendLayout();
 			this->gbGrade->SuspendLayout();
 			this->gbStudent->SuspendLayout();
+			this->pnlLogin->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->pnlHome->SuspendLayout();
 			this->tabLogs->SuspendLayout();
 			this->tabPage1->SuspendLayout();
@@ -255,8 +310,6 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			this->pnlStudent->SuspendLayout();
 			this->gbActive->SuspendLayout();
 			this->gbSex->SuspendLayout();
-			this->pnlLogin->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -421,6 +474,8 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			this->txtOwed->TabIndex = 15;
 			this->txtOwed->Text = L"$0.00";
 			this->txtOwed->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
+			this->txtOwed->Enter += gcnew System::EventHandler(this, &Form1::txtOwed_Enter);
+			this->txtOwed->Leave += gcnew System::EventHandler(this, &Form1::txtOwed_Leave);
 			// 
 			// lblEmail
 			// 
@@ -468,9 +523,9 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			// 
 			// menuStrip2
 			// 
-			this->menuStrip2->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+			this->menuStrip2->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->fileToolStripMenuItem,
-					this->editToolStripMenuItem, this->viewToolStripMenuItem, this->studentToolStripMenuItem, this->toolsToolStripMenuItem, this->helpToolStripMenuItem
+					this->editToolStripMenuItem, this->viewToolStripMenuItem
 			});
 			this->menuStrip2->Location = System::Drawing::Point(0, 0);
 			this->menuStrip2->Name = L"menuStrip2";
@@ -480,55 +535,178 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			// 
 			// fileToolStripMenuItem
 			// 
-			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->logOutToolStripMenuItem,
-					this->toolStripSeparator7
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(9) {
+				this->mbtnNew,
+					this->mbtnSave, this->toolStripSeparator8, this->mbtnPrintPreview, this->mbtnPrint, this->mbtnExport, this->toolStripSeparator9,
+					this->mbtnLogout, this->mbtnExit
 			});
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
 			this->fileToolStripMenuItem->Size = System::Drawing::Size(37, 20);
 			this->fileToolStripMenuItem->Text = L"File";
 			// 
-			// logOutToolStripMenuItem
+			// mbtnNew
 			// 
-			this->logOutToolStripMenuItem->Name = L"logOutToolStripMenuItem";
-			this->logOutToolStripMenuItem->Size = System::Drawing::Size(117, 22);
-			this->logOutToolStripMenuItem->Text = L"Log Out";
-			this->logOutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::logOutToolStripMenuItem_Click);
+			this->mbtnNew->Enabled = false;
+			this->mbtnNew->Name = L"mbtnNew";
+			this->mbtnNew->Size = System::Drawing::Size(143, 22);
+			this->mbtnNew->Text = L"New";
+			this->mbtnNew->Click += gcnew System::EventHandler(this, &Form1::mbtnNew_Click);
 			// 
-			// toolStripSeparator7
+			// mbtnSave
 			// 
-			this->toolStripSeparator7->Name = L"toolStripSeparator7";
-			this->toolStripSeparator7->Size = System::Drawing::Size(114, 6);
+			this->mbtnSave->Enabled = false;
+			this->mbtnSave->Name = L"mbtnSave";
+			this->mbtnSave->Size = System::Drawing::Size(143, 22);
+			this->mbtnSave->Text = L"Save";
+			// 
+			// toolStripSeparator8
+			// 
+			this->toolStripSeparator8->Name = L"toolStripSeparator8";
+			this->toolStripSeparator8->Size = System::Drawing::Size(140, 6);
+			// 
+			// mbtnPrintPreview
+			// 
+			this->mbtnPrintPreview->Enabled = false;
+			this->mbtnPrintPreview->Name = L"mbtnPrintPreview";
+			this->mbtnPrintPreview->Size = System::Drawing::Size(143, 22);
+			this->mbtnPrintPreview->Text = L"Print Preview";
+			// 
+			// mbtnPrint
+			// 
+			this->mbtnPrint->Enabled = false;
+			this->mbtnPrint->Name = L"mbtnPrint";
+			this->mbtnPrint->Size = System::Drawing::Size(143, 22);
+			this->mbtnPrint->Text = L"Print";
+			// 
+			// mbtnExport
+			// 
+			this->mbtnExport->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->mbtnAsTxt,
+					this->mbtnAsXls
+			});
+			this->mbtnExport->Enabled = false;
+			this->mbtnExport->Name = L"mbtnExport";
+			this->mbtnExport->Size = System::Drawing::Size(143, 22);
+			this->mbtnExport->Text = L"Export";
+			// 
+			// mbtnAsTxt
+			// 
+			this->mbtnAsTxt->Name = L"mbtnAsTxt";
+			this->mbtnAsTxt->Size = System::Drawing::Size(104, 22);
+			this->mbtnAsTxt->Text = L"as .txt";
+			// 
+			// mbtnAsXls
+			// 
+			this->mbtnAsXls->Name = L"mbtnAsXls";
+			this->mbtnAsXls->Size = System::Drawing::Size(104, 22);
+			this->mbtnAsXls->Text = L"as .xls";
+			// 
+			// toolStripSeparator9
+			// 
+			this->toolStripSeparator9->Name = L"toolStripSeparator9";
+			this->toolStripSeparator9->Size = System::Drawing::Size(140, 6);
+			// 
+			// mbtnLogout
+			// 
+			this->mbtnLogout->Enabled = false;
+			this->mbtnLogout->Name = L"mbtnLogout";
+			this->mbtnLogout->Size = System::Drawing::Size(143, 22);
+			this->mbtnLogout->Text = L"Log Out";
+			this->mbtnLogout->Click += gcnew System::EventHandler(this, &Form1::logOutToolStripMenuItem_Click);
+			// 
+			// mbtnExit
+			// 
+			this->mbtnExit->Name = L"mbtnExit";
+			this->mbtnExit->Size = System::Drawing::Size(143, 22);
+			this->mbtnExit->Text = L"Exit";
+			this->mbtnExit->Click += gcnew System::EventHandler(this, &Form1::exitToolStripMenuItem_Click);
 			// 
 			// editToolStripMenuItem
 			// 
+			this->editToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+				this->mbtnUndo,
+					this->toolStripSeparator7, this->mbtnCut, this->mbtnCopy, this->mbtnPaste, this->mbtnClearAll
+			});
 			this->editToolStripMenuItem->Name = L"editToolStripMenuItem";
 			this->editToolStripMenuItem->Size = System::Drawing::Size(39, 20);
 			this->editToolStripMenuItem->Text = L"Edit";
 			// 
+			// mbtnUndo
+			// 
+			this->mbtnUndo->Enabled = false;
+			this->mbtnUndo->Name = L"mbtnUndo";
+			this->mbtnUndo->Size = System::Drawing::Size(152, 22);
+			this->mbtnUndo->Text = L"Undo";
+			this->mbtnUndo->Click += gcnew System::EventHandler(this, &Form1::mbtnUndo_Click);
+			// 
+			// toolStripSeparator7
+			// 
+			this->toolStripSeparator7->Name = L"toolStripSeparator7";
+			this->toolStripSeparator7->Size = System::Drawing::Size(149, 6);
+			// 
+			// mbtnCut
+			// 
+			this->mbtnCut->Enabled = false;
+			this->mbtnCut->Name = L"mbtnCut";
+			this->mbtnCut->Size = System::Drawing::Size(152, 22);
+			this->mbtnCut->Text = L"Cut";
+			this->mbtnCut->Click += gcnew System::EventHandler(this, &Form1::mbtnCut_Click);
+			// 
+			// mbtnCopy
+			// 
+			this->mbtnCopy->Enabled = false;
+			this->mbtnCopy->Name = L"mbtnCopy";
+			this->mbtnCopy->Size = System::Drawing::Size(152, 22);
+			this->mbtnCopy->Text = L"Copy";
+			this->mbtnCopy->Click += gcnew System::EventHandler(this, &Form1::mbtnCopy_Click);
+			// 
+			// mbtnPaste
+			// 
+			this->mbtnPaste->Enabled = false;
+			this->mbtnPaste->Name = L"mbtnPaste";
+			this->mbtnPaste->Size = System::Drawing::Size(152, 22);
+			this->mbtnPaste->Text = L"Paste";
+			this->mbtnPaste->Click += gcnew System::EventHandler(this, &Form1::mbtnPaste_Click);
+			// 
+			// mbtnClearAll
+			// 
+			this->mbtnClearAll->Enabled = false;
+			this->mbtnClearAll->Name = L"mbtnClearAll";
+			this->mbtnClearAll->Size = System::Drawing::Size(152, 22);
+			this->mbtnClearAll->Text = L"Clear All";
+			this->mbtnClearAll->Click += gcnew System::EventHandler(this, &Form1::mbtnClearAll_Click);
+			// 
 			// viewToolStripMenuItem
 			// 
+			this->viewToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->mbtnHome,
+					this->mbtnAccountDetails, this->mbtnProgramSettings
+			});
 			this->viewToolStripMenuItem->Name = L"viewToolStripMenuItem";
 			this->viewToolStripMenuItem->Size = System::Drawing::Size(44, 20);
 			this->viewToolStripMenuItem->Text = L"View";
 			// 
-			// studentToolStripMenuItem
+			// mbtnHome
 			// 
-			this->studentToolStripMenuItem->Name = L"studentToolStripMenuItem";
-			this->studentToolStripMenuItem->Size = System::Drawing::Size(60, 20);
-			this->studentToolStripMenuItem->Text = L"Student";
+			this->mbtnHome->Enabled = false;
+			this->mbtnHome->Name = L"mbtnHome";
+			this->mbtnHome->Size = System::Drawing::Size(165, 22);
+			this->mbtnHome->Text = L"Home";
+			this->mbtnHome->Click += gcnew System::EventHandler(this, &Form1::mbtnHome_Click);
 			// 
-			// toolsToolStripMenuItem
+			// mbtnAccountDetails
 			// 
-			this->toolsToolStripMenuItem->Name = L"toolsToolStripMenuItem";
-			this->toolsToolStripMenuItem->Size = System::Drawing::Size(48, 20);
-			this->toolsToolStripMenuItem->Text = L"Tools";
+			this->mbtnAccountDetails->Enabled = false;
+			this->mbtnAccountDetails->Name = L"mbtnAccountDetails";
+			this->mbtnAccountDetails->Size = System::Drawing::Size(165, 22);
+			this->mbtnAccountDetails->Text = L"Account Details";
 			// 
-			// helpToolStripMenuItem
+			// mbtnProgramSettings
 			// 
-			this->helpToolStripMenuItem->Name = L"helpToolStripMenuItem";
-			this->helpToolStripMenuItem->Size = System::Drawing::Size(44, 20);
-			this->helpToolStripMenuItem->Text = L"Help";
+			this->mbtnProgramSettings->Enabled = false;
+			this->mbtnProgramSettings->Name = L"mbtnProgramSettings";
+			this->mbtnProgramSettings->Size = System::Drawing::Size(165, 22);
+			this->mbtnProgramSettings->Text = L"Program Settings";
 			// 
 			// lblHR
 			// 
@@ -572,6 +750,69 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			this->gbStudent->TabIndex = 5;
 			this->gbStudent->TabStop = false;
 			this->gbStudent->Text = L"Logon Screen";
+			// 
+			// pnlLogin
+			// 
+			this->pnlLogin->Controls->Add(this->btnLogon);
+			this->pnlLogin->Controls->Add(this->label3);
+			this->pnlLogin->Controls->Add(this->txtPass);
+			this->pnlLogin->Controls->Add(this->txtUser);
+			this->pnlLogin->Controls->Add(this->pictureBox1);
+			this->pnlLogin->Location = System::Drawing::Point(6, 19);
+			this->pnlLogin->Name = L"pnlLogin";
+			this->pnlLogin->Size = System::Drawing::Size(659, 413);
+			this->pnlLogin->TabIndex = 24;
+			// 
+			// btnLogon
+			// 
+			this->btnLogon->Location = System::Drawing::Point(281, 289);
+			this->btnLogon->Name = L"btnLogon";
+			this->btnLogon->Size = System::Drawing::Size(115, 21);
+			this->btnLogon->TabIndex = 7;
+			this->btnLogon->Text = L"Log In";
+			this->btnLogon->UseVisualStyleBackColor = true;
+			this->btnLogon->Click += gcnew System::EventHandler(this, &Form1::btnLogon_Click);
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(222, 192);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(72, 13);
+			this->label3->TabIndex = 6;
+			this->label3->Text = L"Please Log In";
+			// 
+			// txtPass
+			// 
+			this->txtPass->ForeColor = System::Drawing::SystemColors::WindowFrame;
+			this->txtPass->Location = System::Drawing::Point(225, 251);
+			this->txtPass->Name = L"txtPass";
+			this->txtPass->Size = System::Drawing::Size(238, 20);
+			this->txtPass->TabIndex = 5;
+			this->txtPass->Text = L"Password";
+			this->txtPass->Enter += gcnew System::EventHandler(this, &Form1::txtPass_Enter);
+			this->txtPass->Leave += gcnew System::EventHandler(this, &Form1::txtPass_Leave);
+			// 
+			// txtUser
+			// 
+			this->txtUser->ForeColor = System::Drawing::SystemColors::WindowFrame;
+			this->txtUser->Location = System::Drawing::Point(225, 214);
+			this->txtUser->Name = L"txtUser";
+			this->txtUser->Size = System::Drawing::Size(238, 20);
+			this->txtUser->TabIndex = 4;
+			this->txtUser->Text = L"Client ID";
+			this->txtUser->Enter += gcnew System::EventHandler(this, &Form1::txtUser_Enter);
+			this->txtUser->Leave += gcnew System::EventHandler(this, &Form1::txtUser_Leave);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(239, 16);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(208, 135);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 1;
+			this->pictureBox1->TabStop = false;
 			// 
 			// pnlHome
 			// 
@@ -782,69 +1023,6 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			this->txtFirstName->TabIndex = 1;
 			this->txtFirstName->TextChanged += gcnew System::EventHandler(this, &Form1::txtFirstName_TextChanged);
 			// 
-			// pnlLogin
-			// 
-			this->pnlLogin->Controls->Add(this->btnLogon);
-			this->pnlLogin->Controls->Add(this->label3);
-			this->pnlLogin->Controls->Add(this->txtPass);
-			this->pnlLogin->Controls->Add(this->txtUser);
-			this->pnlLogin->Controls->Add(this->pictureBox1);
-			this->pnlLogin->Location = System::Drawing::Point(6, 19);
-			this->pnlLogin->Name = L"pnlLogin";
-			this->pnlLogin->Size = System::Drawing::Size(659, 413);
-			this->pnlLogin->TabIndex = 24;
-			// 
-			// btnLogon
-			// 
-			this->btnLogon->Location = System::Drawing::Point(281, 289);
-			this->btnLogon->Name = L"btnLogon";
-			this->btnLogon->Size = System::Drawing::Size(115, 21);
-			this->btnLogon->TabIndex = 7;
-			this->btnLogon->Text = L"Log In";
-			this->btnLogon->UseVisualStyleBackColor = true;
-			this->btnLogon->Click += gcnew System::EventHandler(this, &Form1::btnLogon_Click);
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(222, 192);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(72, 13);
-			this->label3->TabIndex = 6;
-			this->label3->Text = L"Please Log In";
-			// 
-			// txtPass
-			// 
-			this->txtPass->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->txtPass->Location = System::Drawing::Point(225, 251);
-			this->txtPass->Name = L"txtPass";
-			this->txtPass->Size = System::Drawing::Size(238, 20);
-			this->txtPass->TabIndex = 5;
-			this->txtPass->Text = L"Password";
-			this->txtPass->Enter += gcnew System::EventHandler(this, &Form1::txtPass_Enter);
-			this->txtPass->Leave += gcnew System::EventHandler(this, &Form1::txtPass_Leave);
-			// 
-			// txtUser
-			// 
-			this->txtUser->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->txtUser->Location = System::Drawing::Point(225, 214);
-			this->txtUser->Name = L"txtUser";
-			this->txtUser->Size = System::Drawing::Size(238, 20);
-			this->txtUser->TabIndex = 4;
-			this->txtUser->Text = L"Client ID";
-			this->txtUser->Enter += gcnew System::EventHandler(this, &Form1::txtUser_Enter);
-			this->txtUser->Leave += gcnew System::EventHandler(this, &Form1::txtUser_Leave);
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(239, 16);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(208, 135);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 1;
-			this->pictureBox1->TabStop = false;
-			// 
 			// toolStrip1
 			// 
 			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(19) {
@@ -1040,6 +1218,9 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			this->gbGrade->ResumeLayout(false);
 			this->gbGrade->PerformLayout();
 			this->gbStudent->ResumeLayout(false);
+			this->pnlLogin->ResumeLayout(false);
+			this->pnlLogin->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->pnlHome->ResumeLayout(false);
 			this->pnlHome->PerformLayout();
 			this->tabLogs->ResumeLayout(false);
@@ -1055,9 +1236,6 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			this->gbActive->PerformLayout();
 			this->gbSex->ResumeLayout(false);
 			this->gbSex->PerformLayout();
-			this->pnlLogin->ResumeLayout(false);
-			this->pnlLogin->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -1083,12 +1261,23 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 			btnSearch->Enabled = x;
 			txtSearch->Enabled = x;
 			cmbSearchBy->Enabled = x;
+			mbtnNew->Enabled = x;
+			mbtnExport->Enabled = x;
+			mbtnLogout->Enabled = x;
+			mbtnUndo->Enabled = x;
+			mbtnCut->Enabled = x;
+			mbtnCopy->Enabled = x;
+			mbtnPaste->Enabled = x;
+			mbtnHome->Enabled = x;
+			mbtnAccountDetails->Enabled = x;
+			mbtnProgramSettings->Enabled = x;
 		}
 
 		void newFormTitle() { //Changes the name of the group box to the students name when working with new student forms
 			if (!gbStudent->Text->Contains(txtFirstName->Text + " " + txtLastName->Text)) {
 				gbStudent->Text = txtFirstName->Text + " " + txtLastName->Text;
 				btnSave->Enabled = 1;
+				mbtnSave->Enabled = 1;
 				if (txtMemberNum->Text != "") {
 					gbStudent->Text += " - " + txtMemberNum->Text;
 				}
@@ -1112,18 +1301,16 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 		if (!txtOwed->Text->Contains("$")) {
 			txtOwed->Text = "$" + txtOwed->Text;
 		}
+		if (!feeDbl.ToString()->Contains(".")) {
+			txtOwed->Text += ".00";
+		} else {
+			txtOwed->Text = feeStr;
+		}
 		feeStr = txtOwed->Text;
 	}
 	private: System::Void txtOwed_Enter(System::Object^  sender, System::EventArgs^  e) {
 		if (txtOwed->Text->Contains("$")) {
 			txtOwed->Text = feeDbl.ToString();
-		}
-
-		if (!feeDbl.ToString()->Contains(".")) {
-			txtOwed->Text += ".00";
-		}
-		else {
-			txtOwed->Text = feeStr;
 		}
 	}
 			 // **************************************************************
@@ -1132,16 +1319,34 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 	private: System::Void btnCut_Click(System::Object^  sender, System::EventArgs^  e) {
 		SendKeys::Send("^x");
 	}
+	private: System::Void mbtnCut_Click(System::Object^  sender, System::EventArgs^  e) {
+		SendKeys::Send("^x");
+	}
 	private: System::Void btnCopy_Click(System::Object^  sender, System::EventArgs^  e) {
+		SendKeys::Send("^c");
+	}
+	private: System::Void mbtnCopy_Click(System::Object^  sender, System::EventArgs^  e) {
 		SendKeys::Send("^c");
 	}
 	private: System::Void btnPaste_Click(System::Object^  sender, System::EventArgs^  e) {
 		SendKeys::Send("^v");
 	}
+	private: System::Void mbtnPaste_Click(System::Object^  sender, System::EventArgs^  e) {
+		SendKeys::Send("^v");
+	}
 	private: System::Void btnUndo_Click(System::Object^  sender, System::EventArgs^  e) {
 		SendKeys::Send("^z");
 	}
+	private: System::Void mbtnUndo_Click(System::Object^  sender, System::EventArgs^  e) {
+		SendKeys::Send("^z");
+	}
 	private: System::Void btnClear_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (MessageBox::Show("Are you sure that you want to clear ALL information?", "Clear All", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			txtFirstName->Text = ""; txtLastName->Text = ""; txtMI->Text = ""; cmbState->Text = "MO"; txtSchool->Text = ""; txtEmail->Text = "";
+			txtComment->Text = ""; txtOwed->Text = ""; txtJoined->Text = ""; txtMemberNum->Text = ""; rbGrade9->Checked = true; rbMale->Checked = true; rbActive->Checked = true;
+		}
+	}
+	private: System::Void mbtnClearAll_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (MessageBox::Show("Are you sure that you want to clear ALL information?", "Clear All", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
 			txtFirstName->Text = ""; txtLastName->Text = ""; txtMI->Text = ""; cmbState->Text = "MO"; txtSchool->Text = ""; txtEmail->Text = "";
 			txtComment->Text = ""; txtOwed->Text = ""; txtJoined->Text = ""; txtMemberNum->Text = ""; rbGrade9->Checked = true; rbMale->Checked = true; rbActive->Checked = true;
@@ -1159,6 +1364,14 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 		txtStudents->Text = "Member #\tFirst Name\t\tLast Name";
 		toolStripButtons(1);
 	}
+	private: System::Void mbtnHome_Click(System::Object^  sender, System::EventArgs^  e) {
+		gbStudent->Text = "Home";
+		pnlHome->BringToFront();
+		txtLog->Text = "Date\t\tChanged\t\t\tClient ID\r\n";
+		txtClientIDs->Text = "Client ID\t\tNick\t\t\tChanges";
+		txtStudents->Text = "Member #\tFirst Name\t\tLast Name";
+		toolStripButtons(1);
+	}
 
 	private: System::Void logOutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		// Add later: if not saved, request save function
@@ -1167,8 +1380,28 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 		toolStripButtons(0);
 	}
 
+	private: System::Void mbtnNew_Click(System::Object^  sender, System::EventArgs^  e) {
+		// Add later: if not saved, request save function
+		mbtnPrint->Enabled = 1;
+		mbtnClearAll->Enabled = 1;
+		mbtnPrintPreview->Enabled = 1;
+		mbtnSave->Enabled = 0;
+		btnSave->Enabled = 0;
+		btnClear->Enabled = 1;
+		btnPrint->Enabled = 1;
+		btnPrintPreview->Enabled = 1;
+		newForm = 1;
+		gbStudent->Text = txtFirstName->Text + " " + txtLastName->Text;
+		pnlStudent->BringToFront();
+	}
+
 	private: System::Void btnNew_Click(System::Object^  sender, System::EventArgs^  e) {
 		// Add later: if not saved, request save function
+		mbtnPrint->Enabled = 1;
+		mbtnClearAll->Enabled = 1;
+		mbtnPrintPreview->Enabled = 1;
+		mbtnSave->Enabled = 0;
+		btnSave->Enabled = 0;
 		btnClear->Enabled = 1;
 		btnPrint->Enabled = 1;
 		btnPrintPreview->Enabled = 1;
@@ -1215,6 +1448,7 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 	private: System::Void txtPass_Enter(System::Object^  sender, System::EventArgs^  e) {
 		if (txtPass->Text == "Password") {
 			txtPass->ForeColor = SystemColors::WindowText;
+			txtPass->PasswordChar = '*';
 			txtPass->Text = "";
 		}
 	}
@@ -1223,13 +1457,17 @@ private: System::Windows::Forms::TextBox^  txtStudents;
 		if (txtPass->Text == "Password" || txtPass->Text == "") {
 			txtPass->ForeColor = SystemColors::WindowFrame;
 			txtPass->Text = "Password";
+			txtPass->PasswordChar = false;
 		}
 	}
 
 			 // ****************************************************
 
 
-
-
+	private: System::Void exitToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (MessageBox::Show("Are you sure you want to exit the application?", "Exit", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			Application::Exit();
+		}
+	}
 };
 }
