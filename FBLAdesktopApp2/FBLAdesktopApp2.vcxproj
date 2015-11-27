@@ -170,6 +170,7 @@
     <Image Include="..\..\..\..\..\Desktop\Icons\printPreview-black.png" />
     <Image Include="..\..\..\..\..\Desktop\Icons\save-black.png" />
     <Image Include="..\..\..\..\..\Desktop\Icons\search-black.png" />
+    <Image Include="..\..\..\..\..\Desktop\Icons\settings-black.png" />
     <Image Include="..\..\..\..\..\Desktop\Icons\undo-black.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

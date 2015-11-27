@@ -141,7 +141,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnSave;
 
 
 private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator8;
-private: System::Windows::Forms::ToolStripMenuItem^  mbtnPrintPreview;
+
 private: System::Windows::Forms::ToolStripMenuItem^  mbtnPrint;
 private: System::Windows::Forms::ToolStripMenuItem^  mbtnExport;
 private: System::Windows::Forms::ToolStripMenuItem^  mbtnAsTxt;
@@ -172,6 +172,14 @@ private: System::Windows::Forms::ToolStripMenuItem^  mbtnProgramSettings;
 
 private: System::Windows::Forms::ToolStripMenuItem^  mbtnExit;
 private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
+private: System::Drawing::Printing::PrintDocument^  printStudent;
+private: System::Windows::Forms::PrintPreviewDialog^  printPreviewDialog1;
+private: System::Windows::Forms::PrintDialog^  printDialog1;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnPrintSettings;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnPrintPreview;
+private: System::Windows::Forms::ToolStripMenuItem^  mbtnPrint2;
+private: System::Windows::Forms::ToolStripButton^  btnPrintDialog;
+
 
 
 
@@ -231,8 +239,10 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			this->mbtnNew = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->mbtnSave = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStripSeparator8 = (gcnew System::Windows::Forms::ToolStripSeparator());
-			this->mbtnPrintPreview = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->mbtnPrint = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnPrintSettings = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnPrintPreview = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mbtnPrint2 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->mbtnExport = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->mbtnAsTxt = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->mbtnAsXls = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -293,6 +303,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			this->btnClear = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator2 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->btnPrintPreview = (gcnew System::Windows::Forms::ToolStripButton());
+			this->btnPrintDialog = (gcnew System::Windows::Forms::ToolStripButton());
 			this->btnPrint = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator3 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->txtSearch = (gcnew System::Windows::Forms::ToolStripTextBox());
@@ -300,6 +311,9 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			this->cmbSearchBy = (gcnew System::Windows::Forms::ToolStripComboBox());
 			this->btnSearch = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator5 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->printStudent = (gcnew System::Drawing::Printing::PrintDocument());
+			this->printPreviewDialog1 = (gcnew System::Windows::Forms::PrintPreviewDialog());
+			this->printDialog1 = (gcnew System::Windows::Forms::PrintDialog());
 			this->menuStrip2->SuspendLayout();
 			this->gbGrade->SuspendLayout();
 			this->gbStudent->SuspendLayout();
@@ -538,10 +552,9 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			// 
 			// fileToolStripMenuItem
 			// 
-			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(9) {
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(8) {
 				this->mbtnNew,
-					this->mbtnSave, this->toolStripSeparator8, this->mbtnPrintPreview, this->mbtnPrint, this->mbtnExport, this->toolStripSeparator9,
-					this->mbtnLogout, this->mbtnExit
+					this->mbtnSave, this->toolStripSeparator8, this->mbtnPrint, this->mbtnExport, this->toolStripSeparator9, this->mbtnLogout, this->mbtnExit
 			});
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
 			this->fileToolStripMenuItem->Size = System::Drawing::Size(37, 20);
@@ -551,7 +564,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			// 
 			this->mbtnNew->Enabled = false;
 			this->mbtnNew->Name = L"mbtnNew";
-			this->mbtnNew->Size = System::Drawing::Size(143, 22);
+			this->mbtnNew->Size = System::Drawing::Size(152, 22);
 			this->mbtnNew->Text = L"New";
 			this->mbtnNew->Click += gcnew System::EventHandler(this, &Form1::mbtnNew_Click);
 			// 
@@ -559,27 +572,45 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			// 
 			this->mbtnSave->Enabled = false;
 			this->mbtnSave->Name = L"mbtnSave";
-			this->mbtnSave->Size = System::Drawing::Size(143, 22);
+			this->mbtnSave->Size = System::Drawing::Size(152, 22);
 			this->mbtnSave->Text = L"Save";
 			// 
 			// toolStripSeparator8
 			// 
 			this->toolStripSeparator8->Name = L"toolStripSeparator8";
-			this->toolStripSeparator8->Size = System::Drawing::Size(140, 6);
-			// 
-			// mbtnPrintPreview
-			// 
-			this->mbtnPrintPreview->Enabled = false;
-			this->mbtnPrintPreview->Name = L"mbtnPrintPreview";
-			this->mbtnPrintPreview->Size = System::Drawing::Size(143, 22);
-			this->mbtnPrintPreview->Text = L"Print Preview";
+			this->toolStripSeparator8->Size = System::Drawing::Size(149, 6);
 			// 
 			// mbtnPrint
 			// 
+			this->mbtnPrint->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->mbtnPrintSettings,
+					this->mbtnPrintPreview, this->mbtnPrint2
+			});
 			this->mbtnPrint->Enabled = false;
 			this->mbtnPrint->Name = L"mbtnPrint";
-			this->mbtnPrint->Size = System::Drawing::Size(143, 22);
+			this->mbtnPrint->Size = System::Drawing::Size(152, 22);
 			this->mbtnPrint->Text = L"Print";
+			// 
+			// mbtnPrintSettings
+			// 
+			this->mbtnPrintSettings->Name = L"mbtnPrintSettings";
+			this->mbtnPrintSettings->Size = System::Drawing::Size(154, 22);
+			this->mbtnPrintSettings->Text = L"Printer Settings";
+			this->mbtnPrintSettings->Click += gcnew System::EventHandler(this, &Form1::mbtnPrintSettings_Click);
+			// 
+			// mbtnPrintPreview
+			// 
+			this->mbtnPrintPreview->Name = L"mbtnPrintPreview";
+			this->mbtnPrintPreview->Size = System::Drawing::Size(154, 22);
+			this->mbtnPrintPreview->Text = L"Print Preview";
+			this->mbtnPrintPreview->Click += gcnew System::EventHandler(this, &Form1::mbtnPrintPreview_Click);
+			// 
+			// mbtnPrint2
+			// 
+			this->mbtnPrint2->Name = L"mbtnPrint2";
+			this->mbtnPrint2->Size = System::Drawing::Size(154, 22);
+			this->mbtnPrint2->Text = L"Print";
+			this->mbtnPrint2->Click += gcnew System::EventHandler(this, &Form1::mbtnPrint2_Click);
 			// 
 			// mbtnExport
 			// 
@@ -589,7 +620,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			});
 			this->mbtnExport->Enabled = false;
 			this->mbtnExport->Name = L"mbtnExport";
-			this->mbtnExport->Size = System::Drawing::Size(143, 22);
+			this->mbtnExport->Size = System::Drawing::Size(152, 22);
 			this->mbtnExport->Text = L"Export";
 			// 
 			// mbtnAsTxt
@@ -607,20 +638,20 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			// toolStripSeparator9
 			// 
 			this->toolStripSeparator9->Name = L"toolStripSeparator9";
-			this->toolStripSeparator9->Size = System::Drawing::Size(140, 6);
+			this->toolStripSeparator9->Size = System::Drawing::Size(149, 6);
 			// 
 			// mbtnLogout
 			// 
 			this->mbtnLogout->Enabled = false;
 			this->mbtnLogout->Name = L"mbtnLogout";
-			this->mbtnLogout->Size = System::Drawing::Size(143, 22);
+			this->mbtnLogout->Size = System::Drawing::Size(152, 22);
 			this->mbtnLogout->Text = L"Log Out";
 			this->mbtnLogout->Click += gcnew System::EventHandler(this, &Form1::logOutToolStripMenuItem_Click);
 			// 
 			// mbtnExit
 			// 
 			this->mbtnExit->Name = L"mbtnExit";
-			this->mbtnExit->Size = System::Drawing::Size(143, 22);
+			this->mbtnExit->Size = System::Drawing::Size(152, 22);
 			this->mbtnExit->Text = L"Exit";
 			this->mbtnExit->Click += gcnew System::EventHandler(this, &Form1::exitToolStripMenuItem_Click);
 			// 
@@ -1035,11 +1066,11 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			// 
 			// toolStrip1
 			// 
-			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(19) {
+			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(20) {
 				this->btnHome, this->toolStripSeparator6,
 					this->btnNew, this->btnSave, this->toolStripSeparator1, this->btnCut, this->btnCopy, this->btnPaste, this->btnUndo, this->btnClear,
-					this->toolStripSeparator2, this->btnPrintPreview, this->btnPrint, this->toolStripSeparator3, this->txtSearch, this->toolStripSeparator4,
-					this->cmbSearchBy, this->btnSearch, this->toolStripSeparator5
+					this->toolStripSeparator2, this->btnPrintPreview, this->btnPrintDialog, this->btnPrint, this->toolStripSeparator3, this->txtSearch,
+					this->toolStripSeparator4, this->cmbSearchBy, this->btnSearch, this->toolStripSeparator5
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 24);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -1158,6 +1189,18 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			this->btnPrintPreview->Name = L"btnPrintPreview";
 			this->btnPrintPreview->Size = System::Drawing::Size(23, 22);
 			this->btnPrintPreview->Text = L"Print Preview";
+			this->btnPrintPreview->Click += gcnew System::EventHandler(this, &Form1::btnPrintPreview_Click);
+			// 
+			// btnPrintDialog
+			// 
+			this->btnPrintDialog->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->btnPrintDialog->Enabled = false;
+			this->btnPrintDialog->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnPrintDialog.Image")));
+			this->btnPrintDialog->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->btnPrintDialog->Name = L"btnPrintDialog";
+			this->btnPrintDialog->Size = System::Drawing::Size(23, 22);
+			this->btnPrintDialog->Text = L"Printer Settings";
+			this->btnPrintDialog->Click += gcnew System::EventHandler(this, &Form1::btnPrintDialog_Click);
 			// 
 			// btnPrint
 			// 
@@ -1168,6 +1211,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			this->btnPrint->Name = L"btnPrint";
 			this->btnPrint->Size = System::Drawing::Size(23, 22);
 			this->btnPrint->Text = L"Print";
+			this->btnPrint->Click += gcnew System::EventHandler(this, &Form1::btnPrint_Click);
 			// 
 			// toolStripSeparator3
 			// 
@@ -1210,6 +1254,24 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 			// 
 			this->toolStripSeparator5->Name = L"toolStripSeparator5";
 			this->toolStripSeparator5->Size = System::Drawing::Size(6, 25);
+			// 
+			// printStudent
+			// 
+			this->printStudent->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &Form1::printStudent_PrintPage);
+			// 
+			// printPreviewDialog1
+			// 
+			this->printPreviewDialog1->AutoScrollMargin = System::Drawing::Size(0, 0);
+			this->printPreviewDialog1->AutoScrollMinSize = System::Drawing::Size(0, 0);
+			this->printPreviewDialog1->ClientSize = System::Drawing::Size(400, 300);
+			this->printPreviewDialog1->Enabled = true;
+			this->printPreviewDialog1->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"printPreviewDialog1.Icon")));
+			this->printPreviewDialog1->Name = L"printPreviewDialog1";
+			this->printPreviewDialog1->Visible = false;
+			// 
+			// printDialog1
+			// 
+			this->printDialog1->UseEXDialog = true;
 			// 
 			// Form1
 			// 
@@ -1307,6 +1369,11 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 		ttOptional->SetToolTip(lblComment, "Optional");
 		this->Text = "Form - Login Screen";
 		cmbSearchBy->SelectedIndex = 0;
+		txtLog->Text = "Date\t\tChanged\t\t\tClient ID\r\n";
+		txtClientIDs->Text = "Client ID\t\tNick\t\t\tChanges";
+		txtStudents->Text = "Member #\tFirst Name\t\tLast Name";
+		txtJoined->Text = now.Year.ToString();
+		pnlLogin->BringToFront();
 	}
 			 // ***********************************
 
@@ -1378,10 +1445,6 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 		gbStudent->Text = "Home";
 		this->Text = "FBLA - Home";
 		pnlHome->BringToFront();
-		txtLog->Text = "Date\t\tChanged\t\t\tClient ID\r\n";
-		txtClientIDs->Text = "Client ID\t\tNick\t\t\tChanges";
-		txtStudents->Text = "Member #\tFirst Name\t\tLast Name";
-		txtJoined->Text = now.Year.ToString();
 		toolStripButtons(1);
 	}
 	private: System::Void mbtnHome_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -1412,6 +1475,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 		btnSave->Enabled = 0;
 		btnClear->Enabled = 1;
 		btnPrint->Enabled = 1;
+		btnPrintDialog->Enabled = 1;
 		btnPrintPreview->Enabled = 1;
 		newForm = 1;
 		gbStudent->Text = txtFirstName->Text + " " + txtLastName->Text;
@@ -1429,6 +1493,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 		btnClear->Enabled = 1;
 		btnPrint->Enabled = 1;
 		btnPrintPreview->Enabled = 1;
+		btnPrintDialog->Enabled = 1;
 		newForm = 1;
 		gbStudent->Text = txtFirstName->Text + " " + txtLastName->Text;
 		pnlStudent->BringToFront();
@@ -1500,5 +1565,44 @@ private: System::Windows::Forms::ToolStripMenuItem^  creditsToolStripMenuItem;
 		MessageBox::Show("Seth Dixon - Programmer\r\nMichael Blades - Programmer\r\n\r\nIcons by:\r\nFreepik @ Flaticon.com\r\nYannik @ Flaticon.com\r\nGoogle @ Flaticon.com", "Credits");
 	}
 			 // **********************************************
+
+			 // **************** PRINTING ****************
+	private: System::Void btnPrintPreview_Click(System::Object^  sender, System::EventArgs^  e) {
+		printPreviewDialog1->Document = printStudent;
+		printPreviewDialog1->ShowDialog();
+	}
+
+	private: System::Void mbtnPrintPreview_Click(System::Object^  sender, System::EventArgs^  e) {
+		printPreviewDialog1->Document = printStudent;
+		printPreviewDialog1->ShowDialog();
+	}
+
+	private: System::Void btnPrintDialog_Click(System::Object^  sender, System::EventArgs^  e) {
+			PrintDialog ^ printDialog1 = gcnew PrintDialog();
+			printDialog1->Document = printStudent;
+			System::Windows::Forms::DialogResult result = printDialog1->ShowDialog();
+	}
+
+	private: System::Void mbtnPrintSettings_Click(System::Object^  sender, System::EventArgs^  e) {
+		PrintDialog ^ printDialog1 = gcnew PrintDialog();
+		printDialog1->Document = printStudent;
+		System::Windows::Forms::DialogResult result = printDialog1->ShowDialog();
+	}
+			 // Document to be printed v
+	private: System::Void printStudent_PrintPage(System::Object^  sender, System::Drawing::Printing::PrintPageEventArgs^  e) {
+
+	}
+
+	private: System::Void btnPrint_Click(System::Object^  sender, System::EventArgs^  e) {
+		//printStudent->Print(); ENABLE LATER
+		MessageBox::Show("Works - Enable Printing Later");
+	}
+
+	private: System::Void mbtnPrint2_Click(System::Object^  sender, System::EventArgs^  e) {
+		//printStudent->Print(); ENABLE LATER
+		MessageBox::Show("Works - Enable Printing Later");
+	}
+			 // ******************************************
+	
 };
 }
