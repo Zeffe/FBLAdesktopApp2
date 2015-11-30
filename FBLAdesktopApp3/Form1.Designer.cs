@@ -79,13 +79,14 @@
             this.btnSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.gbStudent = new System.Windows.Forms.GroupBox();
-            this.pnlLogin = new System.Windows.Forms.Panel();
-            this.btnLogon = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlHome = new System.Windows.Forms.Panel();
+            this.btnFullReport = new System.Windows.Forms.Button();
+            this.txtEmailHome = new System.Windows.Forms.TextBox();
+            this.btnPrinterSettingsHome = new System.Windows.Forms.Button();
+            this.checkPrint = new System.Windows.Forms.CheckBox();
+            this.checkExport = new System.Windows.Forms.CheckBox();
+            this.checkEmail = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabLogs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtLog = new System.Windows.Forms.TextBox();
@@ -129,14 +130,19 @@
             this.txtMI = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btnLogon = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ttOptional = new System.Windows.Forms.ToolTip(this.components);
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.gbStudent.SuspendLayout();
-            this.pnlLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlHome.SuspendLayout();
             this.tabLogs.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -146,6 +152,8 @@
             this.gbGrade.SuspendLayout();
             this.gbActive.SuspendLayout();
             this.gbSex.SuspendLayout();
+            this.pnlLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -179,7 +187,7 @@
             // 
             this.mbtnNew.Enabled = false;
             this.mbtnNew.Name = "mbtnNew";
-            this.mbtnNew.Size = new System.Drawing.Size(152, 22);
+            this.mbtnNew.Size = new System.Drawing.Size(117, 22);
             this.mbtnNew.Text = "New";
             this.mbtnNew.Click += new System.EventHandler(this.mbtnNew_Click);
             // 
@@ -187,13 +195,13 @@
             // 
             this.mbtnSave.Enabled = false;
             this.mbtnSave.Name = "mbtnSave";
-            this.mbtnSave.Size = new System.Drawing.Size(152, 22);
+            this.mbtnSave.Size = new System.Drawing.Size(117, 22);
             this.mbtnSave.Text = "Save";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(114, 6);
             // 
             // mbtnPrint
             // 
@@ -203,7 +211,7 @@
             this.mbtnPrint2});
             this.mbtnPrint.Enabled = false;
             this.mbtnPrint.Name = "mbtnPrint";
-            this.mbtnPrint.Size = new System.Drawing.Size(152, 22);
+            this.mbtnPrint.Size = new System.Drawing.Size(117, 22);
             this.mbtnPrint.Text = "Print";
             // 
             // mbtnPrintSettings
@@ -234,7 +242,7 @@
             this.mbtnAsXls});
             this.mbtnExport.Enabled = false;
             this.mbtnExport.Name = "mbtnExport";
-            this.mbtnExport.Size = new System.Drawing.Size(152, 22);
+            this.mbtnExport.Size = new System.Drawing.Size(117, 22);
             this.mbtnExport.Text = "Export";
             // 
             // mbtnAsTxt
@@ -252,20 +260,20 @@
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(114, 6);
             // 
             // mbtnLogout
             // 
             this.mbtnLogout.Enabled = false;
             this.mbtnLogout.Name = "mbtnLogout";
-            this.mbtnLogout.Size = new System.Drawing.Size(152, 22);
+            this.mbtnLogout.Size = new System.Drawing.Size(117, 22);
             this.mbtnLogout.Text = "Log Out";
             this.mbtnLogout.Click += new System.EventHandler(this.mbtnLogout_Click);
             // 
             // mbtnExit
             // 
             this.mbtnExit.Name = "mbtnExit";
-            this.mbtnExit.Size = new System.Drawing.Size(152, 22);
+            this.mbtnExit.Size = new System.Drawing.Size(117, 22);
             this.mbtnExit.Text = "Exit";
             this.mbtnExit.Click += new System.EventHandler(this.mbtnExit_Click);
             // 
@@ -286,20 +294,20 @@
             // 
             this.mbtnUndo.Enabled = false;
             this.mbtnUndo.Name = "mbtnUndo";
-            this.mbtnUndo.Size = new System.Drawing.Size(152, 22);
+            this.mbtnUndo.Size = new System.Drawing.Size(118, 22);
             this.mbtnUndo.Text = "Undo";
             this.mbtnUndo.Click += new System.EventHandler(this.mbtnUndo_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(115, 6);
             // 
             // mbtnCut
             // 
             this.mbtnCut.Enabled = false;
             this.mbtnCut.Name = "mbtnCut";
-            this.mbtnCut.Size = new System.Drawing.Size(152, 22);
+            this.mbtnCut.Size = new System.Drawing.Size(118, 22);
             this.mbtnCut.Text = "Cut";
             this.mbtnCut.Click += new System.EventHandler(this.mbtnCut_Click);
             // 
@@ -307,7 +315,7 @@
             // 
             this.mbtnCopy.Enabled = false;
             this.mbtnCopy.Name = "mbtnCopy";
-            this.mbtnCopy.Size = new System.Drawing.Size(152, 22);
+            this.mbtnCopy.Size = new System.Drawing.Size(118, 22);
             this.mbtnCopy.Text = "Copy";
             this.mbtnCopy.Click += new System.EventHandler(this.mbtnCopy_Click);
             // 
@@ -315,7 +323,7 @@
             // 
             this.mbtnPaste.Enabled = false;
             this.mbtnPaste.Name = "mbtnPaste";
-            this.mbtnPaste.Size = new System.Drawing.Size(152, 22);
+            this.mbtnPaste.Size = new System.Drawing.Size(118, 22);
             this.mbtnPaste.Text = "Paste";
             this.mbtnPaste.Click += new System.EventHandler(this.mbtnPaste_Click);
             // 
@@ -323,7 +331,7 @@
             // 
             this.mbtnClearAll.Enabled = false;
             this.mbtnClearAll.Name = "mbtnClearAll";
-            this.mbtnClearAll.Size = new System.Drawing.Size(152, 22);
+            this.mbtnClearAll.Size = new System.Drawing.Size(118, 22);
             this.mbtnClearAll.Text = "Clear All";
             this.mbtnClearAll.Click += new System.EventHandler(this.mbtnClearAll_Click);
             // 
@@ -579,9 +587,9 @@
             // 
             // gbStudent
             // 
+            this.gbStudent.Controls.Add(this.pnlHome);
             this.gbStudent.Controls.Add(this.pnlStudent);
             this.gbStudent.Controls.Add(this.pnlLogin);
-            this.gbStudent.Controls.Add(this.pnlHome);
             this.gbStudent.Location = new System.Drawing.Point(12, 52);
             this.gbStudent.Name = "gbStudent";
             this.gbStudent.Size = new System.Drawing.Size(671, 438);
@@ -589,77 +597,103 @@
             this.gbStudent.TabStop = false;
             this.gbStudent.Text = "Logon Screen";
             // 
-            // pnlLogin
-            // 
-            this.pnlLogin.Controls.Add(this.btnLogon);
-            this.pnlLogin.Controls.Add(this.label3);
-            this.pnlLogin.Controls.Add(this.txtPass);
-            this.pnlLogin.Controls.Add(this.txtUser);
-            this.pnlLogin.Controls.Add(this.pictureBox1);
-            this.pnlLogin.Location = new System.Drawing.Point(6, 19);
-            this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(659, 413);
-            this.pnlLogin.TabIndex = 24;
-            // 
-            // btnLogon
-            // 
-            this.btnLogon.Location = new System.Drawing.Point(281, 289);
-            this.btnLogon.Name = "btnLogon";
-            this.btnLogon.Size = new System.Drawing.Size(115, 21);
-            this.btnLogon.TabIndex = 7;
-            this.btnLogon.Text = "Log In";
-            this.btnLogon.UseVisualStyleBackColor = true;
-            this.btnLogon.Click += new System.EventHandler(this.btnLogon_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(222, 192);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Please Log In";
-            // 
-            // txtPass
-            // 
-            this.txtPass.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtPass.Location = new System.Drawing.Point(225, 251);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(238, 20);
-            this.txtPass.TabIndex = 5;
-            this.txtPass.Text = "Password";
-            this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
-            this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
-            // 
-            // txtUser
-            // 
-            this.txtUser.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtUser.Location = new System.Drawing.Point(225, 214);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(238, 20);
-            this.txtUser.TabIndex = 4;
-            this.txtUser.Text = "Client ID";
-            this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
-            this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(239, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 135);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // pnlHome
             // 
+            this.pnlHome.Controls.Add(this.label4);
+            this.pnlHome.Controls.Add(this.btnFullReport);
+            this.pnlHome.Controls.Add(this.txtEmailHome);
+            this.pnlHome.Controls.Add(this.btnPrinterSettingsHome);
+            this.pnlHome.Controls.Add(this.checkPrint);
+            this.pnlHome.Controls.Add(this.checkExport);
+            this.pnlHome.Controls.Add(this.checkEmail);
+            this.pnlHome.Controls.Add(this.label1);
             this.pnlHome.Controls.Add(this.tabLogs);
             this.pnlHome.Controls.Add(this.label2);
             this.pnlHome.Location = new System.Drawing.Point(6, 19);
             this.pnlHome.Name = "pnlHome";
             this.pnlHome.Size = new System.Drawing.Size(659, 413);
             this.pnlHome.TabIndex = 1;
+            // 
+            // btnFullReport
+            // 
+            this.btnFullReport.Enabled = false;
+            this.btnFullReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFullReport.Location = new System.Drawing.Point(62, 164);
+            this.btnFullReport.Name = "btnFullReport";
+            this.btnFullReport.Size = new System.Drawing.Size(163, 28);
+            this.btnFullReport.TabIndex = 11;
+            this.btnFullReport.Text = "Send Report";
+            this.btnFullReport.UseVisualStyleBackColor = true;
+            // 
+            // txtEmailHome
+            // 
+            this.txtEmailHome.Enabled = false;
+            this.txtEmailHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailHome.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtEmailHome.Location = new System.Drawing.Point(142, 42);
+            this.txtEmailHome.Name = "txtEmailHome";
+            this.txtEmailHome.Size = new System.Drawing.Size(126, 23);
+            this.txtEmailHome.TabIndex = 10;
+            this.txtEmailHome.Text = "Email";
+            this.txtEmailHome.Enter += new System.EventHandler(this.txtEmailHome_Enter);
+            this.txtEmailHome.Leave += new System.EventHandler(this.txtEmailHome_Leave);
+            // 
+            // btnPrinterSettingsHome
+            // 
+            this.btnPrinterSettingsHome.Enabled = false;
+            this.btnPrinterSettingsHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrinterSettingsHome.Location = new System.Drawing.Point(143, 123);
+            this.btnPrinterSettingsHome.Name = "btnPrinterSettingsHome";
+            this.btnPrinterSettingsHome.Size = new System.Drawing.Size(125, 21);
+            this.btnPrinterSettingsHome.TabIndex = 9;
+            this.btnPrinterSettingsHome.Text = "Printer Settings";
+            this.btnPrinterSettingsHome.UseVisualStyleBackColor = true;
+            // 
+            // checkPrint
+            // 
+            this.checkPrint.AutoSize = true;
+            this.checkPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkPrint.Location = new System.Drawing.Point(12, 123);
+            this.checkPrint.Name = "checkPrint";
+            this.checkPrint.Size = new System.Drawing.Size(56, 21);
+            this.checkPrint.TabIndex = 8;
+            this.checkPrint.Text = "Print";
+            this.checkPrint.UseVisualStyleBackColor = true;
+            this.checkPrint.CheckedChanged += new System.EventHandler(this.checkPrint_CheckedChanged);
+            // 
+            // checkExport
+            // 
+            this.checkExport.AutoSize = true;
+            this.checkExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkExport.Location = new System.Drawing.Point(12, 82);
+            this.checkExport.Name = "checkExport";
+            this.checkExport.Size = new System.Drawing.Size(110, 21);
+            this.checkExport.TabIndex = 7;
+            this.checkExport.Text = "Export as .xls";
+            this.checkExport.UseVisualStyleBackColor = true;
+            this.checkExport.CheckedChanged += new System.EventHandler(this.checkExport_CheckedChanged);
+            // 
+            // checkEmail
+            // 
+            this.checkEmail.AutoSize = true;
+            this.checkEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEmail.Location = new System.Drawing.Point(12, 44);
+            this.checkEmail.Name = "checkEmail";
+            this.checkEmail.Size = new System.Drawing.Size(61, 21);
+            this.checkEmail.TabIndex = 6;
+            this.checkEmail.Text = "Email";
+            this.checkEmail.UseVisualStyleBackColor = true;
+            this.checkEmail.CheckedChanged += new System.EventHandler(this.checkEmail_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Full Report";
             // 
             // tabLogs
             // 
@@ -1145,6 +1179,69 @@
             this.txtFirstName.TabIndex = 1;
             this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
+            // pnlLogin
+            // 
+            this.pnlLogin.Controls.Add(this.btnLogon);
+            this.pnlLogin.Controls.Add(this.label3);
+            this.pnlLogin.Controls.Add(this.txtPass);
+            this.pnlLogin.Controls.Add(this.txtUser);
+            this.pnlLogin.Controls.Add(this.pictureBox1);
+            this.pnlLogin.Location = new System.Drawing.Point(6, 19);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(659, 413);
+            this.pnlLogin.TabIndex = 24;
+            // 
+            // btnLogon
+            // 
+            this.btnLogon.Location = new System.Drawing.Point(281, 289);
+            this.btnLogon.Name = "btnLogon";
+            this.btnLogon.Size = new System.Drawing.Size(115, 21);
+            this.btnLogon.TabIndex = 7;
+            this.btnLogon.Text = "Log In";
+            this.btnLogon.UseVisualStyleBackColor = true;
+            this.btnLogon.Click += new System.EventHandler(this.btnLogon_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(222, 192);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Please Log In";
+            // 
+            // txtPass
+            // 
+            this.txtPass.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtPass.Location = new System.Drawing.Point(225, 251);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(238, 20);
+            this.txtPass.TabIndex = 5;
+            this.txtPass.Text = "Password";
+            this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
+            this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
+            // 
+            // txtUser
+            // 
+            this.txtUser.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtUser.Location = new System.Drawing.Point(225, 214);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(238, 20);
+            this.txtUser.TabIndex = 4;
+            this.txtUser.Text = "Client ID";
+            this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
+            this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(239, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -1158,6 +1255,14 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Location = new System.Drawing.Point(10, 207);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(286, 2);
+            this.label4.TabIndex = 12;
             // 
             // Form1
             // 
@@ -1178,9 +1283,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.gbStudent.ResumeLayout(false);
-            this.pnlLogin.ResumeLayout(false);
-            this.pnlLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlHome.ResumeLayout(false);
             this.pnlHome.PerformLayout();
             this.tabLogs.ResumeLayout(false);
@@ -1198,6 +1300,9 @@
             this.gbActive.PerformLayout();
             this.gbSex.ResumeLayout(false);
             this.gbSex.PerformLayout();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1306,6 +1411,14 @@
         private System.Windows.Forms.ToolTip ttOptional;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.TextBox txtEmailHome;
+        private System.Windows.Forms.Button btnPrinterSettingsHome;
+        private System.Windows.Forms.CheckBox checkPrint;
+        private System.Windows.Forms.CheckBox checkExport;
+        private System.Windows.Forms.CheckBox checkEmail;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnFullReport;
+        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -50,6 +50,18 @@ namespace FBLAdesktopApp3
             mbtnProgramSettings.Enabled = x;
         }
 
+        void fullReport()
+        {
+            if (checkEmail.Checked || checkExport.Checked || checkPrint.Checked)
+            {
+                btnFullReport.Enabled = true;
+            }
+            else
+            {
+                btnFullReport.Enabled = false;
+            }
+        }
+
         void newFormTitle()
         { //Changes the name of the group box to the students name when working with new student forms
             if (!gbStudent.Text.Contains(txtFirstName.Text + " " + txtLastName.Text))
@@ -125,6 +137,24 @@ namespace FBLAdesktopApp3
                 txtPass.ForeColor = SystemColors.WindowFrame;
                 txtPass.Text = "Password";
                 txtPass.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void txtEmailHome_Enter(object sender, EventArgs e)
+        {
+            if (txtEmailHome.Text == "Email")
+            {
+                txtEmailHome.ForeColor = SystemColors.WindowText;
+                txtEmailHome.Text = "";
+            }
+        }
+
+        private void txtEmailHome_Leave(object sender, EventArgs e)
+        {
+            if (txtEmailHome.Text == "Email" || txtEmailHome.Text == "")
+            {
+                txtEmailHome.ForeColor = SystemColors.WindowFrame;
+                txtEmailHome.Text = "Email";
             }
         }
         // ******************************************************
@@ -368,6 +398,30 @@ namespace FBLAdesktopApp3
             MessageBox.Show("Works - Enable Printing Later");
         }
 
+        
         // ******************************************
+
+        // ************** Deals With Full Report Checkboxes **************
+
+        private void checkEmail_CheckedChanged(object sender, EventArgs e)
+        {
+            txtEmailHome.Enabled = checkEmail.Checked;
+            fullReport();
+        }
+
+        private void checkPrint_CheckedChanged(object sender, EventArgs e)
+        {
+            btnPrinterSettingsHome.Enabled = checkPrint.Checked;
+            fullReport();
+        }
+
+        private void checkExport_CheckedChanged(object sender, EventArgs e)
+        {
+            fullReport();
+        }
+
+        // ***************************************************************
+
+
     }
 }
