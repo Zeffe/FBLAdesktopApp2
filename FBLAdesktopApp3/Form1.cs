@@ -87,11 +87,10 @@ namespace FBLAdesktopApp3
             ttOptional.SetToolTip(lblComment, "Optional");
             this.Text = "FBLA - Login Screen";
             cmbSearchBy.SelectedIndex = 0;
-            txtLog.Text = "Date\t\tChanged\t\t\tClient ID\r\n";
-            txtClientIDs.Text = "Client ID\t\tNick\t\t\tChanges";
-            txtStudents.Text = "Member #\tFirst Name\t\tLast Name";
             txtJoined.Text = now.Year.ToString();
             pnlLogin.BringToFront();
+            cmbThirdColumn.SelectedIndex = 0;
+            columnHeader9.Text = cmbThirdColumn.Text;
         }
 
         // CREDITS PAGE
@@ -418,6 +417,11 @@ namespace FBLAdesktopApp3
         private void checkExport_CheckedChanged(object sender, EventArgs e)
         {
             fullReport();
+        }
+
+        private void cmbThirdColumn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            columnHeader9.Text = cmbThirdColumn.Text;
         }
 
         // ***************************************************************

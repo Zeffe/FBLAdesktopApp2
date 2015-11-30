@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,6 +83,7 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.gbStudent = new System.Windows.Forms.GroupBox();
             this.pnlHome = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnFullReport = new System.Windows.Forms.Button();
             this.txtEmailHome = new System.Windows.Forms.TextBox();
             this.btnPrinterSettingsHome = new System.Windows.Forms.Button();
@@ -89,11 +93,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabLogs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.txtLog = new System.Windows.Forms.TextBox();
+            this.listLog = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txtClientIDs = new System.Windows.Forms.TextBox();
+            this.listClientIDs = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.txtStudents = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlStudent = new System.Windows.Forms.Panel();
             this.lblOptional = new System.Windows.Forms.Label();
@@ -139,7 +148,12 @@
             this.ttOptional = new System.Windows.Forms.ToolTip(this.components);
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.label4 = new System.Windows.Forms.Label();
+            this.cmbThirdColumn = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.gbStudent.SuspendLayout();
@@ -614,6 +628,14 @@
             this.pnlHome.Size = new System.Drawing.Size(659, 413);
             this.pnlHome.TabIndex = 1;
             // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Location = new System.Drawing.Point(10, 207);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(286, 2);
+            this.label4.TabIndex = 12;
+            // 
             // btnFullReport
             // 
             this.btnFullReport.Enabled = false;
@@ -708,7 +730,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.txtLog);
+            this.tabPage1.Controls.Add(this.listLog);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -717,50 +739,90 @@
             this.tabPage1.Text = "Log";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // txtLog
+            // listLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(1, 1);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(336, 370);
-            this.txtLog.TabIndex = 0;
+            this.listLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listLog.GridLines = true;
+            this.listLog.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.listLog.Location = new System.Drawing.Point(0, 0);
+            this.listLog.Name = "listLog";
+            this.listLog.Size = new System.Drawing.Size(338, 369);
+            this.listLog.TabIndex = 13;
+            this.listLog.UseCompatibleStateImageBehavior = false;
+            this.listLog.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Date";
+            this.columnHeader1.Width = 57;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Student Changed / Added";
+            this.columnHeader2.Width = 167;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Changed By";
+            this.columnHeader3.Width = 110;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.txtClientIDs);
+            this.tabPage2.Controls.Add(this.listClientIDs);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(338, 372);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Client IDs";
+            this.tabPage2.Text = "Administrators";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // txtClientIDs
+            // listClientIDs
             // 
-            this.txtClientIDs.Location = new System.Drawing.Point(0, 1);
-            this.txtClientIDs.Multiline = true;
-            this.txtClientIDs.Name = "txtClientIDs";
-            this.txtClientIDs.Size = new System.Drawing.Size(337, 370);
-            this.txtClientIDs.TabIndex = 0;
+            this.listClientIDs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.listClientIDs.GridLines = true;
+            this.listClientIDs.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem2});
+            this.listClientIDs.Location = new System.Drawing.Point(0, 0);
+            this.listClientIDs.Name = "listClientIDs";
+            this.listClientIDs.Size = new System.Drawing.Size(338, 372);
+            this.listClientIDs.TabIndex = 14;
+            this.listClientIDs.UseCompatibleStateImageBehavior = false;
+            this.listClientIDs.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Client ID";
+            this.columnHeader4.Width = 67;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Full Name";
+            this.columnHeader5.Width = 155;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Changes Made";
+            this.columnHeader6.Width = 112;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.txtStudents);
+            this.tabPage3.Controls.Add(this.listView1);
+            this.tabPage3.Controls.Add(this.cmbThirdColumn);
+            this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(338, 372);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Students";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // txtStudents
-            // 
-            this.txtStudents.Location = new System.Drawing.Point(1, 1);
-            this.txtStudents.Multiline = true;
-            this.txtStudents.Name = "txtStudents";
-            this.txtStudents.Size = new System.Drawing.Size(336, 370);
-            this.txtStudents.TabIndex = 0;
             // 
             // label2
             // 
@@ -1256,13 +1318,63 @@
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // label4
+            // cmbThirdColumn
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Location = new System.Drawing.Point(10, 207);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(286, 2);
-            this.label4.TabIndex = 12;
+            this.cmbThirdColumn.FormattingEnabled = true;
+            this.cmbThirdColumn.Items.AddRange(new object[] {
+            "Grade",
+            "State",
+            "Is Active",
+            "Has Fees",
+            "Year Joined",
+            "Email",
+            "School"});
+            this.cmbThirdColumn.Location = new System.Drawing.Point(151, 343);
+            this.cmbThirdColumn.Name = "cmbThirdColumn";
+            this.cmbThirdColumn.Size = new System.Drawing.Size(143, 21);
+            this.cmbThirdColumn.TabIndex = 17;
+            this.cmbThirdColumn.SelectedIndexChanged += new System.EventHandler(this.cmbThirdColumn_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(34, 342);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 18);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Third Column:";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9});
+            this.listView1.GridLines = true;
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem3});
+            this.listView1.Location = new System.Drawing.Point(0, 1);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(338, 336);
+            this.listView1.TabIndex = 18;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Member #";
+            this.columnHeader7.Width = 67;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Full Name";
+            this.columnHeader8.Width = 155;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Changes Made";
+            this.columnHeader9.Width = 112;
             // 
             // Form1
             // 
@@ -1287,9 +1399,7 @@
             this.pnlHome.PerformLayout();
             this.tabLogs.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.pnlStudent.ResumeLayout(false);
@@ -1367,11 +1477,8 @@
         private System.Windows.Forms.Panel pnlHome;
         private System.Windows.Forms.TabControl tabLogs;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox txtClientIDs;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox txtStudents;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnlStudent;
         private System.Windows.Forms.Label lblOptional;
@@ -1419,6 +1526,20 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFullReport;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListView listLog;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ListView listClientIDs;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ComboBox cmbThirdColumn;
+        private System.Windows.Forms.Label label5;
     }
 }
 
