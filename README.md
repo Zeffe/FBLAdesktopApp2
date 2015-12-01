@@ -25,6 +25,11 @@ Usability and functionality should be the prime objectives.
 
 ![ScreenShot](https://raw.github.com/Zeffe/FBLAdesktopApp2/master/ReadmeImages/LoginScreen.png)
 
+![ScreenShot](https://raw.github.com/Zeffe/FBLAdesktopApp2/master/ReadmeImages/HomeScreen1.png)
+
+![ScreenShot](https://raw.github.com/Zeffe/FBLAdesktopApp2/master/ReadmeImages/HomeScreen2.png)
+
+![ScreenShot](https://raw.github.com/Zeffe/FBLAdesktopApp2/master/ReadmeImages/HomeScreen3.png)
+
 ![ScreenShot](https://raw.github.com/Zeffe/FBLAdesktopApp2/master/ReadmeImages/StudentFormScreen.png)
 
-![ScreenShot](https://raw.github.com/Zeffe/FBLAdesktopApp2/master/ReadmeImages/HomeScreen.png)
