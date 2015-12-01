@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+using System.IO;
+
 
 namespace FBLAdesktopApp3
 {
@@ -17,10 +20,18 @@ namespace FBLAdesktopApp3
             InitializeComponent();
         }
 
-        // ************* Variable and array initialization *************
+        Assembly _assembly;
+        StreamReader _textStreamReader;
+
+
+// ************* Variable and array initialization *************
         String feeStr;
-		Double feeDbl;
+        int search, count;
+        Double feeDbl;
         String[] temp = new String[10];
+        String[] temp2 = new String[20];
+        String[] lines = new String[100];
+        String[,] student = new String[50, 13];
         DateTime now = DateTime.Now;
         bool newForm;
         // *************************************************************
@@ -48,6 +59,33 @@ namespace FBLAdesktopApp3
             mbtnHome.Enabled = x;
             mbtnAccountDetails.Enabled = x;
             mbtnProgramSettings.Enabled = x;
+        }
+
+        void viewForm(int studentNum)
+        {
+            pnlStudent.BringToFront();
+            txtMemberNum.Text = student[studentNum, 0]; txtFirstName.Text = student[studentNum, 1]; txtMI.Text = student[studentNum, 2];
+            cmbState.Text = student[studentNum, 3]; txtLastName.Text = student[studentNum, 4]; txtSchool.Text = student[studentNum, 8];
+            txtEmail.Text = student[studentNum, 9]; txtOwed.Text = student[studentNum, 10]; txtJoined.Text = student[studentNum, 11];
+            txtComment.Text = student[studentNum, 12];
+            switch(student[studentNum, 5])
+            {
+                case "1": rbMale.Checked = true; break;
+                case "2": rbFemale.Checked = true; break;
+            }
+            switch(student[studentNum, 6])
+            {
+                case "1": rbGrade9.Checked = true; break;
+                case "2": rbGrade10.Checked = true; break;
+                case "3": rbGrade11.Checked = true; break;
+                case "4": rbGrade12.Checked = true; break;
+                case "5": rbCollege.Checked = true; break;
+            }
+            switch (student[studentNum, 7])
+            {
+                case "1": rbActive.Checked = true; break;
+                case "2": rbNonActive.Checked = true; break;
+            }
         }
 
         void fullReport()
@@ -82,6 +120,31 @@ namespace FBLAdesktopApp3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // **** Access Temporary Text File Storage and Write Each Line to lines array ****
+            try
+            {
+                _assembly = Assembly.GetExecutingAssembly();
+                _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.tempStorage.txt"));
+                string str;
+                count = 0;
+                while ((str = _textStreamReader.ReadLine()) != null)
+                {
+                    lines[count] = str;
+                    temp2 = lines[count].Split('\\');
+                    for (int i = 0; i < 13; i++)
+                    {
+                        student[count, i] = temp2[i];
+                        // student[#, 0 = member #, 1 = firstName, 2 = MI, 3 = State, 4 = lastName, 5 = Sex, 6 = grade
+                        //          7 = Active, 8 = School, 9 = Email, 10 = fees, 11 = year joined, 12 = Comments]
+                    }
+                    count++;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error accessing resources!");
+            }
+            // *******************************************************************************
             feeDbl = 0.00;
             ttOptional.SetToolTip(lblMI, "Optional");
             ttOptional.SetToolTip(lblComment, "Optional");
@@ -425,6 +488,57 @@ namespace FBLAdesktopApp3
             columnHeader9.Text = cmbThirdColumn.Text;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _assembly = Assembly.GetExecutingAssembly();
+                _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.temp.txt"));
+                string str;
+                int count = 0;
+                while ((str = _textStreamReader.ReadLine()) != null)
+                {
+                    lines[count] = str;
+                    count++;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error accessing resources!");
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            viewForm(0);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            switch (cmbSearchBy.SelectedIndex)
+            {
+                case 0: search = 4; break;
+                case 1: search = 1; break;
+                case 2: search = 11; break;
+                case 3: search = 0; break;
+                case 4: search = 9; break;
+                case 5: search = 8; break;
+            }
+
+            // Search the given searchby argument in all students
+            for (int i = 0; i < count; i++)
+            {
+                if (student[i, search].Contains(txtSearch.Text))
+                {
+                    viewForm(i);
+                    break;
+                } else if (i == count-1)
+                {
+                    MessageBox.Show("Could not find any data matching your requested search", "Error");
+                }
+            }
+
+        }
         // ***************************************************************
 
 

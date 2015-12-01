@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem("");
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +83,8 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.gbStudent = new System.Windows.Forms.GroupBox();
             this.pnlHome = new System.Windows.Forms.Panel();
+            this.btnReportPreview = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnFullReport = new System.Windows.Forms.Button();
             this.txtEmailHome = new System.Windows.Forms.TextBox();
@@ -154,8 +156,6 @@
             this.ttOptional = new System.Windows.Forms.ToolTip(this.components);
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnReportPreview = new System.Windows.Forms.Button();
             this.ttPrintPreview = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -579,7 +579,6 @@
             this.cmbSearchBy.Items.AddRange(new object[] {
             "Last Name",
             "First Name",
-            "Has Fees",
             "Year Joined",
             "Member #",
             "Email",
@@ -596,6 +595,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(23, 22);
             this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // toolStripSeparator5
             // 
@@ -604,9 +604,9 @@
             // 
             // gbStudent
             // 
+            this.gbStudent.Controls.Add(this.pnlLogin);
             this.gbStudent.Controls.Add(this.pnlHome);
             this.gbStudent.Controls.Add(this.pnlStudent);
-            this.gbStudent.Controls.Add(this.pnlLogin);
             this.gbStudent.Location = new System.Drawing.Point(12, 52);
             this.gbStudent.Name = "gbStudent";
             this.gbStudent.Size = new System.Drawing.Size(671, 438);
@@ -632,6 +632,25 @@
             this.pnlHome.Name = "pnlHome";
             this.pnlHome.Size = new System.Drawing.Size(659, 413);
             this.pnlHome.TabIndex = 1;
+            // 
+            // btnReportPreview
+            // 
+            this.btnReportPreview.Image = global::FBLAdesktopApp3.Properties.Resources.printPreview_black;
+            this.btnReportPreview.Location = new System.Drawing.Point(225, 164);
+            this.btnReportPreview.Name = "btnReportPreview";
+            this.btnReportPreview.Size = new System.Drawing.Size(43, 28);
+            this.btnReportPreview.TabIndex = 14;
+            this.btnReportPreview.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 217);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Statistics";
             // 
             // label4
             // 
@@ -752,7 +771,7 @@
             this.columnHeader3});
             this.listLog.GridLines = true;
             this.listLog.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem31});
             this.listLog.Location = new System.Drawing.Point(0, 0);
             this.listLog.Name = "listLog";
             this.listLog.Size = new System.Drawing.Size(338, 369);
@@ -794,7 +813,7 @@
             this.columnHeader6});
             this.listClientIDs.GridLines = true;
             this.listClientIDs.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem32});
             this.listClientIDs.Location = new System.Drawing.Point(0, 0);
             this.listClientIDs.Name = "listClientIDs";
             this.listClientIDs.Size = new System.Drawing.Size(338, 372);
@@ -837,7 +856,7 @@
             this.columnHeader9});
             this.listView1.GridLines = true;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem33});
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(338, 337);
@@ -1380,25 +1399,6 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 217);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Statistics";
-            // 
-            // btnReportPreview
-            // 
-            this.btnReportPreview.Image = global::FBLAdesktopApp3.Properties.Resources.printPreview_black;
-            this.btnReportPreview.Location = new System.Drawing.Point(225, 164);
-            this.btnReportPreview.Name = "btnReportPreview";
-            this.btnReportPreview.Size = new System.Drawing.Size(43, 28);
-            this.btnReportPreview.TabIndex = 14;
-            this.btnReportPreview.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
