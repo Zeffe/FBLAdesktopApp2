@@ -103,6 +103,12 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmbThirdColumn = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlStudent = new System.Windows.Forms.Panel();
             this.lblOptional = new System.Windows.Forms.Label();
@@ -148,12 +154,9 @@
             this.ttOptional = new System.Windows.Forms.ToolTip(this.components);
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.cmbThirdColumn = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnReportPreview = new System.Windows.Forms.Button();
+            this.ttPrintPreview = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.gbStudent.SuspendLayout();
@@ -613,6 +616,8 @@
             // 
             // pnlHome
             // 
+            this.pnlHome.Controls.Add(this.btnReportPreview);
+            this.pnlHome.Controls.Add(this.label6);
             this.pnlHome.Controls.Add(this.label4);
             this.pnlHome.Controls.Add(this.btnFullReport);
             this.pnlHome.Controls.Add(this.txtEmailHome);
@@ -640,7 +645,7 @@
             // 
             this.btnFullReport.Enabled = false;
             this.btnFullReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFullReport.Location = new System.Drawing.Point(62, 164);
+            this.btnFullReport.Location = new System.Drawing.Point(42, 164);
             this.btnFullReport.Name = "btnFullReport";
             this.btnFullReport.Size = new System.Drawing.Size(163, 28);
             this.btnFullReport.TabIndex = 11;
@@ -823,6 +828,64 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Students";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9});
+            this.listView1.GridLines = true;
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem3});
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(338, 337);
+            this.listView1.TabIndex = 18;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Member #";
+            this.columnHeader7.Width = 67;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Full Name";
+            this.columnHeader8.Width = 155;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Changes Made";
+            this.columnHeader9.Width = 112;
+            // 
+            // cmbThirdColumn
+            // 
+            this.cmbThirdColumn.FormattingEnabled = true;
+            this.cmbThirdColumn.Items.AddRange(new object[] {
+            "Grade",
+            "State",
+            "Is Active",
+            "Has Fees",
+            "Year Joined",
+            "Email",
+            "School"});
+            this.cmbThirdColumn.Location = new System.Drawing.Point(151, 343);
+            this.cmbThirdColumn.Name = "cmbThirdColumn";
+            this.cmbThirdColumn.Size = new System.Drawing.Size(143, 21);
+            this.cmbThirdColumn.TabIndex = 17;
+            this.cmbThirdColumn.SelectedIndexChanged += new System.EventHandler(this.cmbThirdColumn_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(34, 342);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 18);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Third Column:";
             // 
             // label2
             // 
@@ -1318,63 +1381,24 @@
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // cmbThirdColumn
+            // label6
             // 
-            this.cmbThirdColumn.FormattingEnabled = true;
-            this.cmbThirdColumn.Items.AddRange(new object[] {
-            "Grade",
-            "State",
-            "Is Active",
-            "Has Fees",
-            "Year Joined",
-            "Email",
-            "School"});
-            this.cmbThirdColumn.Location = new System.Drawing.Point(151, 343);
-            this.cmbThirdColumn.Name = "cmbThirdColumn";
-            this.cmbThirdColumn.Size = new System.Drawing.Size(143, 21);
-            this.cmbThirdColumn.TabIndex = 17;
-            this.cmbThirdColumn.SelectedIndexChanged += new System.EventHandler(this.cmbThirdColumn_SelectedIndexChanged);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 217);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Statistics";
             // 
-            // label5
+            // btnReportPreview
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(34, 342);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 18);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Third Column:";
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
-            this.listView1.GridLines = true;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
-            this.listView1.Location = new System.Drawing.Point(0, 1);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(338, 336);
-            this.listView1.TabIndex = 18;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Member #";
-            this.columnHeader7.Width = 67;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Full Name";
-            this.columnHeader8.Width = 155;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Changes Made";
-            this.columnHeader9.Width = 112;
+            this.btnReportPreview.Image = global::FBLAdesktopApp3.Properties.Resources.printPreview_black;
+            this.btnReportPreview.Location = new System.Drawing.Point(225, 164);
+            this.btnReportPreview.Name = "btnReportPreview";
+            this.btnReportPreview.Size = new System.Drawing.Size(43, 28);
+            this.btnReportPreview.TabIndex = 14;
+            this.btnReportPreview.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1540,6 +1564,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ComboBox cmbThirdColumn;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnReportPreview;
+        private System.Windows.Forms.ToolTip ttPrintPreview;
     }
 }
 

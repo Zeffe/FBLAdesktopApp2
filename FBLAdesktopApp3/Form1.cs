@@ -85,6 +85,7 @@ namespace FBLAdesktopApp3
             feeDbl = 0.00;
             ttOptional.SetToolTip(lblMI, "Optional");
             ttOptional.SetToolTip(lblComment, "Optional");
+            ttPrintPreview.SetToolTip(btnReportPreview, "Preview report");
             this.Text = "FBLA - Login Screen";
             cmbSearchBy.SelectedIndex = 0;
             txtJoined.Text = now.Year.ToString();
