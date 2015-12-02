@@ -22,16 +22,19 @@ namespace FBLAdesktopApp3
 
         Assembly _assembly;
         StreamReader _textStreamReader;
+        StreamReader _textStreamReader2;
 
 
 // ************* Variable and array initialization *************
         String feeStr;
-        int search, count;
+        int search, count, loginCount, account;
         Double feeDbl;
         String[] temp = new String[10];
         String[] temp2 = new String[20];
         String[] lines = new String[100];
+        String[] lines2 = new String[100];
         String[,] student = new String[50, 13];
+        String[,] logins = new String[50, 4];
         DateTime now = DateTime.Now;
         bool newForm;
         // *************************************************************
@@ -125,8 +128,20 @@ namespace FBLAdesktopApp3
             {
                 _assembly = Assembly.GetExecutingAssembly();
                 _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.tempStorage.txt"));
+                _textStreamReader2 = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.logins.txt"));
                 string str;
                 count = 0;
+                loginCount = 0;
+                while ((str = _textStreamReader2.ReadLine()) != null)
+                {
+                    lines2[loginCount] = str;
+                    temp2 = lines2[loginCount].Split('\\');
+                    for (int i = 0; i < 4; i++)
+                    {
+                        logins[loginCount, i] = temp2[i];
+                    }
+                    loginCount++;
+                }
                 while ((str = _textStreamReader.ReadLine()) != null)
                 {
                     lines[count] = str;
@@ -245,10 +260,21 @@ namespace FBLAdesktopApp3
         // ********************** These buttons handle the movement of panels and renaming of group boxes **********************
         private void btnLogon_Click(object sender, EventArgs e)
         {
-            gbStudent.Text = "Home";
-            this.Text = "FBLA - Home";
-            pnlHome.BringToFront();
-            toolStripButtons(true);
+            for (int i = 0; i <= loginCount; i++)
+            {
+                if (logins[i, 0] == txtUser.Text && logins[i, 1] == txtPass.Text)
+                {
+                    gbStudent.Text = "Home";
+                    this.Text = "FBLA - Home";
+                    pnlHome.BringToFront();
+                    toolStripButtons(true);
+                    account = i;
+                    break;
+                } else if (i == loginCount)
+                {
+                    MessageBox.Show("Invalid username or password.", "Error");
+                }
+            }
         }
         private void mbtnHome_Click(object sender, EventArgs e)
         {
