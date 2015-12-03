@@ -66,6 +66,7 @@ namespace FBLAdesktopApp3
 
         void save()
         {
+            specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
             if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
             {
                 checkMemNum();
@@ -73,8 +74,13 @@ namespace FBLAdesktopApp3
                 if (rbMale.Checked) sex = "1"; else sex = "2";
                 if (rbGrade9.Checked) grade = "1"; else if (rbGrade10.Checked) grade = "2"; else if (rbGrade11.Checked) grade = "3"; else if (rbGrade12.Checked) grade = "4"; else grade = "5";
                 if (rbActive.Checked) active = "1"; else active = "2";
-                specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
-                File.AppendAllText(specificFolder, "\r\n" + txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
+                if (student[0, 1] == null)
+                {
+                    File.AppendAllText(specificFolder, txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
+                } else
+                {
+                    File.AppendAllText(specificFolder, "\r\n" + txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
+                }
                 readToArray();
                 studentLog();
                 MessageBox.Show("Save Successful!", "Saved");
@@ -165,7 +171,7 @@ namespace FBLAdesktopApp3
         void adminLog()
         {
             listClientIDs.Items.Clear();
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < loginCount; i++)
             {
                 ListViewItem new_item = listClientIDs.Items.Add(logins[i, 0]);
                 new_item.SubItems.Add(logins[i, 2]);
@@ -210,7 +216,7 @@ namespace FBLAdesktopApp3
             }
             catch
             {
-                MessageBox.Show("Error accessing resources!");
+                MessageBox.Show("Error reading resources", "Error");
             }
         }
 
@@ -273,6 +279,10 @@ namespace FBLAdesktopApp3
             if (!File.Exists(specificFolder))
             {
                 Directory.CreateDirectory(specificFolder);
+            }
+            if (!File.Exists(specificFolder + "/students.txt"))
+            {
+                File.Create(specificFolder + "/students.txt").Dispose();
             }
             readToArray();
             studentLog();

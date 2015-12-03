@@ -201,7 +201,7 @@
             // 
             this.mbtnNew.Enabled = false;
             this.mbtnNew.Name = "mbtnNew";
-            this.mbtnNew.Size = new System.Drawing.Size(152, 22);
+            this.mbtnNew.Size = new System.Drawing.Size(117, 22);
             this.mbtnNew.Text = "New";
             this.mbtnNew.Click += new System.EventHandler(this.mbtnNew_Click);
             // 
@@ -209,14 +209,14 @@
             // 
             this.mbtnSave.Enabled = false;
             this.mbtnSave.Name = "mbtnSave";
-            this.mbtnSave.Size = new System.Drawing.Size(152, 22);
+            this.mbtnSave.Size = new System.Drawing.Size(117, 22);
             this.mbtnSave.Text = "Save";
             this.mbtnSave.Click += new System.EventHandler(this.mbtnSave_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(114, 6);
             // 
             // mbtnPrint
             // 
@@ -226,7 +226,7 @@
             this.mbtnPrint2});
             this.mbtnPrint.Enabled = false;
             this.mbtnPrint.Name = "mbtnPrint";
-            this.mbtnPrint.Size = new System.Drawing.Size(152, 22);
+            this.mbtnPrint.Size = new System.Drawing.Size(117, 22);
             this.mbtnPrint.Text = "Print";
             // 
             // mbtnPrintSettings
@@ -257,7 +257,7 @@
             this.mbtnAsXls});
             this.mbtnExport.Enabled = false;
             this.mbtnExport.Name = "mbtnExport";
-            this.mbtnExport.Size = new System.Drawing.Size(152, 22);
+            this.mbtnExport.Size = new System.Drawing.Size(117, 22);
             this.mbtnExport.Text = "Export";
             // 
             // mbtnAsTxt
@@ -275,20 +275,20 @@
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(114, 6);
             // 
             // mbtnLogout
             // 
             this.mbtnLogout.Enabled = false;
             this.mbtnLogout.Name = "mbtnLogout";
-            this.mbtnLogout.Size = new System.Drawing.Size(152, 22);
+            this.mbtnLogout.Size = new System.Drawing.Size(117, 22);
             this.mbtnLogout.Text = "Log Out";
             this.mbtnLogout.Click += new System.EventHandler(this.mbtnLogout_Click);
             // 
             // mbtnExit
             // 
             this.mbtnExit.Name = "mbtnExit";
-            this.mbtnExit.Size = new System.Drawing.Size(152, 22);
+            this.mbtnExit.Size = new System.Drawing.Size(117, 22);
             this.mbtnExit.Text = "Exit";
             this.mbtnExit.Click += new System.EventHandler(this.mbtnExit_Click);
             // 
@@ -603,9 +603,9 @@
             // 
             // gbStudent
             // 
+            this.gbStudent.Controls.Add(this.pnlHome);
             this.gbStudent.Controls.Add(this.pnlStudent);
             this.gbStudent.Controls.Add(this.pnlLogin);
-            this.gbStudent.Controls.Add(this.pnlHome);
             this.gbStudent.Location = new System.Drawing.Point(12, 52);
             this.gbStudent.Name = "gbStudent";
             this.gbStudent.Size = new System.Drawing.Size(671, 438);
