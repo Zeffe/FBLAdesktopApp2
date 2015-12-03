@@ -103,6 +103,17 @@ namespace FBLAdesktopApp3
             }
         }
 
+        void adminLog()
+        {
+            listClientIDs.Items.Clear();
+            for (int i = 0; i < count; i++)
+            {
+                ListViewItem new_item = listClientIDs.Items.Add(logins[i, 0]);
+                new_item.SubItems.Add(logins[i, 2]);
+                new_item.SubItems.Add(logins[i, 3]);
+            }
+        }
+
         void studentLog()
         {
             listView1.Items.Clear();
@@ -196,6 +207,7 @@ namespace FBLAdesktopApp3
             }
             // *******************************************************************************
             studentLog();
+            adminLog();
             feeDbl = 0.00;
             ttOptional.SetToolTip(lblMI, "Optional");
             ttOptional.SetToolTip(lblComment, "Optional");
