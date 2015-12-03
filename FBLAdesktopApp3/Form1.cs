@@ -302,7 +302,7 @@ namespace FBLAdesktopApp3
         // CREDITS PAGE
         private void creditsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Seth Dixon - Programmer\r\nMichael Blades - Programmer\r\n\r\nIcons by:\r\nFreepik @ Flaticon.com\r\nYannik @ Flaticon.com\r\nGoogle @ Flaticon.com", "Credits");
+            MessageBox.Show("Seth Dixon - Programmer\r\n\r\nIcons by:\r\nFreepik @ Flaticon.com\r\nYannik @ Flaticon.com\r\nGoogle @ Flaticon.com", "Credits");
         }
         ////////////////
 
