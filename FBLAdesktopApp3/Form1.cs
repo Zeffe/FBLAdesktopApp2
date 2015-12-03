@@ -77,6 +77,7 @@ namespace FBLAdesktopApp3
                 File.AppendAllText(specificFolder, "\r\n" + txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
                 readToArray();
                 studentLog();
+                MessageBox.Show("Save Successful!", "Saved");
             }
             else
             {
