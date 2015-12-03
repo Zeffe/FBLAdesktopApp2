@@ -79,36 +79,6 @@
             this.btnSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.gbStudent = new System.Windows.Forms.GroupBox();
-            this.pnlHome = new System.Windows.Forms.Panel();
-            this.btnReportPreview = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnFullReport = new System.Windows.Forms.Button();
-            this.txtEmailHome = new System.Windows.Forms.TextBox();
-            this.btnPrinterSettingsHome = new System.Windows.Forms.Button();
-            this.checkPrint = new System.Windows.Forms.CheckBox();
-            this.checkExport = new System.Windows.Forms.CheckBox();
-            this.checkEmail = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabLogs = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listLog = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listClientIDs = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cmbThirdColumn = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlStudent = new System.Windows.Forms.Panel();
             this.lblOptional = new System.Windows.Forms.Label();
             this.lblComment = new System.Windows.Forms.Label();
@@ -150,6 +120,36 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlHome = new System.Windows.Forms.Panel();
+            this.btnReportPreview = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnFullReport = new System.Windows.Forms.Button();
+            this.txtEmailHome = new System.Windows.Forms.TextBox();
+            this.btnPrinterSettingsHome = new System.Windows.Forms.Button();
+            this.checkPrint = new System.Windows.Forms.CheckBox();
+            this.checkExport = new System.Windows.Forms.CheckBox();
+            this.checkEmail = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabLogs = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listLog = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listClientIDs = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmbThirdColumn = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.ttOptional = new System.Windows.Forms.ToolTip(this.components);
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -157,17 +157,17 @@
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.gbStudent.SuspendLayout();
-            this.pnlHome.SuspendLayout();
-            this.tabLogs.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.pnlStudent.SuspendLayout();
             this.gbGrade.SuspendLayout();
             this.gbActive.SuspendLayout();
             this.gbSex.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlHome.SuspendLayout();
+            this.tabLogs.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -201,7 +201,7 @@
             // 
             this.mbtnNew.Enabled = false;
             this.mbtnNew.Name = "mbtnNew";
-            this.mbtnNew.Size = new System.Drawing.Size(117, 22);
+            this.mbtnNew.Size = new System.Drawing.Size(152, 22);
             this.mbtnNew.Text = "New";
             this.mbtnNew.Click += new System.EventHandler(this.mbtnNew_Click);
             // 
@@ -209,13 +209,14 @@
             // 
             this.mbtnSave.Enabled = false;
             this.mbtnSave.Name = "mbtnSave";
-            this.mbtnSave.Size = new System.Drawing.Size(117, 22);
+            this.mbtnSave.Size = new System.Drawing.Size(152, 22);
             this.mbtnSave.Text = "Save";
+            this.mbtnSave.Click += new System.EventHandler(this.mbtnSave_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(114, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
             // 
             // mbtnPrint
             // 
@@ -225,7 +226,7 @@
             this.mbtnPrint2});
             this.mbtnPrint.Enabled = false;
             this.mbtnPrint.Name = "mbtnPrint";
-            this.mbtnPrint.Size = new System.Drawing.Size(117, 22);
+            this.mbtnPrint.Size = new System.Drawing.Size(152, 22);
             this.mbtnPrint.Text = "Print";
             // 
             // mbtnPrintSettings
@@ -256,7 +257,7 @@
             this.mbtnAsXls});
             this.mbtnExport.Enabled = false;
             this.mbtnExport.Name = "mbtnExport";
-            this.mbtnExport.Size = new System.Drawing.Size(117, 22);
+            this.mbtnExport.Size = new System.Drawing.Size(152, 22);
             this.mbtnExport.Text = "Export";
             // 
             // mbtnAsTxt
@@ -274,20 +275,20 @@
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(114, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(149, 6);
             // 
             // mbtnLogout
             // 
             this.mbtnLogout.Enabled = false;
             this.mbtnLogout.Name = "mbtnLogout";
-            this.mbtnLogout.Size = new System.Drawing.Size(117, 22);
+            this.mbtnLogout.Size = new System.Drawing.Size(152, 22);
             this.mbtnLogout.Text = "Log Out";
             this.mbtnLogout.Click += new System.EventHandler(this.mbtnLogout_Click);
             // 
             // mbtnExit
             // 
             this.mbtnExit.Name = "mbtnExit";
-            this.mbtnExit.Size = new System.Drawing.Size(117, 22);
+            this.mbtnExit.Size = new System.Drawing.Size(152, 22);
             this.mbtnExit.Text = "Exit";
             this.mbtnExit.Click += new System.EventHandler(this.mbtnExit_Click);
             // 
@@ -611,303 +612,6 @@
             this.gbStudent.TabIndex = 8;
             this.gbStudent.TabStop = false;
             this.gbStudent.Text = "Logon Screen";
-            // 
-            // pnlHome
-            // 
-            this.pnlHome.Controls.Add(this.btnReportPreview);
-            this.pnlHome.Controls.Add(this.label6);
-            this.pnlHome.Controls.Add(this.label4);
-            this.pnlHome.Controls.Add(this.btnFullReport);
-            this.pnlHome.Controls.Add(this.txtEmailHome);
-            this.pnlHome.Controls.Add(this.btnPrinterSettingsHome);
-            this.pnlHome.Controls.Add(this.checkPrint);
-            this.pnlHome.Controls.Add(this.checkExport);
-            this.pnlHome.Controls.Add(this.checkEmail);
-            this.pnlHome.Controls.Add(this.label1);
-            this.pnlHome.Controls.Add(this.tabLogs);
-            this.pnlHome.Controls.Add(this.label2);
-            this.pnlHome.Location = new System.Drawing.Point(6, 19);
-            this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(659, 413);
-            this.pnlHome.TabIndex = 1;
-            // 
-            // btnReportPreview
-            // 
-            this.btnReportPreview.Image = global::FBLAdesktopApp3.Properties.Resources.printPreview_black;
-            this.btnReportPreview.Location = new System.Drawing.Point(225, 164);
-            this.btnReportPreview.Name = "btnReportPreview";
-            this.btnReportPreview.Size = new System.Drawing.Size(43, 28);
-            this.btnReportPreview.TabIndex = 14;
-            this.btnReportPreview.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 217);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Statistics";
-            // 
-            // label4
-            // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Location = new System.Drawing.Point(10, 207);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(286, 2);
-            this.label4.TabIndex = 12;
-            // 
-            // btnFullReport
-            // 
-            this.btnFullReport.Enabled = false;
-            this.btnFullReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFullReport.Location = new System.Drawing.Point(42, 164);
-            this.btnFullReport.Name = "btnFullReport";
-            this.btnFullReport.Size = new System.Drawing.Size(163, 28);
-            this.btnFullReport.TabIndex = 11;
-            this.btnFullReport.Text = "Send Report";
-            this.btnFullReport.UseVisualStyleBackColor = true;
-            // 
-            // txtEmailHome
-            // 
-            this.txtEmailHome.Enabled = false;
-            this.txtEmailHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailHome.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtEmailHome.Location = new System.Drawing.Point(142, 42);
-            this.txtEmailHome.Name = "txtEmailHome";
-            this.txtEmailHome.Size = new System.Drawing.Size(126, 23);
-            this.txtEmailHome.TabIndex = 10;
-            this.txtEmailHome.Text = "Email";
-            this.txtEmailHome.Enter += new System.EventHandler(this.txtEmailHome_Enter);
-            this.txtEmailHome.Leave += new System.EventHandler(this.txtEmailHome_Leave);
-            // 
-            // btnPrinterSettingsHome
-            // 
-            this.btnPrinterSettingsHome.Enabled = false;
-            this.btnPrinterSettingsHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrinterSettingsHome.Location = new System.Drawing.Point(143, 123);
-            this.btnPrinterSettingsHome.Name = "btnPrinterSettingsHome";
-            this.btnPrinterSettingsHome.Size = new System.Drawing.Size(125, 21);
-            this.btnPrinterSettingsHome.TabIndex = 9;
-            this.btnPrinterSettingsHome.Text = "Printer Settings";
-            this.btnPrinterSettingsHome.UseVisualStyleBackColor = true;
-            // 
-            // checkPrint
-            // 
-            this.checkPrint.AutoSize = true;
-            this.checkPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkPrint.Location = new System.Drawing.Point(12, 123);
-            this.checkPrint.Name = "checkPrint";
-            this.checkPrint.Size = new System.Drawing.Size(56, 21);
-            this.checkPrint.TabIndex = 8;
-            this.checkPrint.Text = "Print";
-            this.checkPrint.UseVisualStyleBackColor = true;
-            this.checkPrint.CheckedChanged += new System.EventHandler(this.checkPrint_CheckedChanged);
-            // 
-            // checkExport
-            // 
-            this.checkExport.AutoSize = true;
-            this.checkExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkExport.Location = new System.Drawing.Point(12, 82);
-            this.checkExport.Name = "checkExport";
-            this.checkExport.Size = new System.Drawing.Size(110, 21);
-            this.checkExport.TabIndex = 7;
-            this.checkExport.Text = "Export as .xls";
-            this.checkExport.UseVisualStyleBackColor = true;
-            this.checkExport.CheckedChanged += new System.EventHandler(this.checkExport_CheckedChanged);
-            // 
-            // checkEmail
-            // 
-            this.checkEmail.AutoSize = true;
-            this.checkEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkEmail.Location = new System.Drawing.Point(12, 44);
-            this.checkEmail.Name = "checkEmail";
-            this.checkEmail.Size = new System.Drawing.Size(61, 21);
-            this.checkEmail.TabIndex = 6;
-            this.checkEmail.Text = "Email";
-            this.checkEmail.UseVisualStyleBackColor = true;
-            this.checkEmail.CheckedChanged += new System.EventHandler(this.checkEmail_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Full Report";
-            // 
-            // tabLogs
-            // 
-            this.tabLogs.Controls.Add(this.tabPage1);
-            this.tabLogs.Controls.Add(this.tabPage2);
-            this.tabLogs.Controls.Add(this.tabPage3);
-            this.tabLogs.Location = new System.Drawing.Point(308, 7);
-            this.tabLogs.Name = "tabLogs";
-            this.tabLogs.SelectedIndex = 0;
-            this.tabLogs.Size = new System.Drawing.Size(346, 398);
-            this.tabLogs.TabIndex = 3;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.listLog);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(338, 372);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Log";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // listLog
-            // 
-            this.listLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.listLog.GridLines = true;
-            this.listLog.HideSelection = false;
-            this.listLog.Location = new System.Drawing.Point(0, 0);
-            this.listLog.Name = "listLog";
-            this.listLog.Size = new System.Drawing.Size(338, 369);
-            this.listLog.TabIndex = 13;
-            this.listLog.UseCompatibleStateImageBehavior = false;
-            this.listLog.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Date";
-            this.columnHeader1.Width = 57;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Student Changed / Added";
-            this.columnHeader2.Width = 167;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Changed By";
-            this.columnHeader3.Width = 110;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.listClientIDs);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(338, 372);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Administrators";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // listClientIDs
-            // 
-            this.listClientIDs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listClientIDs.GridLines = true;
-            this.listClientIDs.Location = new System.Drawing.Point(0, 0);
-            this.listClientIDs.Name = "listClientIDs";
-            this.listClientIDs.Size = new System.Drawing.Size(338, 372);
-            this.listClientIDs.TabIndex = 14;
-            this.listClientIDs.UseCompatibleStateImageBehavior = false;
-            this.listClientIDs.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Client ID";
-            this.columnHeader4.Width = 67;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Full Name";
-            this.columnHeader5.Width = 155;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Changes Made";
-            this.columnHeader6.Width = 112;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.listView1);
-            this.tabPage3.Controls.Add(this.cmbThirdColumn);
-            this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(338, 372);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Students";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(338, 337);
-            this.listView1.TabIndex = 18;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Member #";
-            this.columnHeader7.Width = 67;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Full Name";
-            this.columnHeader8.Width = 155;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Changes Made";
-            this.columnHeader9.Width = 112;
-            // 
-            // cmbThirdColumn
-            // 
-            this.cmbThirdColumn.FormattingEnabled = true;
-            this.cmbThirdColumn.Items.AddRange(new object[] {
-            "Grade",
-            "State",
-            "Is Active",
-            "Has Fees",
-            "Year Joined",
-            "Email",
-            "School"});
-            this.cmbThirdColumn.Location = new System.Drawing.Point(151, 343);
-            this.cmbThirdColumn.Name = "cmbThirdColumn";
-            this.cmbThirdColumn.Size = new System.Drawing.Size(143, 21);
-            this.cmbThirdColumn.TabIndex = 17;
-            this.cmbThirdColumn.SelectedIndexChanged += new System.EventHandler(this.cmbThirdColumn_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(34, 342);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 18);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Third Column:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 265F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(300, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(2, 402);
-            this.label2.TabIndex = 0;
             // 
             // pnlStudent
             // 
@@ -1379,6 +1083,303 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // pnlHome
+            // 
+            this.pnlHome.Controls.Add(this.btnReportPreview);
+            this.pnlHome.Controls.Add(this.label6);
+            this.pnlHome.Controls.Add(this.label4);
+            this.pnlHome.Controls.Add(this.btnFullReport);
+            this.pnlHome.Controls.Add(this.txtEmailHome);
+            this.pnlHome.Controls.Add(this.btnPrinterSettingsHome);
+            this.pnlHome.Controls.Add(this.checkPrint);
+            this.pnlHome.Controls.Add(this.checkExport);
+            this.pnlHome.Controls.Add(this.checkEmail);
+            this.pnlHome.Controls.Add(this.label1);
+            this.pnlHome.Controls.Add(this.tabLogs);
+            this.pnlHome.Controls.Add(this.label2);
+            this.pnlHome.Location = new System.Drawing.Point(6, 19);
+            this.pnlHome.Name = "pnlHome";
+            this.pnlHome.Size = new System.Drawing.Size(659, 413);
+            this.pnlHome.TabIndex = 1;
+            // 
+            // btnReportPreview
+            // 
+            this.btnReportPreview.Image = global::FBLAdesktopApp3.Properties.Resources.printPreview_black;
+            this.btnReportPreview.Location = new System.Drawing.Point(225, 164);
+            this.btnReportPreview.Name = "btnReportPreview";
+            this.btnReportPreview.Size = new System.Drawing.Size(43, 28);
+            this.btnReportPreview.TabIndex = 14;
+            this.btnReportPreview.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 217);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Statistics";
+            // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Location = new System.Drawing.Point(10, 207);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(286, 2);
+            this.label4.TabIndex = 12;
+            // 
+            // btnFullReport
+            // 
+            this.btnFullReport.Enabled = false;
+            this.btnFullReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFullReport.Location = new System.Drawing.Point(42, 164);
+            this.btnFullReport.Name = "btnFullReport";
+            this.btnFullReport.Size = new System.Drawing.Size(163, 28);
+            this.btnFullReport.TabIndex = 11;
+            this.btnFullReport.Text = "Send Report";
+            this.btnFullReport.UseVisualStyleBackColor = true;
+            // 
+            // txtEmailHome
+            // 
+            this.txtEmailHome.Enabled = false;
+            this.txtEmailHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailHome.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtEmailHome.Location = new System.Drawing.Point(142, 42);
+            this.txtEmailHome.Name = "txtEmailHome";
+            this.txtEmailHome.Size = new System.Drawing.Size(126, 23);
+            this.txtEmailHome.TabIndex = 10;
+            this.txtEmailHome.Text = "Email";
+            this.txtEmailHome.Enter += new System.EventHandler(this.txtEmailHome_Enter);
+            this.txtEmailHome.Leave += new System.EventHandler(this.txtEmailHome_Leave);
+            // 
+            // btnPrinterSettingsHome
+            // 
+            this.btnPrinterSettingsHome.Enabled = false;
+            this.btnPrinterSettingsHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrinterSettingsHome.Location = new System.Drawing.Point(143, 123);
+            this.btnPrinterSettingsHome.Name = "btnPrinterSettingsHome";
+            this.btnPrinterSettingsHome.Size = new System.Drawing.Size(125, 21);
+            this.btnPrinterSettingsHome.TabIndex = 9;
+            this.btnPrinterSettingsHome.Text = "Printer Settings";
+            this.btnPrinterSettingsHome.UseVisualStyleBackColor = true;
+            // 
+            // checkPrint
+            // 
+            this.checkPrint.AutoSize = true;
+            this.checkPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkPrint.Location = new System.Drawing.Point(12, 123);
+            this.checkPrint.Name = "checkPrint";
+            this.checkPrint.Size = new System.Drawing.Size(56, 21);
+            this.checkPrint.TabIndex = 8;
+            this.checkPrint.Text = "Print";
+            this.checkPrint.UseVisualStyleBackColor = true;
+            this.checkPrint.CheckedChanged += new System.EventHandler(this.checkPrint_CheckedChanged);
+            // 
+            // checkExport
+            // 
+            this.checkExport.AutoSize = true;
+            this.checkExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkExport.Location = new System.Drawing.Point(12, 82);
+            this.checkExport.Name = "checkExport";
+            this.checkExport.Size = new System.Drawing.Size(110, 21);
+            this.checkExport.TabIndex = 7;
+            this.checkExport.Text = "Export as .xls";
+            this.checkExport.UseVisualStyleBackColor = true;
+            this.checkExport.CheckedChanged += new System.EventHandler(this.checkExport_CheckedChanged);
+            // 
+            // checkEmail
+            // 
+            this.checkEmail.AutoSize = true;
+            this.checkEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEmail.Location = new System.Drawing.Point(12, 44);
+            this.checkEmail.Name = "checkEmail";
+            this.checkEmail.Size = new System.Drawing.Size(61, 21);
+            this.checkEmail.TabIndex = 6;
+            this.checkEmail.Text = "Email";
+            this.checkEmail.UseVisualStyleBackColor = true;
+            this.checkEmail.CheckedChanged += new System.EventHandler(this.checkEmail_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Full Report";
+            // 
+            // tabLogs
+            // 
+            this.tabLogs.Controls.Add(this.tabPage1);
+            this.tabLogs.Controls.Add(this.tabPage2);
+            this.tabLogs.Controls.Add(this.tabPage3);
+            this.tabLogs.Location = new System.Drawing.Point(308, 7);
+            this.tabLogs.Name = "tabLogs";
+            this.tabLogs.SelectedIndex = 0;
+            this.tabLogs.Size = new System.Drawing.Size(346, 398);
+            this.tabLogs.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.listLog);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(338, 372);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Log";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // listLog
+            // 
+            this.listLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listLog.GridLines = true;
+            this.listLog.HideSelection = false;
+            this.listLog.Location = new System.Drawing.Point(0, 0);
+            this.listLog.Name = "listLog";
+            this.listLog.Size = new System.Drawing.Size(338, 369);
+            this.listLog.TabIndex = 13;
+            this.listLog.UseCompatibleStateImageBehavior = false;
+            this.listLog.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Date";
+            this.columnHeader1.Width = 57;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Student Changed / Added";
+            this.columnHeader2.Width = 167;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Changed By";
+            this.columnHeader3.Width = 110;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.listClientIDs);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(338, 372);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Administrators";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // listClientIDs
+            // 
+            this.listClientIDs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.listClientIDs.GridLines = true;
+            this.listClientIDs.Location = new System.Drawing.Point(0, 0);
+            this.listClientIDs.Name = "listClientIDs";
+            this.listClientIDs.Size = new System.Drawing.Size(338, 372);
+            this.listClientIDs.TabIndex = 14;
+            this.listClientIDs.UseCompatibleStateImageBehavior = false;
+            this.listClientIDs.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Client ID";
+            this.columnHeader4.Width = 67;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Full Name";
+            this.columnHeader5.Width = 155;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Changes Made";
+            this.columnHeader6.Width = 112;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.listView1);
+            this.tabPage3.Controls.Add(this.cmbThirdColumn);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(338, 372);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Students";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9});
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(338, 337);
+            this.listView1.TabIndex = 18;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Member #";
+            this.columnHeader7.Width = 67;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Full Name";
+            this.columnHeader8.Width = 155;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Changes Made";
+            this.columnHeader9.Width = 112;
+            // 
+            // cmbThirdColumn
+            // 
+            this.cmbThirdColumn.FormattingEnabled = true;
+            this.cmbThirdColumn.Items.AddRange(new object[] {
+            "Grade",
+            "State",
+            "Is Active",
+            "Has Fees",
+            "Year Joined",
+            "Email",
+            "School"});
+            this.cmbThirdColumn.Location = new System.Drawing.Point(151, 343);
+            this.cmbThirdColumn.Name = "cmbThirdColumn";
+            this.cmbThirdColumn.Size = new System.Drawing.Size(143, 21);
+            this.cmbThirdColumn.TabIndex = 17;
+            this.cmbThirdColumn.SelectedIndexChanged += new System.EventHandler(this.cmbThirdColumn_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(34, 342);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 18);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Third Column:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 265F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(300, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(2, 402);
+            this.label2.TabIndex = 0;
+            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -1412,13 +1413,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.gbStudent.ResumeLayout(false);
-            this.pnlHome.ResumeLayout(false);
-            this.pnlHome.PerformLayout();
-            this.tabLogs.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.pnlStudent.ResumeLayout(false);
             this.pnlStudent.PerformLayout();
             this.gbGrade.ResumeLayout(false);
@@ -1430,6 +1424,13 @@
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlHome.ResumeLayout(false);
+            this.pnlHome.PerformLayout();
+            this.tabLogs.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

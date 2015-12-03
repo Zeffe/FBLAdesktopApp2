@@ -43,6 +43,47 @@ namespace FBLAdesktopApp3
 
         // ********************** User Declared Functions **********************
 
+
+        void clearAll()
+        {
+            if (newForm && btnSave.Enabled && MessageBox.Show("Are you sure that you want to discard any unsaved data?", "New Form", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                txtFirstName.Text = ""; txtLastName.Text = ""; txtMI.Text = ""; cmbState.Text = "MO"; txtSchool.Text = ""; txtEmail.Text = ""; gbStudent.Text = "";
+                txtComment.Text = ""; txtOwed.Text = "$0.00"; txtJoined.Text = now.Year.ToString(); txtMemberNum.Text = ""; rbGrade9.Checked = true; rbMale.Checked = true; rbActive.Checked = true;
+                this.Text = "FBLA";
+            } else if (!newForm && MessageBox.Show("Are you sure that you want to clear ALL information?", "Clear All", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                txtFirstName.Text = ""; txtLastName.Text = ""; txtMI.Text = ""; cmbState.Text = "MO"; txtSchool.Text = ""; txtEmail.Text = ""; gbStudent.Text = "";
+                txtComment.Text = ""; txtOwed.Text = "$0.00"; txtJoined.Text = now.Year.ToString(); txtMemberNum.Text = ""; rbGrade9.Checked = true; rbMale.Checked = true; rbActive.Checked = true;
+                this.Text = "FBLA";
+            } else
+            {
+                txtFirstName.Text = ""; txtLastName.Text = ""; txtMI.Text = ""; cmbState.Text = "MO"; txtSchool.Text = ""; txtEmail.Text = ""; gbStudent.Text = "";
+                txtComment.Text = ""; txtOwed.Text = "$0.00"; txtJoined.Text = now.Year.ToString(); txtMemberNum.Text = ""; rbGrade9.Checked = true; rbMale.Checked = true; rbActive.Checked = true;
+                this.Text = "FBLA";
+            }
+        }
+
+        void save()
+        {
+            if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
+            {
+                checkMemNum();
+                String sex, grade, active;
+                if (rbMale.Checked) sex = "1"; else sex = "2";
+                if (rbGrade9.Checked) grade = "1"; else if (rbGrade10.Checked) grade = "2"; else if (rbGrade11.Checked) grade = "3"; else if (rbGrade12.Checked) grade = "4"; else grade = "5";
+                if (rbActive.Checked) active = "1"; else active = "2";
+                specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
+                File.AppendAllText(specificFolder, "\r\n" + txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
+                readToArray();
+                studentLog();
+            }
+            else
+            {
+                MessageBox.Show("Please ensure all non-optional entries are filled", "Error: Empty Entry");
+            }
+        }
+
         void toolStripButtons(bool x) //Faster way to enable and disable toolstrip buttons
         {
             btnHome.Enabled = x;
@@ -375,13 +416,14 @@ namespace FBLAdesktopApp3
             this.Text = "FBLA";
             mbtnClearAll.Enabled = true;
             mbtnPrintPreview.Enabled = true;
-            mbtnSave.Enabled = false;
-            btnSave.Enabled = false;
             btnClear.Enabled = true;
             btnPrint.Enabled = true;
             btnPrintDialog.Enabled = true;
             btnPrintPreview.Enabled = true;
             newForm = true;
+            clearAll();
+            btnSave.Enabled = false;
+            mbtnSave.Enabled = false;
             gbStudent.Text = txtFirstName.Text + " " + txtLastName.Text;
             pnlStudent.BringToFront();
         }
@@ -393,13 +435,14 @@ namespace FBLAdesktopApp3
             this.Text = "FBLA";
             mbtnClearAll.Enabled = true;
             mbtnPrintPreview.Enabled = true;
-            mbtnSave.Enabled = false;
-            btnSave.Enabled = false;
             btnClear.Enabled = true;
             btnPrint.Enabled = true;
             btnPrintDialog.Enabled = true;
             btnPrintPreview.Enabled = true;
             newForm = true;
+            clearAll();
+            btnSave.Enabled = false;
+            mbtnSave.Enabled = false;
             gbStudent.Text = txtFirstName.Text + " " + txtLastName.Text;
             pnlStudent.BringToFront();
         }
@@ -459,22 +502,12 @@ namespace FBLAdesktopApp3
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure that you want to clear ALL information?", "Clear All", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-            {
-                txtFirstName.Text = ""; txtLastName.Text = ""; txtMI.Text = ""; cmbState.Text = "MO"; txtSchool.Text = ""; txtEmail.Text = ""; gbStudent.Text = "";
-                txtComment.Text = ""; txtOwed.Text = "$0.00"; txtJoined.Text = now.Year.ToString(); txtMemberNum.Text = ""; rbGrade9.Checked = true; rbMale.Checked = true; rbActive.Checked = true;
-                this.Text = "FBLA";
-            }
+            clearAll();
         }
 
         private void mbtnClearAll_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure that you want to clear ALL information?", "Clear All", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-            {
-                txtFirstName.Text = ""; txtLastName.Text = ""; txtMI.Text = ""; cmbState.Text = "MO"; txtSchool.Text = ""; txtEmail.Text = ""; gbStudent.Text = "";
-                txtComment.Text = ""; txtOwed.Text = "$0.00"; txtJoined.Text = now.Year.ToString(); txtMemberNum.Text = ""; rbGrade9.Checked = true; rbMale.Checked = true; rbActive.Checked = true;
-                this.Text = "FBLA";
-            }
+            clearAll();
         }
         //*************************************************************************************************************  
 
@@ -586,21 +619,12 @@ namespace FBLAdesktopApp3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
-            {
-                checkMemNum();
-                String sex, grade, active;
-                if (rbMale.Checked) sex = "1"; else sex = "2";
-                if (rbGrade9.Checked) grade = "1"; else if (rbGrade10.Checked) grade = "2"; else if (rbGrade11.Checked) grade = "3"; else if (rbGrade12.Checked) grade = "4"; else grade = "5";
-                if (rbActive.Checked) active = "1"; else active = "2";
-                specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
-                File.AppendAllText(specificFolder , "\r\n" + txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
-                readToArray();
-                studentLog();
-            } else
-            {
-                MessageBox.Show("Please ensure all non-optional entries are filled", "Error: Empty Entry");
-            }
+            save();
+        }
+
+        private void mbtnSave_Click(object sender, EventArgs e)
+        {
+            save();
         }
 
         private void cmbThirdColumn_SelectedIndexChanged(object sender, EventArgs e)
@@ -652,6 +676,8 @@ namespace FBLAdesktopApp3
                 if (student[i, search].Contains(txtSearch.Text))
                 {
                     viewForm(i);
+                    btnSave.Enabled = false;
+                    mbtnSave.Enabled = false;
                     break;
                 } else if (i == count-1)
                 {
