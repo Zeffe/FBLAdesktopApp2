@@ -25,7 +25,7 @@ namespace FBLAdesktopApp3
         StreamReader _textStreamReader2;
 
 
-// ************* Variable and array initialization *************
+        // ************* Variable and array initialization *************
         String feeStr;
         int search, count, loginCount, account;
         Double feeDbl;
@@ -62,6 +62,21 @@ namespace FBLAdesktopApp3
             mbtnHome.Enabled = x;
             mbtnAccountDetails.Enabled = x;
             mbtnProgramSettings.Enabled = x;
+        }
+
+        void checkMemNum()
+        {
+            int num;
+            Int32.TryParse(txtMemberNum.Text, out num);
+            for (int i = 0; i < count; i++)
+            {
+
+                if (student[i, 0] == txtMemberNum.Text || num == 0)
+                {
+                    MessageBox.Show("Invalid Member Number: Already in use or invalid integer", "Member# Error");
+                    break;
+                }
+            }
         }
 
         void viewForm(int studentNum)
@@ -111,6 +126,46 @@ namespace FBLAdesktopApp3
                 ListViewItem new_item = listClientIDs.Items.Add(logins[i, 0]);
                 new_item.SubItems.Add(logins[i, 2]);
                 new_item.SubItems.Add(logins[i, 3]);
+            }
+        }
+
+        void readToArray()
+        {
+            try
+            {
+                _assembly = Assembly.GetExecutingAssembly();
+                _textStreamReader = File.OpenText("C:/FBLAapplication/students.txt");
+                _textStreamReader2 = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.logins.txt"));
+                string str;
+                count = 0;
+                loginCount = 0;
+                while ((str = _textStreamReader2.ReadLine()) != null)
+                {
+                    lines2[loginCount] = str;
+                    temp2 = lines2[loginCount].Split('\\');
+                    for (int i = 0; i < 4; i++)
+                    {
+                        logins[loginCount, i] = temp2[i];
+                    }
+                    loginCount++;
+                }
+                while ((str = _textStreamReader.ReadLine()) != null)
+                {
+                    lines[count] = str;
+                    temp2 = lines[count].Split('\\');
+                    for (int i = 0; i < 13; i++)
+                    {
+                        student[count, i] = temp2[i];
+                        // student[#, 0 = member #, 1 = firstName, 2 = MI, 3 = State, 4 = lastName, 5 = Sex, 6 = grade
+                        //          7 = Active, 8 = School, 9 = Email, 10 = fees, 11 = year joined, 12 = Comments]
+                    }
+                    count++;
+                }
+                _textStreamReader.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Error accessing resources!");
             }
         }
 
@@ -169,43 +224,11 @@ namespace FBLAdesktopApp3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // **** Access Temporary Text File Storage and Write Each Line to lines array ****
-            try
+            if (!File.Exists("c:\\FBLAapplication"))
             {
-                _assembly = Assembly.GetExecutingAssembly();
-                _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.tempStorage.txt"));
-                _textStreamReader2 = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.logins.txt"));
-                string str;
-                count = 0;
-                loginCount = 0;
-                while ((str = _textStreamReader2.ReadLine()) != null)
-                {
-                    lines2[loginCount] = str;
-                    temp2 = lines2[loginCount].Split('\\');
-                    for (int i = 0; i < 4; i++)
-                    {
-                        logins[loginCount, i] = temp2[i];
-                    }
-                    loginCount++;
-                }
-                while ((str = _textStreamReader.ReadLine()) != null)
-                {
-                    lines[count] = str;
-                    temp2 = lines[count].Split('\\');
-                    for (int i = 0; i < 13; i++)
-                    {
-                        student[count, i] = temp2[i];
-                        // student[#, 0 = member #, 1 = firstName, 2 = MI, 3 = State, 4 = lastName, 5 = Sex, 6 = grade
-                        //          7 = Active, 8 = School, 9 = Email, 10 = fees, 11 = year joined, 12 = Comments]
-                    }
-                    count++;
-                }
+                Directory.CreateDirectory("c:\\FBLAapplication");
             }
-            catch
-            {
-                MessageBox.Show("Error accessing resources!");
-            }
-            // *******************************************************************************
+            readToArray();
             studentLog();
             adminLog();
             feeDbl = 0.00;
@@ -555,6 +578,24 @@ namespace FBLAdesktopApp3
         private void checkExport_CheckedChanged(object sender, EventArgs e)
         {
             fullReport();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
+            {
+                checkMemNum();
+                String sex, grade, active;
+                if (rbMale.Checked) sex = "1"; else sex = "2";
+                if (rbGrade9.Checked) grade = "1"; else if (rbGrade10.Checked) grade = "2"; else if (rbGrade11.Checked) grade = "3"; else if (rbGrade12.Checked) grade = "4"; else grade = "5";
+                if (rbActive.Checked) active = "1"; else active = "2";
+                File.AppendAllText("C:/FBLAapplication/students.txt" , "\r\n" + txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
+                readToArray();
+                studentLog();
+            } else
+            {
+                MessageBox.Show("Please ensure all non-optional entries are filled", "Error: Empty Entry");
+            }
         }
 
         private void cmbThirdColumn_SelectedIndexChanged(object sender, EventArgs e)

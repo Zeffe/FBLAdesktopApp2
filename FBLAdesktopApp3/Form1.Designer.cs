@@ -454,6 +454,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(23, 22);
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // toolStripSeparator1
             // 
@@ -601,9 +602,9 @@
             // 
             // gbStudent
             // 
-            this.gbStudent.Controls.Add(this.pnlHome);
             this.gbStudent.Controls.Add(this.pnlStudent);
             this.gbStudent.Controls.Add(this.pnlLogin);
+            this.gbStudent.Controls.Add(this.pnlHome);
             this.gbStudent.Location = new System.Drawing.Point(12, 52);
             this.gbStudent.Name = "gbStudent";
             this.gbStudent.Size = new System.Drawing.Size(671, 438);

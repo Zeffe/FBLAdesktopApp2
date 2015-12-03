@@ -1,2 +1,0 @@
-Member#\firstName\MI\State\lastName\2\3\2\School\Email\fees\yearJoined\Comment
-1234\Seth\D\MO\Dixon\1\2\1\Carthage High School\Zeffer5789@gmail.com\$0.00\2014\Pretty cool guy
