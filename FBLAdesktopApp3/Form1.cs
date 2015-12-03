@@ -36,7 +36,7 @@ namespace FBLAdesktopApp3
         String[,] student = new String[50, 13];
         String[,] logins = new String[50, 4];
         DateTime now = DateTime.Now;
-        bool newForm;
+        bool newForm, gradeview;
         // *************************************************************
 
         // ********************** User Declared Functions **********************
@@ -103,6 +103,41 @@ namespace FBLAdesktopApp3
             }
         }
 
+        void studentLog()
+        {
+            listView1.Items.Clear();
+            for (int i = 0; i < count; i++)
+            {
+                ListViewItem new_item = listView1.Items.Add(student[i, 0]);
+                new_item.SubItems.Add(student[i, 1] + " " + student[i, 4]);
+                switch (cmbThirdColumn.SelectedIndex)
+                {
+                    case 0: 
+                        switch(student[i, 6])
+                        {
+                            case "1": new_item.SubItems.Add("9"); break;
+                            case "2": new_item.SubItems.Add("10"); break;
+                            case "3": new_item.SubItems.Add("11"); break;
+                            case "4": new_item.SubItems.Add("12"); break;
+                            case "5": new_item.SubItems.Add("13+"); break;
+                        }
+                        break;
+                    case 1: new_item.SubItems.Add(student[i, 3]); break;
+                    case 2:
+                        if (student[i, 7] == "1") new_item.SubItems.Add("Yes");
+                        if (student[i, 7] == "2") new_item.SubItems.Add("No");
+                        break;
+                    case 3:
+                        if (student[i, 10] != "$0.00") new_item.SubItems.Add("Yes");
+                        if (student[i, 10] == "$0.00") new_item.SubItems.Add("No");
+                        break;
+                    case 4: new_item.SubItems.Add(student[i, 11]); break;
+                    case 5: new_item.SubItems.Add(student[i, 9]); break;
+                    case 6: new_item.SubItems.Add(student[i, 8]); break;
+                }
+            }
+        }
+
         void newFormTitle()
         { //Changes the name of the group box to the students name when working with new student forms
             if (!gbStudent.Text.Contains(txtFirstName.Text + " " + txtLastName.Text))
@@ -160,6 +195,7 @@ namespace FBLAdesktopApp3
                 MessageBox.Show("Error accessing resources!");
             }
             // *******************************************************************************
+            studentLog();
             feeDbl = 0.00;
             ttOptional.SetToolTip(lblMI, "Optional");
             ttOptional.SetToolTip(lblComment, "Optional");
@@ -512,6 +548,7 @@ namespace FBLAdesktopApp3
         private void cmbThirdColumn_SelectedIndexChanged(object sender, EventArgs e)
         {
             columnHeader9.Text = cmbThirdColumn.Text;
+            studentLog();
         }
 
         private void button1_Click(object sender, EventArgs e)
