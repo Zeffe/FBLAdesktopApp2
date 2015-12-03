@@ -28,6 +28,8 @@ namespace FBLAdesktopApp3
         // ************* Variable and array initialization *************
         String feeStr;
         int search, count, loginCount, account;
+        string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        string specificFolder;
         Double feeDbl;
         String[] temp = new String[10];
         String[] temp2 = new String[20];
@@ -134,7 +136,8 @@ namespace FBLAdesktopApp3
             try
             {
                 _assembly = Assembly.GetExecutingAssembly();
-                _textStreamReader = File.OpenText("C:/FBLAapplication/students.txt");
+                specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
+                _textStreamReader = File.OpenText(specificFolder);
                 _textStreamReader2 = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.logins.txt"));
                 string str;
                 count = 0;
@@ -224,9 +227,10 @@ namespace FBLAdesktopApp3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (!File.Exists("c:\\FBLAapplication"))
+            specificFolder = Path.Combine(folder, "FBLAapplication");
+            if (!File.Exists(specificFolder))
             {
-                Directory.CreateDirectory("c:\\FBLAapplication");
+                Directory.CreateDirectory(specificFolder);
             }
             readToArray();
             studentLog();
@@ -589,7 +593,8 @@ namespace FBLAdesktopApp3
                 if (rbMale.Checked) sex = "1"; else sex = "2";
                 if (rbGrade9.Checked) grade = "1"; else if (rbGrade10.Checked) grade = "2"; else if (rbGrade11.Checked) grade = "3"; else if (rbGrade12.Checked) grade = "4"; else grade = "5";
                 if (rbActive.Checked) active = "1"; else active = "2";
-                File.AppendAllText("C:/FBLAapplication/students.txt" , "\r\n" + txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
+                specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
+                File.AppendAllText(specificFolder , "\r\n" + txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
                 readToArray();
                 studentLog();
             } else
