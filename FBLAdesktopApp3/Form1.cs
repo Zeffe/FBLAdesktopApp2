@@ -43,7 +43,7 @@ namespace FBLAdesktopApp3
 
         // ********************** User Declared Functions **********************
 
-
+        // Function called to clear all data on the pnlStudent, called when new button is hit and when clear button is hit
         void clearAll()
         {
             if (newForm && btnSave.Enabled && MessageBox.Show("Are you sure that you want to discard any unsaved data?", "New Form", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -64,6 +64,7 @@ namespace FBLAdesktopApp3
             }
         }
 
+        // Function called when writing data from pnlStudent to text file
         void save()
         {
             specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
@@ -91,6 +92,7 @@ namespace FBLAdesktopApp3
             }
         }
 
+        // Function called when searching the array students for words from the txtSearch textbox
         void searchFunc()
         {
             switch (cmbSearchBy.SelectedIndex)
@@ -120,6 +122,7 @@ namespace FBLAdesktopApp3
             }
         }
 
+        // Function called to update statistics, variables come from studentLog function
         void stats()
         {
             lblStudent.Text = "Total Students: " + count.ToString();
@@ -136,7 +139,8 @@ namespace FBLAdesktopApp3
             }
         }
 
-        void toolStripButtons(bool x) //Faster way to enable and disable toolstrip buttons
+        //Faster way to enable and disable toolstrip buttons
+        void toolStripButtons(bool x) 
         {
             btnHome.Enabled = x;
             btnNew.Enabled = x;
@@ -159,6 +163,7 @@ namespace FBLAdesktopApp3
             mbtnProgramSettings.Enabled = x;
         }
 
+        // Function called when saving new form to ensure no member # duplicates or errors
         void checkMemNum()
         {
             int num;
@@ -174,6 +179,7 @@ namespace FBLAdesktopApp3
             }
         }
 
+        // Function called to load data from studentNum onto pnlStudent, and bring pnlStudent to front.
         void viewForm(int studentNum)
         {
             pnlStudent.BringToFront();
@@ -201,6 +207,7 @@ namespace FBLAdesktopApp3
             }
         }
 
+        // Enables the textboxes and things to coinside with the checkboxes for full report.
         void fullReport()
         {
             if (checkEmail.Checked || checkExport.Checked || checkPrint.Checked)
@@ -213,6 +220,7 @@ namespace FBLAdesktopApp3
             }
         }
 
+        // Writes the logins array into the Administrators tab on home page.
         void adminLog()
         {
             listClientIDs.Items.Clear();
@@ -224,6 +232,7 @@ namespace FBLAdesktopApp3
             }
         }
 
+        // Reads information from loginstxt and students.txt into their respective arrays.
         void readToArray()
         {
             try
@@ -235,6 +244,7 @@ namespace FBLAdesktopApp3
                 string str;
                 count = 0;
                 loginCount = 0;
+                // Reading to login array.
                 while ((str = _textStreamReader2.ReadLine()) != null)
                 {
                     lines2[loginCount] = str;
@@ -242,9 +252,12 @@ namespace FBLAdesktopApp3
                     for (int i = 0; i < 4; i++)
                     {
                         logins[loginCount, i] = temp2[i];
+                        // logins[#, 0 = username, 1 = password, 2 = full name, 3 = changes made]
                     }
+                    // loginCount represents the amount of lines in logins.txt, used to get an amount of administrators
                     loginCount++;
                 }
+                // Reading to student array.
                 while ((str = _textStreamReader.ReadLine()) != null)
                 {
                     lines[count] = str;
@@ -255,6 +268,7 @@ namespace FBLAdesktopApp3
                         // student[#, 0 = member #, 1 = firstName, 2 = MI, 3 = State, 4 = lastName, 5 = Sex, 6 = grade
                         //          7 = Active, 8 = School, 9 = Email, 10 = fees, 11 = year joined, 12 = Comments]
                     }
+                    // Count represents the amount of users gone through, can be used as amount of students in logs
                     count++;
                 }
                 _textStreamReader.Close();
@@ -265,15 +279,18 @@ namespace FBLAdesktopApp3
             }
         }
 
+        // Writes the student array to the log on home page
         void studentLog()
         {
             listView1.Items.Clear();
+            // Setting the variables for statistics to 0 so they can be rewritten.
             active = 0;
             hasFees = 0;
             for (int i = 0; i < count; i++)
             {
                 ListViewItem new_item = listView1.Items.Add(student[i, 0]);
                 new_item.SubItems.Add(student[i, 1] + " " + student[i, 4]);
+                // Getting the values for statistics.
                 if (student[i, 7] == "1") active++;
                 if (student[i, 10] != "$0.00") hasFees++;
                 switch (student[i, 6])
@@ -284,6 +301,8 @@ namespace FBLAdesktopApp3
                     case "4": g12++; break; 
                     case "5": g13++; break;
                 }
+                // Determining based on cmbThirdColumn what data member to display in third column.
+                // Occurs when cmbThirdColumn is changed.
                 switch (cmbThirdColumn.SelectedIndex)
                 {
                     case 0: 
@@ -310,11 +329,13 @@ namespace FBLAdesktopApp3
                     case 6: new_item.SubItems.Add(student[i, 8]); break;
                 }
             }
+            // Update the statistic labels.
             stats();
         }
 
+        //Changes the name of the group box to the students name when working with new student forms.
         void newFormTitle()
-        { //Changes the name of the group box to the students name when working with new student forms
+        { 
             if (!gbStudent.Text.Contains(txtFirstName.Text + " " + txtLastName.Text))
             {
                 gbStudent.Text = txtFirstName.Text + " " + txtLastName.Text;
@@ -330,19 +351,23 @@ namespace FBLAdesktopApp3
 
         // *********************************************************************
 
-
+            // FORM1_LOAD
         private void Form1_Load(object sender, EventArgs e)
         {
+            // If the %appdata% file does not exist, create it.
             specificFolder = Path.Combine(folder, "FBLAapplication");
             if (!File.Exists(specificFolder))
             {
                 Directory.CreateDirectory(specificFolder);
             }
+            // If students.txt does not exist, create it.
             if (!File.Exists(specificFolder + "/students.txt"))
             {
                 File.Create(specificFolder + "/students.txt").Dispose();
             }
+            // Read students.txt to students array.
             readToArray();
+            // Update student and admin log.
             studentLog();
             adminLog();
             feeDbl = 0.00;
@@ -666,6 +691,7 @@ namespace FBLAdesktopApp3
 
         private void lblGrades_Click(object sender, EventArgs e)
         {
+            // When clicking lblGrades, cycle through the grade values.
             if (grade == 4)
             {
                 grade = 0;
@@ -717,7 +743,9 @@ namespace FBLAdesktopApp3
 
         private void listView1_ItemActivate(object sender, EventArgs e)
         {
+            // Searches for a log item when double clicked.
             string stri = listView1.FocusedItem.ToString();
+            // Removes extra characters to get value to be searched.
             stri = stri.Trim( new Char[] {'L','i', 's', 't', 'V', 'i', 'e', 'w', 'I', 't', ' ', 'm', ':', '{', '}' } );
             cmbSearchBy.SelectedIndex = 3;
             txtSearch.Text = stri;
@@ -728,26 +756,6 @@ namespace FBLAdesktopApp3
         {
             columnHeader9.Text = cmbThirdColumn.Text;
             studentLog();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                _assembly = Assembly.GetExecutingAssembly();
-                _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.temp.txt"));
-                string str;
-                int count = 0;
-                while ((str = _textStreamReader.ReadLine()) != null)
-                {
-                    lines[count] = str;
-                    count++;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Error accessing resources!");
-            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
