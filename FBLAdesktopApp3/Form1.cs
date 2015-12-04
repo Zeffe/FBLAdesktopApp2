@@ -91,6 +91,35 @@ namespace FBLAdesktopApp3
             }
         }
 
+        void searchFunc()
+        {
+            switch (cmbSearchBy.SelectedIndex)
+            {
+                case 0: search = 4; break;
+                case 1: search = 1; break;
+                case 2: search = 11; break;
+                case 3: search = 0; break;
+                case 4: search = 9; break;
+                case 5: search = 8; break;
+            }
+
+            // Search the given searchby argument in all students
+            for (int i = 0; i < count; i++)
+            {
+                if (student[i, search].Contains(txtSearch.Text))
+                {
+                    viewForm(i);
+                    btnSave.Enabled = false;
+                    mbtnSave.Enabled = false;
+                    break;
+                }
+                else if (i == count - 1)
+                {
+                    MessageBox.Show("Could not find any data matching your requested search", "Error");
+                }
+            }
+        }
+
         void toolStripButtons(bool x) //Faster way to enable and disable toolstrip buttons
         {
             btnHome.Enabled = x;
@@ -638,6 +667,15 @@ namespace FBLAdesktopApp3
             save();
         }
 
+        private void listView1_ItemActivate(object sender, EventArgs e)
+        {
+            string stri = listView1.FocusedItem.ToString();
+            stri = stri.Trim( new Char[] {'L','i', 's', 't', 'V', 'i', 'e', 'w', 'I', 't', ' ', 'm', ':', '{', '}' } );
+            cmbSearchBy.SelectedIndex = 3;
+            txtSearch.Text = stri;
+            searchFunc();
+        }
+
         private void cmbThirdColumn_SelectedIndexChanged(object sender, EventArgs e)
         {
             columnHeader9.Text = cmbThirdColumn.Text;
@@ -671,30 +709,7 @@ namespace FBLAdesktopApp3
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            switch (cmbSearchBy.SelectedIndex)
-            {
-                case 0: search = 4; break;
-                case 1: search = 1; break;
-                case 2: search = 11; break;
-                case 3: search = 0; break;
-                case 4: search = 9; break;
-                case 5: search = 8; break;
-            }
-
-            // Search the given searchby argument in all students
-            for (int i = 0; i < count; i++)
-            {
-                if (student[i, search].Contains(txtSearch.Text))
-                {
-                    viewForm(i);
-                    btnSave.Enabled = false;
-                    mbtnSave.Enabled = false;
-                    break;
-                } else if (i == count-1)
-                {
-                    MessageBox.Show("Could not find any data matching your requested search", "Error");
-                }
-            }
+            searchFunc();
 
         }
         // ***************************************************************
