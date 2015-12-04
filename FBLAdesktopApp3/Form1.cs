@@ -286,6 +286,7 @@ namespace FBLAdesktopApp3
             // Setting the variables for statistics to 0 so they can be rewritten.
             active = 0;
             hasFees = 0;
+            g9 = 0; g10 = 0; g11 = 0; g12 = 0; g13 = 0;
             for (int i = 0; i < count; i++)
             {
                 ListViewItem new_item = listView1.Items.Add(student[i, 0]);
