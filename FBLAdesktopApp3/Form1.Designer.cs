@@ -154,6 +154,11 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.ttPrintPreview = new System.Windows.Forms.ToolTip(this.components);
+            this.lblStudent = new System.Windows.Forms.Label();
+            this.lblAdmins = new System.Windows.Forms.Label();
+            this.lblActive = new System.Windows.Forms.Label();
+            this.lblFees = new System.Windows.Forms.Label();
+            this.lblGrades = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.gbStudent.SuspendLayout();
@@ -615,6 +620,11 @@
             // 
             // pnlHome
             // 
+            this.pnlHome.Controls.Add(this.lblGrades);
+            this.pnlHome.Controls.Add(this.lblFees);
+            this.pnlHome.Controls.Add(this.lblActive);
+            this.pnlHome.Controls.Add(this.lblAdmins);
+            this.pnlHome.Controls.Add(this.lblStudent);
             this.pnlHome.Controls.Add(this.btnReportPreview);
             this.pnlHome.Controls.Add(this.label6);
             this.pnlHome.Controls.Add(this.label4);
@@ -1395,6 +1405,58 @@
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
+            // lblStudent
+            // 
+            this.lblStudent.AutoSize = true;
+            this.lblStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudent.Location = new System.Drawing.Point(26, 247);
+            this.lblStudent.Name = "lblStudent";
+            this.lblStudent.Size = new System.Drawing.Size(85, 17);
+            this.lblStudent.TabIndex = 15;
+            this.lblStudent.Text = "PlaceHolder";
+            // 
+            // lblAdmins
+            // 
+            this.lblAdmins.AutoSize = true;
+            this.lblAdmins.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdmins.Location = new System.Drawing.Point(26, 277);
+            this.lblAdmins.Name = "lblAdmins";
+            this.lblAdmins.Size = new System.Drawing.Size(85, 17);
+            this.lblAdmins.TabIndex = 16;
+            this.lblAdmins.Text = "PlaceHolder";
+            // 
+            // lblActive
+            // 
+            this.lblActive.AutoSize = true;
+            this.lblActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActive.Location = new System.Drawing.Point(26, 308);
+            this.lblActive.Name = "lblActive";
+            this.lblActive.Size = new System.Drawing.Size(85, 17);
+            this.lblActive.TabIndex = 17;
+            this.lblActive.Text = "PlaceHolder";
+            // 
+            // lblFees
+            // 
+            this.lblFees.AutoSize = true;
+            this.lblFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFees.Location = new System.Drawing.Point(26, 338);
+            this.lblFees.Name = "lblFees";
+            this.lblFees.Size = new System.Drawing.Size(85, 17);
+            this.lblFees.TabIndex = 18;
+            this.lblFees.Text = "PlaceHolder";
+            // 
+            // lblGrades
+            // 
+            this.lblGrades.AutoSize = true;
+            this.lblGrades.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrades.Location = new System.Drawing.Point(26, 368);
+            this.lblGrades.Name = "lblGrades";
+            this.lblGrades.Size = new System.Drawing.Size(85, 17);
+            this.lblGrades.TabIndex = 19;
+            this.lblGrades.Text = "PlaceHolder";
+            this.ttOptional.SetToolTip(this.lblGrades, "Click to cycle grades.");
+            this.lblGrades.Click += new System.EventHandler(this.lblGrades_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1562,6 +1624,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnReportPreview;
         private System.Windows.Forms.ToolTip ttPrintPreview;
+        private System.Windows.Forms.Label lblStudent;
+        private System.Windows.Forms.Label lblAdmins;
+        private System.Windows.Forms.Label lblActive;
+        private System.Windows.Forms.Label lblFees;
+        private System.Windows.Forms.Label lblGrades;
     }
 }
 

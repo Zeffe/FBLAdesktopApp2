@@ -27,7 +27,7 @@ namespace FBLAdesktopApp3
 
         // ************* Variable and array initialization *************
         String feeStr;
-        int search, count, loginCount, account;
+        int search, count, loginCount, account, active, hasFees, g9, g10, g11, g12, g13, grade;
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         string specificFolder;
         Double feeDbl;
@@ -117,6 +117,22 @@ namespace FBLAdesktopApp3
                 {
                     MessageBox.Show("Could not find any data matching your requested search", "Error");
                 }
+            }
+        }
+
+        void stats()
+        {
+            lblStudent.Text = "Total Students: " + count.ToString();
+            lblAdmins.Text = "Administrator Accounts: " + loginCount.ToString();
+            lblActive.Text = "Active Students: " + (active / 2).ToString();
+            lblFees.Text = "Students With Fees: " + hasFees.ToString();
+            switch (grade)
+            {
+                case 0: lblGrades.Text = "Freshmen: " + (g9/2).ToString(); break;
+                case 1: lblGrades.Text = "Sophomores: " + (g10 / 2).ToString(); break;
+                case 2: lblGrades.Text = "Juniors: " + (g11 / 2).ToString(); break;
+                case 3: lblGrades.Text = "Seniors: " + (g12 / 2).ToString(); break;
+                case 4: lblGrades.Text = "College Level: " + (g13 / 2).ToString(); break;
             }
         }
 
@@ -252,10 +268,22 @@ namespace FBLAdesktopApp3
         void studentLog()
         {
             listView1.Items.Clear();
+            active = 0;
+            hasFees = 0;
             for (int i = 0; i < count; i++)
             {
                 ListViewItem new_item = listView1.Items.Add(student[i, 0]);
                 new_item.SubItems.Add(student[i, 1] + " " + student[i, 4]);
+                if (student[i, 7] == "1") active++;
+                if (student[i, 10] != "$0.00") hasFees++;
+                switch (student[i, 6])
+                {
+                    case "1": g9++; break;
+                    case "2": g10++; break;
+                    case "3": g11++; break;
+                    case "4": g12++; break; 
+                    case "5": g13++; break;
+                }
                 switch (cmbThirdColumn.SelectedIndex)
                 {
                     case 0: 
@@ -282,6 +310,7 @@ namespace FBLAdesktopApp3
                     case 6: new_item.SubItems.Add(student[i, 8]); break;
                 }
             }
+            stats();
         }
 
         void newFormTitle()
@@ -326,6 +355,7 @@ namespace FBLAdesktopApp3
             pnlLogin.BringToFront();
             cmbThirdColumn.SelectedIndex = 0;
             columnHeader9.Text = cmbThirdColumn.Text;
+            stats();
         }
 
         // CREDITS PAGE
@@ -627,6 +657,24 @@ namespace FBLAdesktopApp3
         {
             //printStudent.Print(); ENABLE LATER
             MessageBox.Show("Works - Enable Printing Later");
+        }
+
+        private void cmbGrades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            stats();
+        }
+
+        private void lblGrades_Click(object sender, EventArgs e)
+        {
+            if (grade == 4)
+            {
+                grade = 0;
+            }
+            else
+            {
+                grade++;
+            }
+            stats();
         }
 
         private void mbtnPrint2_Click(object sender, EventArgs e)
