@@ -29,7 +29,7 @@ namespace FBLAdesktopApp3
         String feeStr;
         int search, count, loginCount, account, active, hasFees, g9, g10, g11, g12, g13, grade;
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        string specificFolder;
+        string specificFolder, logFolder, date;
         Double feeDbl;
         String[] temp = new String[10];
         String[] temp2 = new String[20];
@@ -68,6 +68,8 @@ namespace FBLAdesktopApp3
         void save()
         {
             specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
+            logFolder = Path.Combine(folder, "FBLAapplication/log.txt");
+            date = now.Month + "/" + now.Day;
             if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
             {
                 checkMemNum();
@@ -78,8 +80,10 @@ namespace FBLAdesktopApp3
                 if (student[0, 1] == null)
                 {
                     File.AppendAllText(specificFolder, txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
+                    File.AppendAllText(logFolder, date + "\\" + txtFirstName.Text + " " + txtLastName.Text + "\\" + logins[account, 0] + "\\" + txtMemberNum.Text + "\r\n");
                 } else
                 {
+                    File.AppendAllText(logFolder, date + "\\" + txtFirstName.Text + " " + txtLastName.Text + "\\" + logins[account, 0] + "\\" + txtMemberNum.Text + "\r\n");
                     File.AppendAllText(specificFolder, "\r\n" + txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
                 }
                 readToArray();
@@ -365,6 +369,11 @@ namespace FBLAdesktopApp3
             if (!File.Exists(specificFolder + "/students.txt"))
             {
                 File.Create(specificFolder + "/students.txt").Dispose();
+            }
+            // If log.txt does not exist, create it.
+            if (!File.Exists(specificFolder + "/log.txt"))
+            {
+                File.Create(specificFolder + "/log.txt").Dispose();
             }
             // Read students.txt to students array.
             readToArray();
@@ -673,6 +682,7 @@ namespace FBLAdesktopApp3
             printDialog1.Document = printDocument1;
             DialogResult result = printDialog1.ShowDialog();
         }
+
         // Document to be printed v
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
