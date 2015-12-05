@@ -23,20 +23,24 @@ namespace FBLAdesktopApp3
         Assembly _assembly;
         StreamReader _textStreamReader;
         StreamReader _textStreamReader2;
+        StreamReader _textStreamReader3;
 
 
         // ************* Variable and array initialization *************
         String feeStr;
-        int search, count, loginCount, account, active, hasFees, g9, g10, g11, g12, g13, grade;
+        int search, count, loginCount, logCount, account, active, hasFees, g9, g10, g11, g12, g13, grade;
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         string specificFolder, logFolder, date;
         Double feeDbl;
         String[] temp = new String[10];
         String[] temp2 = new String[20];
+        String[] temp3 = new String[20];
         String[] lines = new String[100];
         String[] lines2 = new String[100];
+        String[] lines3 = new String[100];
         String[,] student = new String[50, 13];
         String[,] logins = new String[50, 4];
+        String[,] log = new String[50, 4];
         DateTime now = DateTime.Now;
         bool newForm, gradeview;
         // *************************************************************
@@ -243,11 +247,24 @@ namespace FBLAdesktopApp3
             {
                 _assembly = Assembly.GetExecutingAssembly();
                 specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
+                logFolder = Path.Combine(folder, "FBLAapplication/log.txt");
                 _textStreamReader = File.OpenText(specificFolder);
                 _textStreamReader2 = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.logins.txt"));
+                _textStreamReader3 = File.OpenText(logFolder);
                 string str;
                 count = 0;
                 loginCount = 0;
+                logCount = 0;
+                while ((str = _textStreamReader3.ReadLine()) != null)
+                {
+                    lines3[logCount] = str;
+                    temp3 = lines3[loginCount].Split('\\');
+                    for (int i = 0; i < 4; i++)
+                    {
+                        log[logCount, i] = temp3[i];
+                    }
+                    logCount++;
+                }
                 // Reading to login array.
                 while ((str = _textStreamReader2.ReadLine()) != null)
                 {
@@ -276,10 +293,22 @@ namespace FBLAdesktopApp3
                     count++;
                 }
                 _textStreamReader.Close();
+                _textStreamReader3.Close();
             }
             catch
             {
                 MessageBox.Show("Error reading resources", "Error");
+            }
+        }
+
+        void logLog()
+        {
+            listLog.Items.Clear();
+            for (int i = 0; i < logCount; i++)
+            {
+                ListViewItem new_item = listLog.Items.Add(log[i, 0]);
+                new_item.SubItems.Add(log[i, 1]);
+                new_item.SubItems.Add(log[i, 2]);
             }
         }
 
@@ -380,6 +409,7 @@ namespace FBLAdesktopApp3
             // Update student and admin log.
             studentLog();
             adminLog();
+            logLog();
             feeDbl = 0.00;
             ttOptional.SetToolTip(lblMI, "Optional");
             ttOptional.SetToolTip(lblComment, "Optional");
