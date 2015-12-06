@@ -53,67 +53,19 @@
             this.mbtnPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnClearAll = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mbtnHome = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnAccountDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnProgramSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnHome = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnNew = new System.Windows.Forms.ToolStripButton();
-            this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnCut = new System.Windows.Forms.ToolStripButton();
-            this.btnCopy = new System.Windows.Forms.ToolStripButton();
-            this.btnPaste = new System.Windows.Forms.ToolStripButton();
-            this.btnUndo = new System.Windows.Forms.ToolStripButton();
-            this.btnClear = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnPrintPreview = new System.Windows.Forms.ToolStripButton();
-            this.btnPrintDialog = new System.Windows.Forms.ToolStripButton();
-            this.btnPrint = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.txtSearch = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.cmbSearchBy = new System.Windows.Forms.ToolStripComboBox();
-            this.btnSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.gbStudent = new System.Windows.Forms.GroupBox();
-            this.pnlHome = new System.Windows.Forms.Panel();
-            this.lblGrades = new System.Windows.Forms.Label();
-            this.lblFees = new System.Windows.Forms.Label();
-            this.lblActive = new System.Windows.Forms.Label();
-            this.lblAdmins = new System.Windows.Forms.Label();
-            this.lblStudent = new System.Windows.Forms.Label();
-            this.btnReportPreview = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnFullReport = new System.Windows.Forms.Button();
-            this.txtEmailHome = new System.Windows.Forms.TextBox();
-            this.btnPrinterSettingsHome = new System.Windows.Forms.Button();
-            this.checkPrint = new System.Windows.Forms.CheckBox();
-            this.checkExport = new System.Windows.Forms.CheckBox();
-            this.checkEmail = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabLogs = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listLog = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listClientIDs = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cmbThirdColumn = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlStudent = new System.Windows.Forms.Panel();
             this.lblOptional = new System.Windows.Forms.Label();
             this.lblComment = new System.Windows.Forms.Label();
@@ -154,24 +106,74 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlHome = new System.Windows.Forms.Panel();
+            this.lblGrades = new System.Windows.Forms.Label();
+            this.lblFees = new System.Windows.Forms.Label();
+            this.lblActive = new System.Windows.Forms.Label();
+            this.lblAdmins = new System.Windows.Forms.Label();
+            this.lblStudent = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnFullReport = new System.Windows.Forms.Button();
+            this.txtEmailHome = new System.Windows.Forms.TextBox();
+            this.btnPrinterSettingsHome = new System.Windows.Forms.Button();
+            this.checkPrint = new System.Windows.Forms.CheckBox();
+            this.checkExport = new System.Windows.Forms.CheckBox();
+            this.checkEmail = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabLogs = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listLog = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listClientIDs = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmbThirdColumn = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.ttOptional = new System.Windows.Forms.ToolTip(this.components);
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.ttPrintPreview = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnReportPreview = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.ToolStripButton();
+            this.btnNew = new System.Windows.Forms.ToolStripButton();
+            this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.btnCut = new System.Windows.Forms.ToolStripButton();
+            this.btnCopy = new System.Windows.Forms.ToolStripButton();
+            this.btnPaste = new System.Windows.Forms.ToolStripButton();
+            this.btnUndo = new System.Windows.Forms.ToolStripButton();
+            this.btnClear = new System.Windows.Forms.ToolStripButton();
+            this.btnPrintPreview = new System.Windows.Forms.ToolStripButton();
+            this.btnPrintDialog = new System.Windows.Forms.ToolStripButton();
+            this.btnPrint = new System.Windows.Forms.ToolStripButton();
+            this.btnSearch = new System.Windows.Forms.ToolStripButton();
+            this.mbtnHome = new System.Windows.Forms.ToolStripMenuItem();
+            this.mbtnQuickAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.gbStudent.SuspendLayout();
-            this.pnlHome.SuspendLayout();
-            this.tabLogs.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.pnlStudent.SuspendLayout();
             this.gbGrade.SuspendLayout();
             this.gbActive.SuspendLayout();
             this.gbSex.SuspendLayout();
             this.pnlLogin.SuspendLayout();
+            this.pnlHome.SuspendLayout();
+            this.tabLogs.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -359,20 +361,13 @@
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mbtnHome,
+            this.mbtnQuickAdd,
             this.mbtnAccountDetails,
             this.mbtnProgramSettings,
             this.creditsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
-            // 
-            // mbtnHome
-            // 
-            this.mbtnHome.Enabled = false;
-            this.mbtnHome.Name = "mbtnHome";
-            this.mbtnHome.Size = new System.Drawing.Size(165, 22);
-            this.mbtnHome.Text = "Home";
-            this.mbtnHome.Click += new System.EventHandler(this.mbtnHome_Click);
             // 
             // mbtnAccountDetails
             // 
@@ -424,141 +419,20 @@
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btnHome
-            // 
-            this.btnHome.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnHome.Enabled = false;
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(23, 22);
-            this.btnHome.Text = "Home";
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnNew
-            // 
-            this.btnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNew.Enabled = false;
-            this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
-            this.btnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(23, 22);
-            this.btnNew.Text = "New";
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSave.Enabled = false;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(23, 22);
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // btnCut
-            // 
-            this.btnCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCut.Enabled = false;
-            this.btnCut.Image = ((System.Drawing.Image)(resources.GetObject("btnCut.Image")));
-            this.btnCut.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCut.Name = "btnCut";
-            this.btnCut.Size = new System.Drawing.Size(23, 22);
-            this.btnCut.Text = "Cut";
-            this.btnCut.Click += new System.EventHandler(this.btnCut_Click);
-            // 
-            // btnCopy
-            // 
-            this.btnCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCopy.Enabled = false;
-            this.btnCopy.Image = ((System.Drawing.Image)(resources.GetObject("btnCopy.Image")));
-            this.btnCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(23, 22);
-            this.btnCopy.Text = "Copy";
-            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
-            // 
-            // btnPaste
-            // 
-            this.btnPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPaste.Enabled = false;
-            this.btnPaste.Image = ((System.Drawing.Image)(resources.GetObject("btnPaste.Image")));
-            this.btnPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPaste.Name = "btnPaste";
-            this.btnPaste.Size = new System.Drawing.Size(23, 22);
-            this.btnPaste.Text = "Paste";
-            this.btnPaste.Click += new System.EventHandler(this.btnPaste_Click);
-            // 
-            // btnUndo
-            // 
-            this.btnUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnUndo.Enabled = false;
-            this.btnUndo.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.Image")));
-            this.btnUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(23, 22);
-            this.btnUndo.Text = "Undo";
-            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnClear.Enabled = false;
-            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(23, 22);
-            this.btnClear.Text = "Clear All";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnPrintPreview
-            // 
-            this.btnPrintPreview.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPrintPreview.Enabled = false;
-            this.btnPrintPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintPreview.Image")));
-            this.btnPrintPreview.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPrintPreview.Name = "btnPrintPreview";
-            this.btnPrintPreview.Size = new System.Drawing.Size(23, 22);
-            this.btnPrintPreview.Text = "Print Preview";
-            this.btnPrintPreview.Click += new System.EventHandler(this.btnPrintPreview_Click);
-            // 
-            // btnPrintDialog
-            // 
-            this.btnPrintDialog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPrintDialog.Enabled = false;
-            this.btnPrintDialog.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintDialog.Image")));
-            this.btnPrintDialog.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPrintDialog.Name = "btnPrintDialog";
-            this.btnPrintDialog.Size = new System.Drawing.Size(23, 22);
-            this.btnPrintDialog.Text = "Printer Settings";
-            this.btnPrintDialog.Click += new System.EventHandler(this.btnPrintDialog_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPrint.Enabled = false;
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(23, 22);
-            this.btnPrint.Text = "Print";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // toolStripSeparator3
             // 
@@ -590,17 +464,6 @@
             this.cmbSearchBy.Name = "cmbSearchBy";
             this.cmbSearchBy.Size = new System.Drawing.Size(100, 25);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSearch.Enabled = false;
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(23, 22);
-            this.btnSearch.Text = "Search";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
@@ -608,370 +471,15 @@
             // 
             // gbStudent
             // 
-            this.gbStudent.Controls.Add(this.pnlStudent);
             this.gbStudent.Controls.Add(this.pnlLogin);
             this.gbStudent.Controls.Add(this.pnlHome);
+            this.gbStudent.Controls.Add(this.pnlStudent);
             this.gbStudent.Location = new System.Drawing.Point(12, 52);
             this.gbStudent.Name = "gbStudent";
             this.gbStudent.Size = new System.Drawing.Size(671, 438);
             this.gbStudent.TabIndex = 8;
             this.gbStudent.TabStop = false;
             this.gbStudent.Text = "Logon Screen";
-            // 
-            // pnlHome
-            // 
-            this.pnlHome.Controls.Add(this.lblGrades);
-            this.pnlHome.Controls.Add(this.lblFees);
-            this.pnlHome.Controls.Add(this.lblActive);
-            this.pnlHome.Controls.Add(this.lblAdmins);
-            this.pnlHome.Controls.Add(this.lblStudent);
-            this.pnlHome.Controls.Add(this.btnReportPreview);
-            this.pnlHome.Controls.Add(this.label6);
-            this.pnlHome.Controls.Add(this.label4);
-            this.pnlHome.Controls.Add(this.btnFullReport);
-            this.pnlHome.Controls.Add(this.txtEmailHome);
-            this.pnlHome.Controls.Add(this.btnPrinterSettingsHome);
-            this.pnlHome.Controls.Add(this.checkPrint);
-            this.pnlHome.Controls.Add(this.checkExport);
-            this.pnlHome.Controls.Add(this.checkEmail);
-            this.pnlHome.Controls.Add(this.label1);
-            this.pnlHome.Controls.Add(this.tabLogs);
-            this.pnlHome.Controls.Add(this.label2);
-            this.pnlHome.Location = new System.Drawing.Point(6, 19);
-            this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(659, 413);
-            this.pnlHome.TabIndex = 1;
-            // 
-            // lblGrades
-            // 
-            this.lblGrades.AutoSize = true;
-            this.lblGrades.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrades.Location = new System.Drawing.Point(26, 368);
-            this.lblGrades.Name = "lblGrades";
-            this.lblGrades.Size = new System.Drawing.Size(85, 17);
-            this.lblGrades.TabIndex = 19;
-            this.lblGrades.Text = "PlaceHolder";
-            this.ttOptional.SetToolTip(this.lblGrades, "Click to cycle grades.");
-            this.lblGrades.Click += new System.EventHandler(this.lblGrades_Click);
-            // 
-            // lblFees
-            // 
-            this.lblFees.AutoSize = true;
-            this.lblFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFees.Location = new System.Drawing.Point(26, 338);
-            this.lblFees.Name = "lblFees";
-            this.lblFees.Size = new System.Drawing.Size(85, 17);
-            this.lblFees.TabIndex = 18;
-            this.lblFees.Text = "PlaceHolder";
-            // 
-            // lblActive
-            // 
-            this.lblActive.AutoSize = true;
-            this.lblActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActive.Location = new System.Drawing.Point(26, 308);
-            this.lblActive.Name = "lblActive";
-            this.lblActive.Size = new System.Drawing.Size(85, 17);
-            this.lblActive.TabIndex = 17;
-            this.lblActive.Text = "PlaceHolder";
-            // 
-            // lblAdmins
-            // 
-            this.lblAdmins.AutoSize = true;
-            this.lblAdmins.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdmins.Location = new System.Drawing.Point(26, 277);
-            this.lblAdmins.Name = "lblAdmins";
-            this.lblAdmins.Size = new System.Drawing.Size(85, 17);
-            this.lblAdmins.TabIndex = 16;
-            this.lblAdmins.Text = "PlaceHolder";
-            // 
-            // lblStudent
-            // 
-            this.lblStudent.AutoSize = true;
-            this.lblStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudent.Location = new System.Drawing.Point(26, 247);
-            this.lblStudent.Name = "lblStudent";
-            this.lblStudent.Size = new System.Drawing.Size(85, 17);
-            this.lblStudent.TabIndex = 15;
-            this.lblStudent.Text = "PlaceHolder";
-            // 
-            // btnReportPreview
-            // 
-            this.btnReportPreview.Image = global::FBLAdesktopApp3.Properties.Resources.printPreview_black;
-            this.btnReportPreview.Location = new System.Drawing.Point(225, 164);
-            this.btnReportPreview.Name = "btnReportPreview";
-            this.btnReportPreview.Size = new System.Drawing.Size(43, 28);
-            this.btnReportPreview.TabIndex = 14;
-            this.btnReportPreview.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 217);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Statistics";
-            // 
-            // label4
-            // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Location = new System.Drawing.Point(10, 207);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(286, 2);
-            this.label4.TabIndex = 12;
-            // 
-            // btnFullReport
-            // 
-            this.btnFullReport.Enabled = false;
-            this.btnFullReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFullReport.Location = new System.Drawing.Point(42, 164);
-            this.btnFullReport.Name = "btnFullReport";
-            this.btnFullReport.Size = new System.Drawing.Size(163, 28);
-            this.btnFullReport.TabIndex = 11;
-            this.btnFullReport.Text = "Send Report";
-            this.btnFullReport.UseVisualStyleBackColor = true;
-            // 
-            // txtEmailHome
-            // 
-            this.txtEmailHome.Enabled = false;
-            this.txtEmailHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailHome.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtEmailHome.Location = new System.Drawing.Point(142, 42);
-            this.txtEmailHome.Name = "txtEmailHome";
-            this.txtEmailHome.Size = new System.Drawing.Size(126, 23);
-            this.txtEmailHome.TabIndex = 10;
-            this.txtEmailHome.Text = "Email";
-            this.txtEmailHome.Enter += new System.EventHandler(this.txtEmailHome_Enter);
-            this.txtEmailHome.Leave += new System.EventHandler(this.txtEmailHome_Leave);
-            // 
-            // btnPrinterSettingsHome
-            // 
-            this.btnPrinterSettingsHome.Enabled = false;
-            this.btnPrinterSettingsHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrinterSettingsHome.Location = new System.Drawing.Point(143, 123);
-            this.btnPrinterSettingsHome.Name = "btnPrinterSettingsHome";
-            this.btnPrinterSettingsHome.Size = new System.Drawing.Size(125, 21);
-            this.btnPrinterSettingsHome.TabIndex = 9;
-            this.btnPrinterSettingsHome.Text = "Printer Settings";
-            this.btnPrinterSettingsHome.UseVisualStyleBackColor = true;
-            // 
-            // checkPrint
-            // 
-            this.checkPrint.AutoSize = true;
-            this.checkPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkPrint.Location = new System.Drawing.Point(12, 123);
-            this.checkPrint.Name = "checkPrint";
-            this.checkPrint.Size = new System.Drawing.Size(56, 21);
-            this.checkPrint.TabIndex = 8;
-            this.checkPrint.Text = "Print";
-            this.checkPrint.UseVisualStyleBackColor = true;
-            this.checkPrint.CheckedChanged += new System.EventHandler(this.checkPrint_CheckedChanged);
-            // 
-            // checkExport
-            // 
-            this.checkExport.AutoSize = true;
-            this.checkExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkExport.Location = new System.Drawing.Point(12, 82);
-            this.checkExport.Name = "checkExport";
-            this.checkExport.Size = new System.Drawing.Size(110, 21);
-            this.checkExport.TabIndex = 7;
-            this.checkExport.Text = "Export as .xls";
-            this.checkExport.UseVisualStyleBackColor = true;
-            this.checkExport.CheckedChanged += new System.EventHandler(this.checkExport_CheckedChanged);
-            // 
-            // checkEmail
-            // 
-            this.checkEmail.AutoSize = true;
-            this.checkEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkEmail.Location = new System.Drawing.Point(12, 44);
-            this.checkEmail.Name = "checkEmail";
-            this.checkEmail.Size = new System.Drawing.Size(61, 21);
-            this.checkEmail.TabIndex = 6;
-            this.checkEmail.Text = "Email";
-            this.checkEmail.UseVisualStyleBackColor = true;
-            this.checkEmail.CheckedChanged += new System.EventHandler(this.checkEmail_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Full Report";
-            // 
-            // tabLogs
-            // 
-            this.tabLogs.Controls.Add(this.tabPage1);
-            this.tabLogs.Controls.Add(this.tabPage2);
-            this.tabLogs.Controls.Add(this.tabPage3);
-            this.tabLogs.Location = new System.Drawing.Point(308, 7);
-            this.tabLogs.Name = "tabLogs";
-            this.tabLogs.SelectedIndex = 0;
-            this.tabLogs.Size = new System.Drawing.Size(346, 398);
-            this.tabLogs.TabIndex = 3;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.listLog);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(338, 372);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Log";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // listLog
-            // 
-            this.listLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.listLog.GridLines = true;
-            this.listLog.HideSelection = false;
-            this.listLog.Location = new System.Drawing.Point(0, 0);
-            this.listLog.Name = "listLog";
-            this.listLog.Size = new System.Drawing.Size(338, 369);
-            this.listLog.TabIndex = 13;
-            this.listLog.UseCompatibleStateImageBehavior = false;
-            this.listLog.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Date";
-            this.columnHeader1.Width = 57;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Student Changed / Added";
-            this.columnHeader2.Width = 167;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Changed By";
-            this.columnHeader3.Width = 110;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.listClientIDs);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(338, 372);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Administrators";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // listClientIDs
-            // 
-            this.listClientIDs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listClientIDs.GridLines = true;
-            this.listClientIDs.Location = new System.Drawing.Point(0, 0);
-            this.listClientIDs.Name = "listClientIDs";
-            this.listClientIDs.Size = new System.Drawing.Size(338, 372);
-            this.listClientIDs.TabIndex = 14;
-            this.listClientIDs.UseCompatibleStateImageBehavior = false;
-            this.listClientIDs.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Client ID";
-            this.columnHeader4.Width = 67;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Full Name";
-            this.columnHeader5.Width = 155;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Changes Made";
-            this.columnHeader6.Width = 112;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.listView1);
-            this.tabPage3.Controls.Add(this.cmbThirdColumn);
-            this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(338, 372);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Students";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(338, 337);
-            this.listView1.TabIndex = 18;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.ItemActivate += new System.EventHandler(this.listView1_ItemActivate);
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Member #";
-            this.columnHeader7.Width = 67;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Full Name";
-            this.columnHeader8.Width = 155;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Changes Made";
-            this.columnHeader9.Width = 112;
-            // 
-            // cmbThirdColumn
-            // 
-            this.cmbThirdColumn.FormattingEnabled = true;
-            this.cmbThirdColumn.Items.AddRange(new object[] {
-            "Grade",
-            "State",
-            "Is Active",
-            "Has Fees",
-            "Year Joined",
-            "Email",
-            "School"});
-            this.cmbThirdColumn.Location = new System.Drawing.Point(151, 343);
-            this.cmbThirdColumn.Name = "cmbThirdColumn";
-            this.cmbThirdColumn.Size = new System.Drawing.Size(143, 21);
-            this.cmbThirdColumn.TabIndex = 17;
-            this.cmbThirdColumn.SelectedIndexChanged += new System.EventHandler(this.cmbThirdColumn_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(34, 342);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 18);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Third Column:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 265F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(300, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(2, 402);
-            this.label2.TabIndex = 0;
             // 
             // pnlStudent
             // 
@@ -1436,15 +944,352 @@
             this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
             this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
             // 
-            // pictureBox1
+            // pnlHome
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(239, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 135);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pnlHome.Controls.Add(this.lblGrades);
+            this.pnlHome.Controls.Add(this.lblFees);
+            this.pnlHome.Controls.Add(this.lblActive);
+            this.pnlHome.Controls.Add(this.lblAdmins);
+            this.pnlHome.Controls.Add(this.lblStudent);
+            this.pnlHome.Controls.Add(this.btnReportPreview);
+            this.pnlHome.Controls.Add(this.label6);
+            this.pnlHome.Controls.Add(this.label4);
+            this.pnlHome.Controls.Add(this.btnFullReport);
+            this.pnlHome.Controls.Add(this.txtEmailHome);
+            this.pnlHome.Controls.Add(this.btnPrinterSettingsHome);
+            this.pnlHome.Controls.Add(this.checkPrint);
+            this.pnlHome.Controls.Add(this.checkExport);
+            this.pnlHome.Controls.Add(this.checkEmail);
+            this.pnlHome.Controls.Add(this.label1);
+            this.pnlHome.Controls.Add(this.tabLogs);
+            this.pnlHome.Controls.Add(this.label2);
+            this.pnlHome.Location = new System.Drawing.Point(6, 19);
+            this.pnlHome.Name = "pnlHome";
+            this.pnlHome.Size = new System.Drawing.Size(659, 413);
+            this.pnlHome.TabIndex = 1;
+            // 
+            // lblGrades
+            // 
+            this.lblGrades.AutoSize = true;
+            this.lblGrades.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrades.Location = new System.Drawing.Point(26, 368);
+            this.lblGrades.Name = "lblGrades";
+            this.lblGrades.Size = new System.Drawing.Size(85, 17);
+            this.lblGrades.TabIndex = 19;
+            this.lblGrades.Text = "PlaceHolder";
+            this.ttOptional.SetToolTip(this.lblGrades, "Click to cycle grades.");
+            this.lblGrades.Click += new System.EventHandler(this.lblGrades_Click);
+            // 
+            // lblFees
+            // 
+            this.lblFees.AutoSize = true;
+            this.lblFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFees.Location = new System.Drawing.Point(26, 338);
+            this.lblFees.Name = "lblFees";
+            this.lblFees.Size = new System.Drawing.Size(85, 17);
+            this.lblFees.TabIndex = 18;
+            this.lblFees.Text = "PlaceHolder";
+            // 
+            // lblActive
+            // 
+            this.lblActive.AutoSize = true;
+            this.lblActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActive.Location = new System.Drawing.Point(26, 308);
+            this.lblActive.Name = "lblActive";
+            this.lblActive.Size = new System.Drawing.Size(85, 17);
+            this.lblActive.TabIndex = 17;
+            this.lblActive.Text = "PlaceHolder";
+            // 
+            // lblAdmins
+            // 
+            this.lblAdmins.AutoSize = true;
+            this.lblAdmins.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdmins.Location = new System.Drawing.Point(26, 277);
+            this.lblAdmins.Name = "lblAdmins";
+            this.lblAdmins.Size = new System.Drawing.Size(85, 17);
+            this.lblAdmins.TabIndex = 16;
+            this.lblAdmins.Text = "PlaceHolder";
+            // 
+            // lblStudent
+            // 
+            this.lblStudent.AutoSize = true;
+            this.lblStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudent.Location = new System.Drawing.Point(26, 247);
+            this.lblStudent.Name = "lblStudent";
+            this.lblStudent.Size = new System.Drawing.Size(85, 17);
+            this.lblStudent.TabIndex = 15;
+            this.lblStudent.Text = "PlaceHolder";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 217);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Statistics";
+            // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Location = new System.Drawing.Point(10, 207);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(286, 2);
+            this.label4.TabIndex = 12;
+            // 
+            // btnFullReport
+            // 
+            this.btnFullReport.Enabled = false;
+            this.btnFullReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFullReport.Location = new System.Drawing.Point(42, 164);
+            this.btnFullReport.Name = "btnFullReport";
+            this.btnFullReport.Size = new System.Drawing.Size(163, 28);
+            this.btnFullReport.TabIndex = 11;
+            this.btnFullReport.Text = "Send Report";
+            this.btnFullReport.UseVisualStyleBackColor = true;
+            // 
+            // txtEmailHome
+            // 
+            this.txtEmailHome.Enabled = false;
+            this.txtEmailHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailHome.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtEmailHome.Location = new System.Drawing.Point(142, 42);
+            this.txtEmailHome.Name = "txtEmailHome";
+            this.txtEmailHome.Size = new System.Drawing.Size(126, 23);
+            this.txtEmailHome.TabIndex = 10;
+            this.txtEmailHome.Text = "Email";
+            this.txtEmailHome.Enter += new System.EventHandler(this.txtEmailHome_Enter);
+            this.txtEmailHome.Leave += new System.EventHandler(this.txtEmailHome_Leave);
+            // 
+            // btnPrinterSettingsHome
+            // 
+            this.btnPrinterSettingsHome.Enabled = false;
+            this.btnPrinterSettingsHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrinterSettingsHome.Location = new System.Drawing.Point(143, 123);
+            this.btnPrinterSettingsHome.Name = "btnPrinterSettingsHome";
+            this.btnPrinterSettingsHome.Size = new System.Drawing.Size(125, 21);
+            this.btnPrinterSettingsHome.TabIndex = 9;
+            this.btnPrinterSettingsHome.Text = "Printer Settings";
+            this.btnPrinterSettingsHome.UseVisualStyleBackColor = true;
+            // 
+            // checkPrint
+            // 
+            this.checkPrint.AutoSize = true;
+            this.checkPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkPrint.Location = new System.Drawing.Point(12, 123);
+            this.checkPrint.Name = "checkPrint";
+            this.checkPrint.Size = new System.Drawing.Size(56, 21);
+            this.checkPrint.TabIndex = 8;
+            this.checkPrint.Text = "Print";
+            this.checkPrint.UseVisualStyleBackColor = true;
+            this.checkPrint.CheckedChanged += new System.EventHandler(this.checkPrint_CheckedChanged);
+            // 
+            // checkExport
+            // 
+            this.checkExport.AutoSize = true;
+            this.checkExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkExport.Location = new System.Drawing.Point(12, 82);
+            this.checkExport.Name = "checkExport";
+            this.checkExport.Size = new System.Drawing.Size(110, 21);
+            this.checkExport.TabIndex = 7;
+            this.checkExport.Text = "Export as .xls";
+            this.checkExport.UseVisualStyleBackColor = true;
+            this.checkExport.CheckedChanged += new System.EventHandler(this.checkExport_CheckedChanged);
+            // 
+            // checkEmail
+            // 
+            this.checkEmail.AutoSize = true;
+            this.checkEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEmail.Location = new System.Drawing.Point(12, 44);
+            this.checkEmail.Name = "checkEmail";
+            this.checkEmail.Size = new System.Drawing.Size(61, 21);
+            this.checkEmail.TabIndex = 6;
+            this.checkEmail.Text = "Email";
+            this.checkEmail.UseVisualStyleBackColor = true;
+            this.checkEmail.CheckedChanged += new System.EventHandler(this.checkEmail_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Full Report";
+            // 
+            // tabLogs
+            // 
+            this.tabLogs.Controls.Add(this.tabPage1);
+            this.tabLogs.Controls.Add(this.tabPage2);
+            this.tabLogs.Controls.Add(this.tabPage3);
+            this.tabLogs.Location = new System.Drawing.Point(308, 7);
+            this.tabLogs.Name = "tabLogs";
+            this.tabLogs.SelectedIndex = 0;
+            this.tabLogs.Size = new System.Drawing.Size(346, 398);
+            this.tabLogs.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.listLog);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(338, 372);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Log";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // listLog
+            // 
+            this.listLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listLog.GridLines = true;
+            this.listLog.HideSelection = false;
+            this.listLog.Location = new System.Drawing.Point(0, 0);
+            this.listLog.Name = "listLog";
+            this.listLog.Size = new System.Drawing.Size(338, 369);
+            this.listLog.TabIndex = 13;
+            this.listLog.UseCompatibleStateImageBehavior = false;
+            this.listLog.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Date";
+            this.columnHeader1.Width = 57;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Student Changed / Added";
+            this.columnHeader2.Width = 167;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Changed By";
+            this.columnHeader3.Width = 110;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.listClientIDs);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(338, 372);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Administrators";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // listClientIDs
+            // 
+            this.listClientIDs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.listClientIDs.GridLines = true;
+            this.listClientIDs.Location = new System.Drawing.Point(0, 0);
+            this.listClientIDs.Name = "listClientIDs";
+            this.listClientIDs.Size = new System.Drawing.Size(338, 372);
+            this.listClientIDs.TabIndex = 14;
+            this.listClientIDs.UseCompatibleStateImageBehavior = false;
+            this.listClientIDs.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Client ID";
+            this.columnHeader4.Width = 67;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Full Name";
+            this.columnHeader5.Width = 155;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Changes Made";
+            this.columnHeader6.Width = 112;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btnRefresh);
+            this.tabPage3.Controls.Add(this.listView1);
+            this.tabPage3.Controls.Add(this.cmbThirdColumn);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(338, 372);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Students";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9});
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(338, 337);
+            this.listView1.TabIndex = 18;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.ItemActivate += new System.EventHandler(this.listView1_ItemActivate);
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Member #";
+            this.columnHeader7.Width = 67;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Full Name";
+            this.columnHeader8.Width = 155;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Changes Made";
+            this.columnHeader9.Width = 112;
+            // 
+            // cmbThirdColumn
+            // 
+            this.cmbThirdColumn.FormattingEnabled = true;
+            this.cmbThirdColumn.Items.AddRange(new object[] {
+            "Grade",
+            "State",
+            "Is Active",
+            "Has Fees",
+            "Year Joined",
+            "Email",
+            "School"});
+            this.cmbThirdColumn.Location = new System.Drawing.Point(110, 343);
+            this.cmbThirdColumn.Name = "cmbThirdColumn";
+            this.cmbThirdColumn.Size = new System.Drawing.Size(143, 21);
+            this.cmbThirdColumn.TabIndex = 17;
+            this.cmbThirdColumn.SelectedIndexChanged += new System.EventHandler(this.cmbThirdColumn_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 342);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 18);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Third Column:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 265F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(300, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(2, 402);
+            this.label2.TabIndex = 0;
             // 
             // printPreviewDialog1
             // 
@@ -1459,6 +1304,184 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(239, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnReportPreview
+            // 
+            this.btnReportPreview.Image = global::FBLAdesktopApp3.Properties.Resources.printPreview_black;
+            this.btnReportPreview.Location = new System.Drawing.Point(225, 164);
+            this.btnReportPreview.Name = "btnReportPreview";
+            this.btnReportPreview.Size = new System.Drawing.Size(43, 28);
+            this.btnReportPreview.TabIndex = 14;
+            this.btnReportPreview.UseVisualStyleBackColor = true;
+            // 
+            // btnHome
+            // 
+            this.btnHome.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnHome.Enabled = false;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(23, 22);
+            this.btnHome.Text = "Home";
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNew.Enabled = false;
+            this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
+            this.btnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(23, 22);
+            this.btnNew.Text = "New";
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSave.Enabled = false;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(23, 22);
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCut
+            // 
+            this.btnCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCut.Enabled = false;
+            this.btnCut.Image = ((System.Drawing.Image)(resources.GetObject("btnCut.Image")));
+            this.btnCut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCut.Name = "btnCut";
+            this.btnCut.Size = new System.Drawing.Size(23, 22);
+            this.btnCut.Text = "Cut";
+            this.btnCut.Click += new System.EventHandler(this.btnCut_Click);
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCopy.Enabled = false;
+            this.btnCopy.Image = ((System.Drawing.Image)(resources.GetObject("btnCopy.Image")));
+            this.btnCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(23, 22);
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // btnPaste
+            // 
+            this.btnPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPaste.Enabled = false;
+            this.btnPaste.Image = ((System.Drawing.Image)(resources.GetObject("btnPaste.Image")));
+            this.btnPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPaste.Name = "btnPaste";
+            this.btnPaste.Size = new System.Drawing.Size(23, 22);
+            this.btnPaste.Text = "Paste";
+            this.btnPaste.Click += new System.EventHandler(this.btnPaste_Click);
+            // 
+            // btnUndo
+            // 
+            this.btnUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUndo.Enabled = false;
+            this.btnUndo.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.Image")));
+            this.btnUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(23, 22);
+            this.btnUndo.Text = "Undo";
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnClear.Enabled = false;
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(23, 22);
+            this.btnClear.Text = "Clear All";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnPrintPreview
+            // 
+            this.btnPrintPreview.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrintPreview.Enabled = false;
+            this.btnPrintPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintPreview.Image")));
+            this.btnPrintPreview.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPrintPreview.Name = "btnPrintPreview";
+            this.btnPrintPreview.Size = new System.Drawing.Size(23, 22);
+            this.btnPrintPreview.Text = "Print Preview";
+            this.btnPrintPreview.Click += new System.EventHandler(this.btnPrintPreview_Click);
+            // 
+            // btnPrintDialog
+            // 
+            this.btnPrintDialog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrintDialog.Enabled = false;
+            this.btnPrintDialog.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintDialog.Image")));
+            this.btnPrintDialog.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPrintDialog.Name = "btnPrintDialog";
+            this.btnPrintDialog.Size = new System.Drawing.Size(23, 22);
+            this.btnPrintDialog.Text = "Printer Settings";
+            this.btnPrintDialog.Click += new System.EventHandler(this.btnPrintDialog_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrint.Enabled = false;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(23, 22);
+            this.btnPrint.Text = "Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSearch.Enabled = false;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(23, 22);
+            this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // mbtnHome
+            // 
+            this.mbtnHome.Enabled = false;
+            this.mbtnHome.Name = "mbtnHome";
+            this.mbtnHome.Size = new System.Drawing.Size(165, 22);
+            this.mbtnHome.Text = "Home";
+            this.mbtnHome.Click += new System.EventHandler(this.mbtnHome_Click);
+            // 
+            // mbtnQuickAdd
+            // 
+            this.mbtnQuickAdd.Enabled = false;
+            this.mbtnQuickAdd.Name = "mbtnQuickAdd";
+            this.mbtnQuickAdd.Size = new System.Drawing.Size(165, 22);
+            this.mbtnQuickAdd.Text = "QuickAdd";
+            this.mbtnQuickAdd.Click += new System.EventHandler(this.quickAddToolStripMenuItem_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(259, 343);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRefresh.Size = new System.Drawing.Size(73, 21);
+            this.btnRefresh.TabIndex = 19;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
@@ -1479,13 +1502,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.gbStudent.ResumeLayout(false);
-            this.pnlHome.ResumeLayout(false);
-            this.pnlHome.PerformLayout();
-            this.tabLogs.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.pnlStudent.ResumeLayout(false);
             this.pnlStudent.PerformLayout();
             this.gbGrade.ResumeLayout(false);
@@ -1496,6 +1512,13 @@
             this.gbSex.PerformLayout();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
+            this.pnlHome.ResumeLayout(false);
+            this.pnlHome.PerformLayout();
+            this.tabLogs.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1526,7 +1549,6 @@
         private System.Windows.Forms.ToolStripMenuItem mbtnPaste;
         private System.Windows.Forms.ToolStripMenuItem mbtnClearAll;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mbtnHome;
         private System.Windows.Forms.ToolStripMenuItem mbtnAccountDetails;
         private System.Windows.Forms.ToolStripMenuItem mbtnProgramSettings;
         private System.Windows.Forms.ToolStripMenuItem creditsToolStripMenuItem;
@@ -1632,6 +1654,9 @@
         private System.Windows.Forms.Label lblActive;
         private System.Windows.Forms.Label lblFees;
         private System.Windows.Forms.Label lblGrades;
+        private System.Windows.Forms.ToolStripMenuItem mbtnHome;
+        private System.Windows.Forms.ToolStripMenuItem mbtnQuickAdd;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

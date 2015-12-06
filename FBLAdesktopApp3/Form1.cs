@@ -160,6 +160,7 @@ namespace FBLAdesktopApp3
             btnSearch.Enabled = x;
             txtSearch.Enabled = x;
             cmbSearchBy.Enabled = x;
+            mbtnQuickAdd.Enabled = x;
             mbtnNew.Enabled = x;
             mbtnExport.Enabled = x;
             mbtnLogout.Enabled = x;
@@ -586,6 +587,9 @@ namespace FBLAdesktopApp3
         private void mbtnLogout_Click(object sender, EventArgs e)
         {
             // Add later: if not saved, request save function
+            txtUser.Text = "Client ID"; txtPass.Text = "Password";
+            txtUser.ForeColor = SystemColors.WindowFrame; txtPass.ForeColor = SystemColors.WindowFrame;
+            txtPass.UseSystemPasswordChar = false;
             gbStudent.Text = "Logon Screen";
             this.Text = "FBLA - Login Screen";
             pnlLogin.BringToFront();
@@ -747,6 +751,23 @@ namespace FBLAdesktopApp3
         {
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quickAddToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            quickAddForm form2 = new quickAddForm();
+            form2.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            readToArray();
+            studentLog();
         }
 
         private void cmbState_Enter(object sender, EventArgs e)
