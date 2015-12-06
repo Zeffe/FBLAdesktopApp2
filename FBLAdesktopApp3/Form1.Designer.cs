@@ -608,9 +608,9 @@
             // 
             // gbStudent
             // 
-            this.gbStudent.Controls.Add(this.pnlHome);
             this.gbStudent.Controls.Add(this.pnlStudent);
             this.gbStudent.Controls.Add(this.pnlLogin);
+            this.gbStudent.Controls.Add(this.pnlHome);
             this.gbStudent.Location = new System.Drawing.Point(12, 52);
             this.gbStudent.Name = "gbStudent";
             this.gbStudent.Size = new System.Drawing.Size(671, 438);
@@ -1237,7 +1237,9 @@
             // 
             // cmbState
             // 
+            this.cmbState.BackColor = System.Drawing.SystemColors.Window;
             this.cmbState.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbState.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbState.FormattingEnabled = true;
             this.cmbState.Items.AddRange(new object[] {
             "AL",
@@ -1296,6 +1298,7 @@
             this.cmbState.Size = new System.Drawing.Size(74, 21);
             this.cmbState.TabIndex = 8;
             this.cmbState.Text = "MO";
+            this.cmbState.Enter += new System.EventHandler(this.cmbState_Enter);
             // 
             // gbSex
             // 

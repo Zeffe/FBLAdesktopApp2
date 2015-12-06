@@ -42,7 +42,7 @@ namespace FBLAdesktopApp3
         String[,] logins = new String[50, 4];
         String[,] log = new String[50, 4];
         DateTime now = DateTime.Now;
-        bool newForm, gradeview;
+        bool newForm, gradeview, disabled;
         // *************************************************************
 
         // ********************** User Declared Functions **********************
@@ -121,6 +121,7 @@ namespace FBLAdesktopApp3
                     viewForm(i);
                     btnSave.Enabled = false;
                     mbtnSave.Enabled = false;
+                    readMode(false);
                     break;
                 }
                 else if (i == count - 1)
@@ -184,6 +185,53 @@ namespace FBLAdesktopApp3
                     MessageBox.Show("Invalid Member Number: Already in use or invalid integer", "Member# Error");
                     break;
                 }
+            }
+        }
+
+        void readMode(bool x)
+        {
+            TextBox[] txt = { txtMemberNum, txtFirstName, txtMI, txtLastName, txtSchool, txtEmail, txtOwed, txtJoined, txtComment };
+            for (int i = 0; i < 9; i++)
+            {
+                txt[i].ReadOnly = !x;
+                if (!x)
+                {
+                    txt[i].BackColor = SystemColors.Info;
+                    txt[i].ForeColor = SystemColors.WindowText;
+                } else
+                {
+                    txt[i].BackColor = SystemColors.Window;
+                }
+            }
+
+            disabled = !x;
+            rbMale.Enabled = x; rbFemale.Enabled = x; rbGrade9.Enabled = x; rbGrade10.Enabled = x;
+            rbGrade10.Enabled = x; rbGrade11.Enabled = x; rbGrade12.Enabled = x; rbCollege.Enabled = x; rbActive.Enabled = x;
+            rbNonActive.Enabled = x;
+            if (!x)
+            {
+                cmbState.BackColor = SystemColors.Info; cmbState.ForeColor = SystemColors.WindowText;
+                rbMale.BackColor = SystemColors.Info; rbMale.ForeColor = SystemColors.WindowText;
+                rbFemale.BackColor = SystemColors.Info; rbFemale.ForeColor = SystemColors.WindowText;
+                rbGrade9.BackColor = SystemColors.Info; rbGrade9.ForeColor = SystemColors.WindowText;
+                rbGrade10.BackColor = SystemColors.Info; rbGrade10.ForeColor = SystemColors.WindowText;
+                rbGrade11.BackColor = SystemColors.Info; rbGrade11.ForeColor = SystemColors.WindowText;
+                rbGrade12.BackColor = SystemColors.Info; rbGrade12.ForeColor = SystemColors.WindowText;
+                rbCollege.BackColor = SystemColors.Info; rbCollege.ForeColor = SystemColors.WindowText;
+                rbActive.BackColor = SystemColors.Info; rbActive.ForeColor = SystemColors.WindowText;
+                rbNonActive.BackColor = SystemColors.Info; rbNonActive.ForeColor = SystemColors.WindowText;
+            } else
+            {
+                cmbState.BackColor = SystemColors.Window; 
+                rbMale.BackColor = SystemColors.Control;
+                rbFemale.BackColor = SystemColors.Control; 
+                rbGrade9.BackColor = SystemColors.Control; 
+                rbGrade10.BackColor = SystemColors.Control; 
+                rbGrade11.BackColor = SystemColors.Control; 
+                rbGrade12.BackColor = SystemColors.Control; 
+                rbCollege.BackColor = SystemColors.Control; 
+                rbActive.BackColor = SystemColors.Control; 
+                rbNonActive.BackColor = SystemColors.Control; 
             }
         }
 
@@ -547,6 +595,7 @@ namespace FBLAdesktopApp3
         private void mbtnNew_Click(object sender, EventArgs e)
         {
             // Add later: if not saved, request save function
+            readMode(true);
             mbtnPrint.Enabled = true;
             this.Text = "FBLA";
             mbtnClearAll.Enabled = true;
@@ -566,6 +615,7 @@ namespace FBLAdesktopApp3
         private void btnNew_Click(object sender, EventArgs e)
         {
             // Add later: if not saved, request save function
+            readMode(true);
             mbtnPrint.Enabled = true;
             this.Text = "FBLA";
             mbtnClearAll.Enabled = true;
@@ -699,6 +749,15 @@ namespace FBLAdesktopApp3
             printPreviewDialog1.ShowDialog();
         }
 
+        private void cmbState_Enter(object sender, EventArgs e)
+        {
+            if (disabled)
+            {
+                cmbState.Enabled = false;
+                cmbState.Enabled = true;
+            }
+        }
+
         private void btnPrintDialog_Click(object sender, EventArgs e)
         {
             PrintDialog printDialog1 = new PrintDialog();
@@ -799,10 +858,6 @@ namespace FBLAdesktopApp3
             studentLog();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            viewForm(0);
-        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
