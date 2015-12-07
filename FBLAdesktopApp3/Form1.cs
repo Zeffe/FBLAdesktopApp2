@@ -28,7 +28,7 @@ namespace FBLAdesktopApp3
 
         // ************* Variable and array initialization *************
         String feeStr;
-        int search, count, loginCount, logCount, account, active, hasFees, g9, g10, g11, g12, g13, grade;
+        int search, count, loginCount, logCount, account, active, hasFees, g9, g10, g11, g12, g13, activeStudent, grade;
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         string specificFolder, logFolder, date;
         Double feeDbl;
@@ -113,6 +113,7 @@ namespace FBLAdesktopApp3
                 if (student[i, search].Contains(txtSearch.Text))
                 {
                     viewForm(i);
+                    activeStudent = i;
                     btnSave.Enabled = false;
                     mbtnSave.Enabled = false;
                     readMode(false);
@@ -321,7 +322,7 @@ namespace FBLAdesktopApp3
                 while ((str = _textStreamReader3.ReadLine()) != null)
                 {
                     lines3[logCount] = str;
-                    temp3 = lines3[loginCount].Split('\\');
+                    temp3 = lines3[logCount].Split('\\');
                     for (int i = 0; i < 4; i++)
                     {
                         log[logCount, i] = temp3[i];
@@ -652,6 +653,7 @@ namespace FBLAdesktopApp3
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            if (btnDelete.Visible) btnDelete.Visible = false;
             gbStudent.Text = "Home";
             this.Text = "FBLA - Home";
             pnlHome.BringToFront();
@@ -767,26 +769,31 @@ namespace FBLAdesktopApp3
             printPreviewDialog1.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void quickAddToolStripMenuItem_Click(object sender, EventArgs e)
         {
             quickAddForm form2 = new quickAddForm();
             form2.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             readToArray();
             studentLog();
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            delete(6);
+            if (MessageBox.Show("Are you sure that you want to delete member number " + student[activeStudent, 0] + "?", "Delete " + student [activeStudent, 0], MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                delete(activeStudent);
+                btnDelete.Visible = false;
+                gbStudent.Text = "Home";
+                this.Text = "FBLA - Home";
+                pnlHome.BringToFront();
+                toolStripButtons(true);
+                readToArray();
+                studentLog();
+            }
         }
 
         private void cmbState_Enter(object sender, EventArgs e)
@@ -883,6 +890,7 @@ namespace FBLAdesktopApp3
 
         private void listView1_ItemActivate(object sender, EventArgs e)
         {
+            btnDelete.Visible = true;
             // Searches for a log item when double clicked.
             string stri = listView1.FocusedItem.ToString();
             // Removes extra characters to get value to be searched.
