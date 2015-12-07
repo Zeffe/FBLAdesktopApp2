@@ -81,17 +81,11 @@ namespace FBLAdesktopApp3
                 if (rbMale.Checked) sex = "1"; else sex = "2";
                 if (rbGrade9.Checked) grade = "1"; else if (rbGrade10.Checked) grade = "2"; else if (rbGrade11.Checked) grade = "3"; else if (rbGrade12.Checked) grade = "4"; else grade = "5";
                 if (rbActive.Checked) active = "1"; else active = "2";
-                if (student[0, 1] == null)
-                {
-                    File.AppendAllText(specificFolder, txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
-                    File.AppendAllText(logFolder, date + "\\" + txtFirstName.Text + " " + txtLastName.Text + "\\" + logins[account, 0] + "\\" + txtMemberNum.Text + "\r\n");
-                } else
-                {
-                    File.AppendAllText(logFolder, date + "\\" + txtFirstName.Text + " " + txtLastName.Text + "\\" + logins[account, 0] + "\\" + txtMemberNum.Text + "\r\n");
-                    File.AppendAllText(specificFolder, "\r\n" + txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text);
-                }
+                File.AppendAllText(logFolder, date + "\\" + txtFirstName.Text + " " + txtLastName.Text + "\\" + logins[account, 0] + "\\" + txtMemberNum.Text + "\r\n");
+                File.AppendAllText(specificFolder, txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text + "\r\n");
                 readToArray();
                 studentLog();
+                logLog();
                 MessageBox.Show("Save Successful!", "Saved");
             }
             else
@@ -275,6 +269,26 @@ namespace FBLAdesktopApp3
             {
                 btnFullReport.Enabled = false;
             }
+        }
+
+        void delete(int studentNum)
+        {
+            // TODO: Add updating to log.
+
+            // Create temporary file.
+            var tempFile = Path.GetTempFileName();
+            // Create an array of lines to keep if it doesn't contain the selected student.
+            var linesToKeep = File.ReadLines(specificFolder).Where(l => !(l.Contains(student[studentNum, 0])));
+
+            // Write the kept lines to the temporary file.
+            File.WriteAllLines(tempFile, linesToKeep);
+
+            // Delete current file.
+            File.Delete(specificFolder);
+            
+            //Replace old file with temporary file.
+            File.Move(tempFile, specificFolder);
+
         }
 
         // Writes the logins array into the Administrators tab on home page.
@@ -768,6 +782,11 @@ namespace FBLAdesktopApp3
         {
             readToArray();
             studentLog();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            delete(6);
         }
 
         private void cmbState_Enter(object sender, EventArgs e)
