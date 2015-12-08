@@ -81,7 +81,7 @@ namespace FBLAdesktopApp3
                 if (rbMale.Checked) sex = "1"; else sex = "2";
                 if (rbGrade9.Checked) grade = "1"; else if (rbGrade10.Checked) grade = "2"; else if (rbGrade11.Checked) grade = "3"; else if (rbGrade12.Checked) grade = "4"; else grade = "5";
                 if (rbActive.Checked) active = "1"; else active = "2";
-                File.AppendAllText(logFolder, date + "\\" + txtFirstName.Text + " " + txtLastName.Text + "\\" + logins[account, 0] + "\\" + txtMemberNum.Text + "\r\n");
+                File.AppendAllText(logFolder, date + "\\" + "[A] " + txtFirstName.Text + " " + txtLastName.Text + "\\" + logins[account, 0] + "\\" + txtMemberNum.Text + "\r\n");
                 File.AppendAllText(specificFolder, txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text + "\r\n");
                 readToArray();
                 studentLog();
@@ -94,7 +94,38 @@ namespace FBLAdesktopApp3
             }
         }
 
-        // Function called when searching the array students for words from the txtSearch textbox
+        // Function called to view pnlHome.
+        void viewHome()
+        {
+            if (btnDelete.Visible) btnDelete.Visible = false;
+            gbStudent.Text = "Home";
+            this.Text = "FBLA - Home";
+            pnlHome.BringToFront();
+            toolStripButtons(true);
+        }
+
+        // Function called when creating a new student form.
+        void newStudent()
+        {
+            // Add later: if not saved, request save function
+            readMode(true);
+            mbtnPrint.Enabled = true;
+            this.Text = "FBLA";
+            mbtnClearAll.Enabled = true;
+            mbtnPrintPreview.Enabled = true;
+            btnClear.Enabled = true;
+            btnPrint.Enabled = true;
+            btnPrintDialog.Enabled = true;
+            btnPrintPreview.Enabled = true;
+            newForm = true;
+            clearAll();
+            btnSave.Enabled = false;
+            mbtnSave.Enabled = false;
+            gbStudent.Text = txtFirstName.Text + " " + txtLastName.Text;
+            pnlStudent.BringToFront();
+        }
+
+        // Function called when searching the array students for words from the txtSearch textbox.
         void searchFunc()
         {
             switch (cmbSearchBy.SelectedIndex)
@@ -107,7 +138,7 @@ namespace FBLAdesktopApp3
                 case 5: search = 8; break;
             }
 
-            // Search the given searchby argument in all students
+            // Search the given searchby argument in all students.
             for (int i = 0; i < count; i++)
             {
                 if (student[i, search].Contains(txtSearch.Text))
@@ -131,15 +162,15 @@ namespace FBLAdesktopApp3
         {
             lblStudent.Text = "Total Students: " + count.ToString();
             lblAdmins.Text = "Administrator Accounts: " + loginCount.ToString();
-            lblActive.Text = "Active Students: " + (active / 2).ToString();
+            lblActive.Text = "Active Students: " + (active).ToString();
             lblFees.Text = "Students With Fees: " + hasFees.ToString();
             switch (grade)
             {
-                case 0: lblGrades.Text = "Freshmen: " + (g9/2).ToString(); break;
-                case 1: lblGrades.Text = "Sophomores: " + (g10 / 2).ToString(); break;
-                case 2: lblGrades.Text = "Juniors: " + (g11 / 2).ToString(); break;
-                case 3: lblGrades.Text = "Seniors: " + (g12 / 2).ToString(); break;
-                case 4: lblGrades.Text = "College Level: " + (g13 / 2).ToString(); break;
+                case 0: lblGrades.Text = "Freshmen: " + (g9).ToString(); break;
+                case 1: lblGrades.Text = "Sophomores: " + (g10).ToString(); break;
+                case 2: lblGrades.Text = "Juniors: " + (g11).ToString(); break;
+                case 3: lblGrades.Text = "Seniors: " + (g12).ToString(); break;
+                case 4: lblGrades.Text = "College Level: " + (g13).ToString(); break;
             }
         }
 
@@ -280,7 +311,7 @@ namespace FBLAdesktopApp3
             // Create temporary file.
             var tempFile = Path.GetTempFileName();
             // Create an array of lines to keep if it doesn't contain the selected student.
-            var linesToKeep = File.ReadLines(specificFolder).Where(l => !(l.Contains(student[studentNum, 0])));
+            var linesToKeep = File.ReadLines(specificFolder).Where(l => l != student[studentNum, 0]);
 
             // Write the kept lines to the temporary file.
             File.WriteAllLines(tempFile, linesToKeep);
@@ -290,6 +321,12 @@ namespace FBLAdesktopApp3
             
             //Replace old file with temporary file.
             File.Move(tempFile, specificFolder);
+
+            date = now.Month + "/" + now.Day;
+
+            File.AppendAllText(logFolder, date + "\\" + "[D] " + txtFirstName.Text + " " + txtLastName.Text + "\\" + logins[account, 0] + "\\" + txtMemberNum.Text + "\r\n");
+            readToArray();
+            logLog();
 
         }
 
@@ -594,10 +631,7 @@ namespace FBLAdesktopApp3
         }
         private void mbtnHome_Click(object sender, EventArgs e)
         {
-            gbStudent.Text = "Home";
-            this.Text = "FBLA - Home";
-            pnlHome.BringToFront();
-            toolStripButtons(true);
+            viewHome();
         }
 
         private void mbtnLogout_Click(object sender, EventArgs e)
@@ -614,51 +648,17 @@ namespace FBLAdesktopApp3
 
         private void mbtnNew_Click(object sender, EventArgs e)
         {
-            // Add later: if not saved, request save function
-            readMode(true);
-            mbtnPrint.Enabled = true;
-            this.Text = "FBLA";
-            mbtnClearAll.Enabled = true;
-            mbtnPrintPreview.Enabled = true;
-            btnClear.Enabled = true;
-            btnPrint.Enabled = true;
-            btnPrintDialog.Enabled = true;
-            btnPrintPreview.Enabled = true;
-            newForm = true;
-            clearAll();
-            btnSave.Enabled = false;
-            mbtnSave.Enabled = false;
-            gbStudent.Text = txtFirstName.Text + " " + txtLastName.Text;
-            pnlStudent.BringToFront();
+            newStudent();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            // Add later: if not saved, request save function
-            readMode(true);
-            mbtnPrint.Enabled = true;
-            this.Text = "FBLA";
-            mbtnClearAll.Enabled = true;
-            mbtnPrintPreview.Enabled = true;
-            btnClear.Enabled = true;
-            btnPrint.Enabled = true;
-            btnPrintDialog.Enabled = true;
-            btnPrintPreview.Enabled = true;
-            newForm = true;
-            clearAll();
-            btnSave.Enabled = false;
-            mbtnSave.Enabled = false;
-            gbStudent.Text = txtFirstName.Text + " " + txtLastName.Text;
-            pnlStudent.BringToFront();
+            newStudent();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            if (btnDelete.Visible) btnDelete.Visible = false;
-            gbStudent.Text = "Home";
-            this.Text = "FBLA - Home";
-            pnlHome.BringToFront();
-            toolStripButtons(true);
+            viewHome();
         }
 
         
