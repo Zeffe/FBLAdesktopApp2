@@ -632,9 +632,9 @@
             // 
             // gbStudent
             // 
+            this.gbStudent.Controls.Add(this.pnlLogin);
             this.gbStudent.Controls.Add(this.pnlHome);
             this.gbStudent.Controls.Add(this.pnlStudent);
-            this.gbStudent.Controls.Add(this.pnlLogin);
             this.gbStudent.Location = new System.Drawing.Point(12, 52);
             this.gbStudent.Name = "gbStudent";
             this.gbStudent.Size = new System.Drawing.Size(671, 438);

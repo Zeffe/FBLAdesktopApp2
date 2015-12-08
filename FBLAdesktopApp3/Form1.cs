@@ -41,6 +41,7 @@ namespace FBLAdesktopApp3
         String[,] student = new String[50, 13];
         String[,] logins = new String[50, 4];
         String[,] log = new String[50, 4];
+        String[] backup = new String[10];
         DateTime now = DateTime.Now;
         bool newForm, gradeview, disabled;
         // *************************************************************
@@ -469,6 +470,16 @@ namespace FBLAdesktopApp3
             stats();
         }
 
+        // Function called to configurate which backupfile to read from.
+        void backupConfig()
+        {
+            StreamReader _backupReader;
+            _backupReader = File.OpenText(specificFolder + "/backups/backupSettings.txt");
+            string str;
+            String[] log = new String[10];
+            if ((str = _backupReader.ReadLine()) != null) backup = str.Split('\\');
+        }
+
         //Changes the name of the group box to the students name when working with new student forms.
         void newFormTitle()
         { 
@@ -500,6 +511,16 @@ namespace FBLAdesktopApp3
             if (!File.Exists(specificFolder + "/students.txt"))
             {
                 File.Create(specificFolder + "/students.txt").Dispose();
+            }
+            // If backups folder doesn't exist, create it.
+            if (!File.Exists(specificFolder + "/backups"))
+            {
+                Directory.CreateDirectory(specificFolder + "/backups");
+            }
+            // If backupSettings.txt does not exist, create it.
+            if (!File.Exists(specificFolder + "/backups/backupSettings.txt"))
+            {
+                File.Create(specificFolder + "/backups/backupSettings.txt");
             }
             // If log.txt does not exist, create it.
             if (!File.Exists(specificFolder + "/log.txt"))

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="backupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="backupForm.Designer.cs">
+      <DependentUpon>backupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="quickAddForm.Designer.cs">
       <DependentUpon>quickAddForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="backupForm.resx">
+      <DependentUpon>backupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

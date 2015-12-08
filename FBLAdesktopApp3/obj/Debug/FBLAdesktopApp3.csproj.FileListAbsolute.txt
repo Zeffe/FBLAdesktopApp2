@@ -27,3 +27,4 @@ C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3
 C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.Properties.Resources.resources
 C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.quickAddForm.resources
 C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.csproj.GenerateResource.Cache
+C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.backupForm.resources
