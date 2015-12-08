@@ -43,7 +43,7 @@ namespace FBLAdesktopApp3
             if (OK)
             {
                 specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
-                File.AppendAllText(specificFolder, "\r\n" + txtQuickAdd.Text);
+                File.AppendAllText(specificFolder, txtQuickAdd.Text + "\r\n");
                 MessageBox.Show("Student added, refresh to view on log", "Success!");
             }
         }

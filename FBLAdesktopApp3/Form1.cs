@@ -235,6 +235,7 @@ namespace FBLAdesktopApp3
         void viewForm(int studentNum)
         {
             pnlStudent.BringToFront();
+            gbStudent.Text = student[studentNum, 1] + " " + student[studentNum, 4] + " - " + student[studentNum, 0];
             txtMemberNum.Text = student[studentNum, 0]; txtFirstName.Text = student[studentNum, 1]; txtMI.Text = student[studentNum, 2];
             cmbState.Text = student[studentNum, 3]; txtLastName.Text = student[studentNum, 4]; txtSchool.Text = student[studentNum, 8];
             txtEmail.Text = student[studentNum, 9]; txtOwed.Text = student[studentNum, 10]; txtJoined.Text = student[studentNum, 11];
