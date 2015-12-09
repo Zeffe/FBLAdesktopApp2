@@ -30,7 +30,7 @@ namespace FBLAdesktopApp3
         String feeStr;
         int search, count, loginCount, logCount, account, active, hasFees, g9, g10, g11, g12, g13, activeStudent, grade;
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        string specificFolder, logFolder, date;
+        string specificFolder, logFolder, date, activeFile, str;
         Double feeDbl;
         String[] temp = new String[10];
         String[] temp2 = new String[20];
@@ -72,7 +72,7 @@ namespace FBLAdesktopApp3
         // Function called when writing data from pnlStudent to text file
         void save()
         {
-            specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
+            specificFolder = Path.Combine(folder, "FBLAapplication/" + activeFile);
             logFolder = Path.Combine(folder, "FBLAapplication/log.txt");
             date = now.Month + "/" + now.Day;
             if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
@@ -312,7 +312,7 @@ namespace FBLAdesktopApp3
             // Create temporary file.
             var tempFile = Path.GetTempFileName();
             // Create an array of lines to keep if it doesn't contain the selected student.
-            var linesToKeep = File.ReadLines(specificFolder).Where(l => l != student[studentNum, 0]);
+            var linesToKeep = File.ReadLines(specificFolder).Where(l => !(l.Contains(student[studentNum, 0] + "\\" + student[studentNum, 1])));
 
             // Write the kept lines to the temporary file.
             File.WriteAllLines(tempFile, linesToKeep);
@@ -349,7 +349,7 @@ namespace FBLAdesktopApp3
             try
             {
                 _assembly = Assembly.GetExecutingAssembly();
-                specificFolder = Path.Combine(folder, "FBLAapplication/students.txt");
+                specificFolder = Path.Combine(folder, "FBLAapplication\\" + activeFile);
                 logFolder = Path.Combine(folder, "FBLAapplication/log.txt");
                 _textStreamReader = File.OpenText(specificFolder);
                 _textStreamReader2 = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.logins.txt"));
@@ -474,10 +474,11 @@ namespace FBLAdesktopApp3
         void backupConfig()
         {
             StreamReader _backupReader;
-            _backupReader = File.OpenText(specificFolder + "/backups/backupSettings.txt");
-            string str;
-            String[] log = new String[10];
+            string backupFolder = Path.Combine(folder, "FBLAapplication/backups");
+            _backupReader = File.OpenText(backupFolder + "\\backupSettings.txt");
             if ((str = _backupReader.ReadLine()) != null) backup = str.Split('\\');
+            _backupReader.Close();
+            activeFile = backup[Convert.ToInt32(backup[backup.Length-1])];
         }
 
         //Changes the name of the group box to the students name when working with new student forms.
@@ -527,6 +528,7 @@ namespace FBLAdesktopApp3
             {
                 File.Create(specificFolder + "/log.txt").Dispose();
             }
+            backupConfig();
             // Read students.txt to students array.
             readToArray();
             // Update student and admin log.
