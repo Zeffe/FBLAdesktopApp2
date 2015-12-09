@@ -188,6 +188,7 @@ namespace FBLAdesktopApp3
             txtSearch.Enabled = x;
             cmbSearchBy.Enabled = x;
             mbtnQuickAdd.Enabled = x;
+            mbtnSourceMng.Enabled = x;
             mbtnNew.Enabled = x;
             mbtnExport.Enabled = x;
             mbtnLogout.Enabled = x;
@@ -323,8 +324,10 @@ namespace FBLAdesktopApp3
             //Replace old file with temporary file.
             File.Move(tempFile, specificFolder);
 
+            // Get current date in M/D format.
             date = now.Month + "/" + now.Day;
 
+            // Write the delete to log and display it.
             File.AppendAllText(logFolder, date + "\\" + "[D] " + txtFirstName.Text + " " + txtLastName.Text + "\\" + logins[account, 0] + "\\" + txtMemberNum.Text + "\r\n");
             readToArray();
             logLog();
@@ -791,6 +794,12 @@ namespace FBLAdesktopApp3
         {
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
+        }
+
+        private void mbtnSourceMng_Click(object sender, EventArgs e)
+        {
+            backupForm form3 = new backupForm();
+            form3.Show();
         }
 
         private void quickAddToolStripMenuItem_Click(object sender, EventArgs e)
