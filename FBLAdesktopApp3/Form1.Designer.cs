@@ -82,6 +82,12 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.gbStudent = new System.Windows.Forms.GroupBox();
+            this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btnLogon = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlHome = new System.Windows.Forms.Panel();
             this.lblGrades = new System.Windows.Forms.Label();
             this.lblFees = new System.Windows.Forms.Label();
@@ -153,12 +159,6 @@
             this.txtMI = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.pnlLogin = new System.Windows.Forms.Panel();
-            this.btnLogon = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ttOptional = new System.Windows.Forms.ToolTip(this.components);
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -166,6 +166,8 @@
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.gbStudent.SuspendLayout();
+            this.pnlLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlHome.SuspendLayout();
             this.tabLogs.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -175,8 +177,6 @@
             this.gbGrade.SuspendLayout();
             this.gbActive.SuspendLayout();
             this.gbSex.SuspendLayout();
-            this.pnlLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -648,9 +648,72 @@
             this.gbStudent.Location = new System.Drawing.Point(12, 52);
             this.gbStudent.Name = "gbStudent";
             this.gbStudent.Size = new System.Drawing.Size(671, 438);
-            this.gbStudent.TabIndex = 8;
+            this.gbStudent.TabIndex = 500;
             this.gbStudent.TabStop = false;
             this.gbStudent.Text = "Logon Screen";
+            // 
+            // pnlLogin
+            // 
+            this.pnlLogin.Controls.Add(this.btnLogon);
+            this.pnlLogin.Controls.Add(this.label3);
+            this.pnlLogin.Controls.Add(this.txtPass);
+            this.pnlLogin.Controls.Add(this.txtUser);
+            this.pnlLogin.Controls.Add(this.pictureBox1);
+            this.pnlLogin.Location = new System.Drawing.Point(6, 19);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(659, 413);
+            this.pnlLogin.TabIndex = 24;
+            // 
+            // btnLogon
+            // 
+            this.btnLogon.Location = new System.Drawing.Point(281, 289);
+            this.btnLogon.Name = "btnLogon";
+            this.btnLogon.Size = new System.Drawing.Size(115, 21);
+            this.btnLogon.TabIndex = 3;
+            this.btnLogon.Text = "Log In";
+            this.btnLogon.UseVisualStyleBackColor = true;
+            this.btnLogon.Click += new System.EventHandler(this.btnLogon_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(222, 192);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Please Log In";
+            // 
+            // txtPass
+            // 
+            this.txtPass.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtPass.Location = new System.Drawing.Point(225, 251);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(238, 20);
+            this.txtPass.TabIndex = 2;
+            this.txtPass.Text = "Password";
+            this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
+            this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
+            // 
+            // txtUser
+            // 
+            this.txtUser.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtUser.Location = new System.Drawing.Point(225, 214);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(238, 20);
+            this.txtUser.TabIndex = 1;
+            this.txtUser.Text = "Client ID";
+            this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
+            this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(239, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // pnlHome
             // 
@@ -1430,69 +1493,6 @@
             this.txtFirstName.TabIndex = 1;
             this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
-            // pnlLogin
-            // 
-            this.pnlLogin.Controls.Add(this.btnLogon);
-            this.pnlLogin.Controls.Add(this.label3);
-            this.pnlLogin.Controls.Add(this.txtPass);
-            this.pnlLogin.Controls.Add(this.txtUser);
-            this.pnlLogin.Controls.Add(this.pictureBox1);
-            this.pnlLogin.Location = new System.Drawing.Point(6, 19);
-            this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(659, 413);
-            this.pnlLogin.TabIndex = 24;
-            // 
-            // btnLogon
-            // 
-            this.btnLogon.Location = new System.Drawing.Point(281, 289);
-            this.btnLogon.Name = "btnLogon";
-            this.btnLogon.Size = new System.Drawing.Size(115, 21);
-            this.btnLogon.TabIndex = 7;
-            this.btnLogon.Text = "Log In";
-            this.btnLogon.UseVisualStyleBackColor = true;
-            this.btnLogon.Click += new System.EventHandler(this.btnLogon_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(222, 192);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Please Log In";
-            // 
-            // txtPass
-            // 
-            this.txtPass.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtPass.Location = new System.Drawing.Point(225, 251);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(238, 20);
-            this.txtPass.TabIndex = 5;
-            this.txtPass.Text = "Password";
-            this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
-            this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
-            // 
-            // txtUser
-            // 
-            this.txtUser.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtUser.Location = new System.Drawing.Point(225, 214);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(238, 20);
-            this.txtUser.TabIndex = 4;
-            this.txtUser.Text = "Client ID";
-            this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
-            this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(239, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 135);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -1527,6 +1527,9 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.gbStudent.ResumeLayout(false);
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlHome.ResumeLayout(false);
             this.pnlHome.PerformLayout();
             this.tabLogs.ResumeLayout(false);
@@ -1542,9 +1545,6 @@
             this.gbActive.PerformLayout();
             this.gbSex.ResumeLayout(false);
             this.gbSex.PerformLayout();
-            this.pnlLogin.ResumeLayout(false);
-            this.pnlLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
