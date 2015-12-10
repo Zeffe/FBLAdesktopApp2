@@ -55,6 +55,7 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnHome = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnQuickAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.mbtnSourceMng = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnAccountDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnProgramSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -162,7 +163,6 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.ttPrintPreview = new System.Windows.Forms.ToolTip(this.components);
-            this.mbtnSourceMng = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.gbStudent.SuspendLayout();
@@ -387,6 +387,14 @@
             this.mbtnQuickAdd.Size = new System.Drawing.Size(165, 22);
             this.mbtnQuickAdd.Text = "QuickAdd";
             this.mbtnQuickAdd.Click += new System.EventHandler(this.quickAddToolStripMenuItem_Click);
+            // 
+            // mbtnSourceMng
+            // 
+            this.mbtnSourceMng.Enabled = false;
+            this.mbtnSourceMng.Name = "mbtnSourceMng";
+            this.mbtnSourceMng.Size = new System.Drawing.Size(165, 22);
+            this.mbtnSourceMng.Text = "Source Manager";
+            this.mbtnSourceMng.Click += new System.EventHandler(this.mbtnSourceMng_Click);
             // 
             // mbtnAccountDetails
             // 
@@ -634,9 +642,9 @@
             // 
             // gbStudent
             // 
-            this.gbStudent.Controls.Add(this.pnlLogin);
             this.gbStudent.Controls.Add(this.pnlHome);
             this.gbStudent.Controls.Add(this.pnlStudent);
+            this.gbStudent.Controls.Add(this.pnlLogin);
             this.gbStudent.Location = new System.Drawing.Point(12, 52);
             this.gbStudent.Name = "gbStudent";
             this.gbStudent.Size = new System.Drawing.Size(671, 438);
@@ -1498,14 +1506,6 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // mbtnSourceMng
-            // 
-            this.mbtnSourceMng.Enabled = false;
-            this.mbtnSourceMng.Name = "mbtnSourceMng";
-            this.mbtnSourceMng.Size = new System.Drawing.Size(165, 22);
-            this.mbtnSourceMng.Text = "Source Manager";
-            this.mbtnSourceMng.Click += new System.EventHandler(this.mbtnSourceMng_Click);
             // 
             // Form1
             // 

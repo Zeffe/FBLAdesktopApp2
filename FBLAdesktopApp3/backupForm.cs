@@ -18,7 +18,7 @@ namespace FBLAdesktopApp3
             InitializeComponent();
         }
 
-        string str, activeFile;
+        string str, activeFile, selected;
         String[] backup = new String[10];
         String[] fileName = new String[5];
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -31,13 +31,42 @@ namespace FBLAdesktopApp3
             if ((str = _backupReader.ReadLine()) != null) backup = str.Split('\\');
             _backupReader.Close();
             activeFile = backup[Convert.ToInt32(backup[backup.Length - 1])];
-            fileName = activeFile.Split('.');
+        }
+
+        private void listFiles_ItemActivate(object sender, EventArgs e)
+        {
+            string stri = listFiles.FocusedItem.ToString();
+            selected = stri.Split('{', '}')[1];
+            label2.Text = "Selected: " + selected;
+        }
+
+        void listLoad()
+        {
+            listFiles.Items.Clear();
+            for (int i = 0; i < backup.Length - 1; i++)
+            {
+                ListViewItem new_item = listFiles.Items.Add(backup[i]);
+            }
+        }
+
+        private void backupForm_Activated(object sender, EventArgs e)
+        {
+            backupConfig();
+            listLoad();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            newSourceForm newSource = new newSourceForm();
+            newSource.Show();
         }
 
         private void backupForm_Load(object sender, EventArgs e)
         {
             backupConfig();
-            label1.Text = "Current reading from: " + fileName[0];
+            listLoad();
+            label1.Text = "Current reading from: " + activeFile;
+            label2.Text = "Selected: " + selected;
         }
 
     }
