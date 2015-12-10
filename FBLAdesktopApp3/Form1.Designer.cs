@@ -590,6 +590,8 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.AutoCompleteCustomSource.AddRange(new string[] {
+            "Dixon"});
             this.txtSearch.Enabled = false;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(125, 25);

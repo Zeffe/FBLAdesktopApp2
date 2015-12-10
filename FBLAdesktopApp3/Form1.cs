@@ -73,7 +73,7 @@ namespace FBLAdesktopApp3
         void save()
         {
             specificFolder = Path.Combine(folder, "FBLAapplication/" + activeFile);
-            string notStudents = Path.Combine(folder, "FBLAapplication/backups" + activeFile);
+            string notStudents = Path.Combine(folder, "FBLAapplication/backups/" + activeFile);
             logFolder = Path.Combine(folder, "FBLAapplication/log.fbla");
             date = now.Month + "/" + now.Day;
             if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
@@ -439,7 +439,7 @@ namespace FBLAdesktopApp3
             active = 0;
             hasFees = 0;
             g9 = 0; g10 = 0; g11 = 0; g12 = 0; g13 = 0;
-            for (int i = 0; i < count; i++)
+            for (int i = 1; i < count; i++)
             {
                 ListViewItem new_item = listView1.Items.Add(student[i, 0]);
                 new_item.SubItems.Add(student[i, 1] + " " + student[i, 4]);
