@@ -22,13 +22,14 @@ namespace FBLAdesktopApp3
         int activeFile;
         String[] backup = new String[10];
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        DateTime now = DateTime.Now;
 
 
         void backupConfig()
         {
             StreamReader _backupReader;
             backupFolder = Path.Combine(folder, "FBLAapplication/backups");
-            _backupReader = File.OpenText(backupFolder + "\\backupSettings.txt");
+            _backupReader = File.OpenText(backupFolder + "\\backupSettings.fbla");
             if ((str = _backupReader.ReadLine()) != null) backup = str.Split('\\');
             _backupReader.Close();
             activeFile = Convert.ToInt32(backup[backup.Length - 1]);
@@ -39,7 +40,7 @@ namespace FBLAdesktopApp3
             bool OK = true;
             for (int i = 0; i < backup.Length; i++)
             {
-                if (backup[i] == txtNew.Text + ".txt")
+                if (backup[i] == txtNew.Text + ".fbla")
                 {
                     OK = false;
                     MessageBox.Show("Failed to create source, file name already in use.", "Error");
@@ -47,13 +48,17 @@ namespace FBLAdesktopApp3
             }
             if (OK)
             {
-                StreamWriter _backupWriter = new StreamWriter(backupFolder + "\\backupSettings.txt", false);
-                _backupWriter.WriteLine(newTxt + txtNew.Text + ".txt\\" + activeFile.ToString());
+                StreamWriter _backupWriter = new StreamWriter(backupFolder + "\\backupSettings.fbla", false);
+                StreamWriter _initial = new StreamWriter(backupFolder + "\\" + txtNew.Text + ".fbla");
+                _backupWriter.WriteLine(newTxt + txtNew.Text + ".fbla\\" + activeFile.ToString());
                 _backupWriter.Close();
-                if (!File.Exists(backupFolder + "\\" + txtNew.Text + ".txt"))
+                string date = now.Month.ToString() + "/" + now.Day.ToString();
+                if (!File.Exists(backupFolder + "\\" + txtNew.Text + ".fbla"))
                 {
-                    File.Create(backupFolder + "\\" + txtNew.Text + ".txt");
+                    File.Create(backupFolder + "\\" + txtNew.Text + ".fbla");
                 }
+                _initial.WriteLine("0\\Source Created: \\\\\\" + date + "\\1\\1\\1\\\\\\\\\\");
+                _initial.Close();
                 MessageBox.Show("Successfully created " + txtNew.Text + "!", "Success!");
             }
         }
@@ -61,7 +66,8 @@ namespace FBLAdesktopApp3
         private void btnAdd_Click(object sender, EventArgs e)
         {
             backupConfig();
-            for (int i = 0; i < backup.Length - 1; i++)
+            newTxt = backup[0] + '\\';
+            for (int i = 1; i < backup.Length - 1; i++)
             {
                 newTxt += backup[i] + '\\';
             }

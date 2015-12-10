@@ -73,7 +73,7 @@ namespace FBLAdesktopApp3
         void save()
         {
             specificFolder = Path.Combine(folder, "FBLAapplication/" + activeFile);
-            logFolder = Path.Combine(folder, "FBLAapplication/log.txt");
+            logFolder = Path.Combine(folder, "FBLAapplication/log.fbla");
             date = now.Month + "/" + now.Day;
             if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
             {
@@ -346,20 +346,20 @@ namespace FBLAdesktopApp3
             }
         }
 
-        // Reads information from loginstxt and students.txt into their respective arrays.
+        // Reads information from loginstxt and students.fbla into their respective arrays.
         void readToArray()
         {
             try
             {
                 _assembly = Assembly.GetExecutingAssembly();
-                if (activeFile == "students.txt")
+                if (activeFile == "students.fbla")
                 {
                     specificFolder = Path.Combine(folder, "FBLAapplication\\" + activeFile);
                 } else
                 {
                     specificFolder = Path.Combine(folder, "FBLAapplication\\backups\\" + activeFile);
                 }
-                logFolder = Path.Combine(folder, "FBLAapplication/log.txt");
+                logFolder = Path.Combine(folder, "FBLAapplication/log.fbla");
                 _textStreamReader = File.OpenText(specificFolder);
                 _textStreamReader2 = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.logins.txt"));
                 _textStreamReader3 = File.OpenText(logFolder);
@@ -484,7 +484,7 @@ namespace FBLAdesktopApp3
         {
             StreamReader _backupReader;
             string backupFolder = Path.Combine(folder, "FBLAapplication/backups");
-            _backupReader = File.OpenText(backupFolder + "\\backupSettings.txt");
+            _backupReader = File.OpenText(backupFolder + "\\backupSettings.fbla");
             if ((str = _backupReader.ReadLine()) != null) backup = str.Split('\\');
             _backupReader.Close();
             activeFile = backup[Convert.ToInt32(backup[backup.Length-1])];
@@ -517,28 +517,30 @@ namespace FBLAdesktopApp3
             {
                 Directory.CreateDirectory(specificFolder);
             }
-            // If students.txt does not exist, create it.
-            if (!File.Exists(specificFolder + "/students.txt"))
+            // If students.fbla does not exist, create it.
+            if (!File.Exists(specificFolder + "/students.fbla"))
             {
-                File.Create(specificFolder + "/students.txt").Dispose();
+                File.Create(specificFolder + "/students.fbla").Dispose();
             }
             // If backups folder doesn't exist, create it.
             if (!File.Exists(specificFolder + "/backups"))
             {
                 Directory.CreateDirectory(specificFolder + "/backups");
             }
-            // If backupSettings.txt does not exist, create it.
-            if (!File.Exists(specificFolder + "/backups/backupSettings.txt"))
+            // If backupSettings.fbla does not exist, create it.
+            if (!File.Exists(specificFolder + "/backups/backupSettings.fbla"))
             {
-                File.Create(specificFolder + "/backups/backupSettings.txt");
+                File.Create(specificFolder + "/backups/backupSettings.fbla");
+                StreamWriter _initial = new StreamWriter(specificFolder + "/backups/backupSettings.fbla");
+                _initial.WriteLine("students.fbla\\0");
             }
-            // If log.txt does not exist, create it.
-            if (!File.Exists(specificFolder + "/log.txt"))
+            // If log.fbla does not exist, create it.
+            if (!File.Exists(specificFolder + "/log.fbla"))
             {
-                File.Create(specificFolder + "/log.txt").Dispose();
+                File.Create(specificFolder + "/log.fbla").Dispose();
             }
             backupConfig();
-            // Read students.txt to students array.
+            // Read students.fbla to students array.
             readToArray();
             // Update student and admin log.
             studentLog();
