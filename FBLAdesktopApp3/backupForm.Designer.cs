@@ -91,6 +91,7 @@
             this.btnChange.TabIndex = 4;
             this.btnChange.Text = "Change";
             this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // backupForm
             // 

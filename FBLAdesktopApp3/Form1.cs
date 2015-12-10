@@ -352,7 +352,13 @@ namespace FBLAdesktopApp3
             try
             {
                 _assembly = Assembly.GetExecutingAssembly();
-                specificFolder = Path.Combine(folder, "FBLAapplication\\" + activeFile);
+                if (activeFile == "students.txt")
+                {
+                    specificFolder = Path.Combine(folder, "FBLAapplication\\" + activeFile);
+                } else
+                {
+                    specificFolder = Path.Combine(folder, "FBLAapplication\\backups\\" + activeFile);
+                }
                 logFolder = Path.Combine(folder, "FBLAapplication/log.txt");
                 _textStreamReader = File.OpenText(specificFolder);
                 _textStreamReader2 = new StreamReader(_assembly.GetManifestResourceStream("FBLAdesktopApp3.Resources.logins.txt"));
@@ -810,6 +816,7 @@ namespace FBLAdesktopApp3
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            backupConfig();
             readToArray();
             studentLog();
         }
@@ -927,7 +934,7 @@ namespace FBLAdesktopApp3
             // Searches for a log item when double clicked.
             string stri = listView1.FocusedItem.ToString();
             // Removes extra characters to get value to be searched.
-            stri = stri.Trim( new Char[] {'L','i', 's', 't', 'V', 'i', 'e', 'w', 'I', 't', ' ', 'm', ':', '{', '}' } );
+            stri = stri.Split('{', '}')[1];
             cmbSearchBy.SelectedIndex = 3;
             txtSearch.Text = stri;
             searchFunc();

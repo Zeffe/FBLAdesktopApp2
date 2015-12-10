@@ -18,7 +18,7 @@ namespace FBLAdesktopApp3
             InitializeComponent();
         }
 
-        string str, activeFile, selected;
+        string str, activeFile, selected, backupFolder, newTxt;
         String[] backup = new String[10];
         String[] fileName = new String[5];
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -26,7 +26,7 @@ namespace FBLAdesktopApp3
         void backupConfig()
         {
             StreamReader _backupReader;
-            string backupFolder = Path.Combine(folder, "FBLAapplication/backups");
+            backupFolder = Path.Combine(folder, "FBLAapplication/backups");
             _backupReader = File.OpenText(backupFolder + "\\backupSettings.txt");
             if ((str = _backupReader.ReadLine()) != null) backup = str.Split('\\');
             _backupReader.Close();
@@ -53,6 +53,26 @@ namespace FBLAdesktopApp3
         {
             backupConfig();
             listLoad();
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            if (selected != "")
+            {
+                for (int i = 0; i < backup.Length - 1; i++)
+                {
+                    if (backup[i] == selected) activeFile = i.ToString();
+                }
+                for (int i = 0; i < backup.Length - 1; i++)
+                {
+                    newTxt += backup[i] + '\\';
+                }
+                StreamWriter _backupWriter = new StreamWriter(backupFolder + "\\backupSettings.txt", false);
+                _backupWriter.WriteLine(newTxt + activeFile);
+                _backupWriter.Close();
+                label1.Text = "Current reading from: " + activeFile;
+                MessageBox.Show("Source changed, refresh on student log form to read from new source.", "Success");
+            }
         }
 
         private void btnNew_Click(object sender, EventArgs e)
