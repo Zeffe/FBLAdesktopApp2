@@ -43,7 +43,7 @@ namespace FBLAdesktopApp3
         String[,] log = new String[50, 4];
         String[] backup = new String[10];
         DateTime now = DateTime.Now;
-        bool newForm, gradeview, disabled;
+        bool newForm, gradeview, disabled, firstLoad;
         // *************************************************************
 
         // ********************** User Declared Functions **********************
@@ -73,6 +73,7 @@ namespace FBLAdesktopApp3
         void save()
         {
             specificFolder = Path.Combine(folder, "FBLAapplication/" + activeFile);
+            string notStudents = Path.Combine(folder, "FBLAapplication/backups/" + activeFile);
             logFolder = Path.Combine(folder, "FBLAapplication/log.fbla");
             date = now.Month + "/" + now.Day;
             if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
@@ -83,7 +84,13 @@ namespace FBLAdesktopApp3
                 if (rbGrade9.Checked) grade = "1"; else if (rbGrade10.Checked) grade = "2"; else if (rbGrade11.Checked) grade = "3"; else if (rbGrade12.Checked) grade = "4"; else grade = "5";
                 if (rbActive.Checked) active = "1"; else active = "2";
                 File.AppendAllText(logFolder, date + "\\" + "[A] " + txtFirstName.Text + " " + txtLastName.Text + "\\" + logins[account, 0] + "\\" + txtMemberNum.Text + "\r\n");
-                File.AppendAllText(specificFolder, txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text + "\r\n");
+                if (activeFile != "students.fbla")
+                {
+                    File.AppendAllText(notStudents, txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text + "\r\n");
+                }
+                else {
+                    File.AppendAllText(specificFolder, txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text + "\r\n");
+                }
                 readToArray();
                 studentLog();
                 logLog();
@@ -432,7 +439,7 @@ namespace FBLAdesktopApp3
             active = 0;
             hasFees = 0;
             g9 = 0; g10 = 0; g11 = 0; g12 = 0; g13 = 0;
-            for (int i = 0; i < count; i++)
+            for (int i = 1; i < count; i++)
             {
                 ListViewItem new_item = listView1.Items.Add(student[i, 0]);
                 new_item.SubItems.Add(student[i, 1] + " " + student[i, 4]);
@@ -511,6 +518,7 @@ namespace FBLAdesktopApp3
             // FORM1_LOAD
         private void Form1_Load(object sender, EventArgs e)
         {
+            firstLoad = false;
             // If the %appdata% file does not exist, create it.
             specificFolder = Path.Combine(folder, "FBLAapplication");
             if (!File.Exists(specificFolder))
@@ -520,7 +528,11 @@ namespace FBLAdesktopApp3
             // If students.fbla does not exist, create it.
             if (!File.Exists(specificFolder + "/students.fbla"))
             {
+                date = now.Month.ToString() + "/" + now.Day.ToString();
                 File.Create(specificFolder + "/students.fbla").Dispose();
+                StreamWriter _initial2 = new StreamWriter(specificFolder + "/students.fbla");
+                _initial2.WriteLine("0\\Source Created: \\\\\\" + date + "\\1\\1\\1\\\\\\\\\\");
+                _initial2.Close();
             }
             // If backups folder doesn't exist, create it.
             if (!File.Exists(specificFolder + "/backups"))
@@ -530,9 +542,10 @@ namespace FBLAdesktopApp3
             // If backupSettings.fbla does not exist, create it.
             if (!File.Exists(specificFolder + "/backups/backupSettings.fbla"))
             {
-                File.Create(specificFolder + "/backups/backupSettings.fbla");
-                StreamWriter _initial = new StreamWriter(specificFolder + "/backups/backupSettings.fbla");
-                _initial.WriteLine("students.fbla\\0");
+                File.Create(specificFolder + "/backups/backupSettings.fbla").Dispose();
+                StreamWriter _initial3 = new StreamWriter(specificFolder + "/backups/backupSettings.fbla");
+                _initial3.WriteLine("students.fbla\\0");
+                _initial3.Close();
             }
             // If log.fbla does not exist, create it.
             if (!File.Exists(specificFolder + "/log.fbla"))
@@ -547,6 +560,7 @@ namespace FBLAdesktopApp3
             adminLog();
             logLog();
             feeDbl = 0.00;
+            label3.Select();
             ttOptional.SetToolTip(lblMI, "Optional");
             ttOptional.SetToolTip(lblComment, "Optional");
             ttPrintPreview.SetToolTip(btnReportPreview, "Preview report");
