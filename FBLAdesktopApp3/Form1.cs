@@ -168,7 +168,7 @@ namespace FBLAdesktopApp3
         // Function called to update statistics, variables come from studentLog function
         void stats()
         {
-            lblStudent.Text = "Total Students: " + (count).ToString();
+            lblStudent.Text = "Total Students: " + (count-1).ToString();
             lblAdmins.Text = "Administrator Accounts: " + loginCount.ToString();
             lblActive.Text = "Active Students: " + (active).ToString();
             lblFees.Text = "Students With Fees: " + hasFees.ToString();
