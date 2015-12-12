@@ -30,7 +30,7 @@ namespace FBLAdesktopApp3
             _backupReader = File.OpenText(backupFolder + "\\backupSettings.fbla");
             if ((str = _backupReader.ReadLine()) != null) backup = str.Split('\\');
             _backupReader.Close();
-            activeFile = backup[Convert.ToInt32(backup[backup.Length - 1])];
+            activeFile = backup[backup.Length - 1];
         }
 
         private void listFiles_ItemActivate(object sender, EventArgs e)
@@ -46,6 +46,48 @@ namespace FBLAdesktopApp3
             for (int i = 0; i < backup.Length - 1; i++)
             {
                 ListViewItem new_item = listFiles.Items.Add(backup[i]);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (selected != "" && selected != "students.fbla" && MessageBox.Show("Are you sure you want to delete this source? All contained data will be lost.", "Delete Source", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (backup[Convert.ToInt32(activeFile)] == selected)
+                {
+                    activeFile = "0";
+                }
+                newTxt = backup[0] + '\\';
+                for (int i = 1; i < backup.Length - 1; i++)
+                {
+                    if (backup[i] != selected)
+                    {
+                        newTxt += backup[i] + '\\';
+                    }
+                }
+                StreamWriter _backupWriter = new StreamWriter(backupFolder + "\\backupSettings.fbla", false);
+                _backupWriter.WriteLine(newTxt + activeFile);
+                _backupWriter.Close();
+                File.Delete(backupFolder + "\\" + selected);
+                selected = "";
+                backupConfig();
+                listLoad();
+                label1.Text = "Current reading from: " + backup[Convert.ToInt32(activeFile)];
+                label2.Text = "Selected: " + selected;
+                btnDelete.Enabled = false;
+
+            }
+            else if (selected == "students.fbla")
+            {
+                MessageBox.Show("Sorry, you can not delete students.fbla because it is the main source.", "Error");
+            }
+        }
+
+        private void label2_TextChanged(object sender, EventArgs e)
+        {
+            if (selected != null)
+            {
+                btnDelete.Enabled = true;
             }
         }
 
@@ -87,7 +129,7 @@ namespace FBLAdesktopApp3
         {
             backupConfig();
             listLoad();
-            label1.Text = "Current reading from: " + activeFile;
+            label1.Text = "Current reading from: " + backup[Convert.ToInt32(activeFile)];
             label2.Text = "Selected: " + selected;
         }
 
