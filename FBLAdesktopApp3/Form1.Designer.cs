@@ -163,6 +163,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.ttPrintPreview = new System.Windows.Forms.ToolTip(this.components);
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.gbStudent.SuspendLayout();
@@ -210,7 +211,7 @@
             // 
             this.mbtnNew.Enabled = false;
             this.mbtnNew.Name = "mbtnNew";
-            this.mbtnNew.Size = new System.Drawing.Size(117, 22);
+            this.mbtnNew.Size = new System.Drawing.Size(152, 22);
             this.mbtnNew.Text = "New";
             this.mbtnNew.Click += new System.EventHandler(this.mbtnNew_Click);
             // 
@@ -218,14 +219,14 @@
             // 
             this.mbtnSave.Enabled = false;
             this.mbtnSave.Name = "mbtnSave";
-            this.mbtnSave.Size = new System.Drawing.Size(117, 22);
+            this.mbtnSave.Size = new System.Drawing.Size(152, 22);
             this.mbtnSave.Text = "Save";
             this.mbtnSave.Click += new System.EventHandler(this.mbtnSave_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(114, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
             // 
             // mbtnPrint
             // 
@@ -235,7 +236,7 @@
             this.mbtnPrint2});
             this.mbtnPrint.Enabled = false;
             this.mbtnPrint.Name = "mbtnPrint";
-            this.mbtnPrint.Size = new System.Drawing.Size(117, 22);
+            this.mbtnPrint.Size = new System.Drawing.Size(152, 22);
             this.mbtnPrint.Text = "Print";
             // 
             // mbtnPrintSettings
@@ -266,38 +267,39 @@
             this.mbtnAsXls});
             this.mbtnExport.Enabled = false;
             this.mbtnExport.Name = "mbtnExport";
-            this.mbtnExport.Size = new System.Drawing.Size(117, 22);
-            this.mbtnExport.Text = "Export";
+            this.mbtnExport.Size = new System.Drawing.Size(152, 22);
+            this.mbtnExport.Text = "Export All";
             // 
             // mbtnAsTxt
             // 
             this.mbtnAsTxt.Name = "mbtnAsTxt";
-            this.mbtnAsTxt.Size = new System.Drawing.Size(104, 22);
+            this.mbtnAsTxt.Size = new System.Drawing.Size(152, 22);
             this.mbtnAsTxt.Text = "as .txt";
+            this.mbtnAsTxt.Click += new System.EventHandler(this.mbtnAsTxt_Click);
             // 
             // mbtnAsXls
             // 
             this.mbtnAsXls.Name = "mbtnAsXls";
-            this.mbtnAsXls.Size = new System.Drawing.Size(104, 22);
+            this.mbtnAsXls.Size = new System.Drawing.Size(152, 22);
             this.mbtnAsXls.Text = "as .xls";
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(114, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(149, 6);
             // 
             // mbtnLogout
             // 
             this.mbtnLogout.Enabled = false;
             this.mbtnLogout.Name = "mbtnLogout";
-            this.mbtnLogout.Size = new System.Drawing.Size(117, 22);
+            this.mbtnLogout.Size = new System.Drawing.Size(152, 22);
             this.mbtnLogout.Text = "Log Out";
             this.mbtnLogout.Click += new System.EventHandler(this.mbtnLogout_Click);
             // 
             // mbtnExit
             // 
             this.mbtnExit.Name = "mbtnExit";
-            this.mbtnExit.Size = new System.Drawing.Size(117, 22);
+            this.mbtnExit.Size = new System.Drawing.Size(152, 22);
             this.mbtnExit.Text = "Exit";
             this.mbtnExit.Click += new System.EventHandler(this.mbtnExit_Click);
             // 
@@ -318,20 +320,20 @@
             // 
             this.mbtnUndo.Enabled = false;
             this.mbtnUndo.Name = "mbtnUndo";
-            this.mbtnUndo.Size = new System.Drawing.Size(118, 22);
+            this.mbtnUndo.Size = new System.Drawing.Size(152, 22);
             this.mbtnUndo.Text = "Undo";
             this.mbtnUndo.Click += new System.EventHandler(this.mbtnUndo_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(115, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(149, 6);
             // 
             // mbtnCut
             // 
             this.mbtnCut.Enabled = false;
             this.mbtnCut.Name = "mbtnCut";
-            this.mbtnCut.Size = new System.Drawing.Size(118, 22);
+            this.mbtnCut.Size = new System.Drawing.Size(152, 22);
             this.mbtnCut.Text = "Cut";
             this.mbtnCut.Click += new System.EventHandler(this.mbtnCut_Click);
             // 
@@ -339,7 +341,7 @@
             // 
             this.mbtnCopy.Enabled = false;
             this.mbtnCopy.Name = "mbtnCopy";
-            this.mbtnCopy.Size = new System.Drawing.Size(118, 22);
+            this.mbtnCopy.Size = new System.Drawing.Size(152, 22);
             this.mbtnCopy.Text = "Copy";
             this.mbtnCopy.Click += new System.EventHandler(this.mbtnCopy_Click);
             // 
@@ -347,7 +349,7 @@
             // 
             this.mbtnPaste.Enabled = false;
             this.mbtnPaste.Name = "mbtnPaste";
-            this.mbtnPaste.Size = new System.Drawing.Size(118, 22);
+            this.mbtnPaste.Size = new System.Drawing.Size(152, 22);
             this.mbtnPaste.Text = "Paste";
             this.mbtnPaste.Click += new System.EventHandler(this.mbtnPaste_Click);
             // 
@@ -355,7 +357,7 @@
             // 
             this.mbtnClearAll.Enabled = false;
             this.mbtnClearAll.Name = "mbtnClearAll";
-            this.mbtnClearAll.Size = new System.Drawing.Size(118, 22);
+            this.mbtnClearAll.Size = new System.Drawing.Size(152, 22);
             this.mbtnClearAll.Text = "Clear All";
             this.mbtnClearAll.Click += new System.EventHandler(this.mbtnClearAll_Click);
             // 
@@ -644,9 +646,9 @@
             // 
             // gbStudent
             // 
+            this.gbStudent.Controls.Add(this.pnlStudent);
             this.gbStudent.Controls.Add(this.pnlLogin);
             this.gbStudent.Controls.Add(this.pnlHome);
-            this.gbStudent.Controls.Add(this.pnlStudent);
             this.gbStudent.Location = new System.Drawing.Point(12, 52);
             this.gbStudent.Name = "gbStudent";
             this.gbStudent.Size = new System.Drawing.Size(671, 438);
@@ -1686,6 +1688,7 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripMenuItem mbtnSourceMng;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 

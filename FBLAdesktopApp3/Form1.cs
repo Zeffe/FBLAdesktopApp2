@@ -30,7 +30,7 @@ namespace FBLAdesktopApp3
         String feeStr;
         int search, count, loginCount, logCount, account, active, hasFees, g9, g10, g11, g12, g13, activeStudent, grade;
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        string specificFolder, logFolder, date, activeFile, str;
+        string specificFolder, logFolder, date, activeFile, str, tempSex, tempActive, tempGrade;
         Double feeDbl;
         String[] temp = new String[10];
         String[] temp2 = new String[20];
@@ -66,6 +66,28 @@ namespace FBLAdesktopApp3
                 txtFirstName.Text = ""; txtLastName.Text = ""; txtMI.Text = ""; cmbState.Text = "MO"; txtSchool.Text = ""; txtEmail.Text = ""; gbStudent.Text = "";
                 txtComment.Text = ""; txtOwed.Text = "$0.00"; txtJoined.Text = now.Year.ToString(); txtMemberNum.Text = ""; rbGrade9.Checked = true; rbMale.Checked = true; rbActive.Checked = true;
                 this.Text = "FBLA";
+            }
+        }
+
+        void getValues(int x)
+        {
+            switch (student[x, 5])
+            {
+                case "1": tempSex = "Male"; break;
+                case "2": tempSex = "Female"; break;
+            }
+            switch (student[x, 6])
+            {
+                case "1": tempGrade = "9"; break;
+                case "2": tempGrade = "10"; break;
+                case "3": tempGrade = "11"; break;
+                case "4": tempGrade = "12"; break;
+                case "5": tempGrade = "13+"; break;
+            }
+            switch (student[x, 7])
+            {
+                case "1": tempActive = "Active"; break;
+                case "2": tempActive = "NonActive"; break;
             }
         }
 
@@ -816,6 +838,42 @@ namespace FBLAdesktopApp3
         {
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
+        }
+
+        private void mbtnAsTxt_Click(object sender, EventArgs e)
+        {
+            try {
+                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    if (!File.Exists(folderBrowserDialog1.SelectedPath + "/Students.txt"))
+                    {
+                        string tempFile = folderBrowserDialog1.SelectedPath + "/Students.txt";
+                        date = now.ToShortDateString() + " - " + now.ToShortTimeString();
+                        File.AppendAllText(tempFile, "Full students export for: " + date + "\r\n");
+                        for (int i = 1; i < count; i++)
+                        {
+                            getValues(i);
+                            File.AppendAllText(tempFile, "----- " + student[i, 1] + " " + student[i, 4] + " : " + student[i, 0] + " -----" + "\r\n");
+                            File.AppendAllText(tempFile, "State: " + student[i, 3] + "\r\n");
+                            File.AppendAllText(tempFile, "Sex: " + tempSex + "\r\n");
+                            File.AppendAllText(tempFile, "School: " + student[i, 8] + "\r\n");
+                            File.AppendAllText(tempFile, "Grade: " + tempGrade + "\r\n");
+                            File.AppendAllText(tempFile, "Email: " + student[i, 9] + "\r\n");
+                            File.AppendAllText(tempFile, "Year Joined: " + student[i, 11] + "\r\n");
+                            File.AppendAllText(tempFile, "Membership Status: " + tempActive + "\r\n");
+                            File.AppendAllText(tempFile, "Fees Owed: " + student[i, 10] + "\r\n");
+                            File.AppendAllText(tempFile, "Comments: " + student[i, 12] + "\r\n");
+                        }
+
+                    } else if (File.Exists(folderBrowserDialog1.SelectedPath + "/Students.txt"))
+                    {
+                        MessageBox.Show("Could not export because Students.txt already exists in chosen directory.", "Error");
+                    }
+                }
+            } catch
+            {
+                return;
+            }
         }
 
         private void mbtnSourceMng_Click(object sender, EventArgs e)
