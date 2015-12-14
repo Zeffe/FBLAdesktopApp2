@@ -160,6 +160,7 @@ namespace FBLAdesktopApp3
         // Function called when searching the array students for words from the txtSearch textbox.
         void searchFunc()
         {
+            bool OK = true;
             switch (cmbSearchBy.SelectedIndex)
             {
                 case 0: search = 4; break;
@@ -170,21 +171,43 @@ namespace FBLAdesktopApp3
                 case 5: search = 8; break;
             }
 
-            // Search the given searchby argument in all students.
-            for (int i = 0; i < count; i++)
+            int count2 = 0;
+
+            for (int i = 1; i < count; i++)
             {
-                if (student[i, search].Contains(txtSearch.Text))
+                if (student[i, search].Contains(txtSearch.Text)) count2++;
+                if (count2 >= 2)
                 {
-                    viewForm(i);
-                    activeStudent = i;
-                    btnSave.Enabled = false;
-                    mbtnSave.Enabled = false;
-                    readMode(false);
+                    pnlHome.BringToFront();
+                    gbStudent.Text = "Home";
+                    this.Text = "FBLA - Home";
+                    toolStripButtons(true);
+                    tabLogs.SelectedTab = tabPage3;
+                    cmbFilter.SelectedIndex = cmbSearchBy.SelectedIndex;
+                    studentLog(txtSearch.Text);
+                    OK = false;
                     break;
                 }
-                else if (i == count - 1)
+            }
+
+            if (OK)
+            {
+                // Search the given searchby argument in all students.
+                for (int i = 0; i < count; i++)
                 {
-                    MessageBox.Show("Could not find any data matching your requested search", "Error");
+                    if (student[i, search].Contains(txtSearch.Text))
+                    {
+                        viewForm(i);
+                        activeStudent = i;
+                        btnSave.Enabled = false;
+                        mbtnSave.Enabled = false;
+                        readMode(false);
+                        break;
+                    }
+                    else if (i == count - 1)
+                    {
+                        MessageBox.Show("Could not find any data matching your requested search", "Error");
+                    }
                 }
             }
         }
