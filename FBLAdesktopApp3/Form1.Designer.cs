@@ -83,41 +83,6 @@
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.gbStudent = new System.Windows.Forms.GroupBox();
-            this.pnlStudent = new System.Windows.Forms.Panel();
-            this.lblOptional = new System.Windows.Forms.Label();
-            this.lblComment = new System.Windows.Forms.Label();
-            this.txtJoined = new System.Windows.Forms.TextBox();
-            this.txtComment = new System.Windows.Forms.TextBox();
-            this.txtMemberNum = new System.Windows.Forms.TextBox();
-            this.lblMemNum = new System.Windows.Forms.Label();
-            this.lblJoined = new System.Windows.Forms.Label();
-            this.lblOwed = new System.Windows.Forms.Label();
-            this.txtOwed = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblSchool = new System.Windows.Forms.Label();
-            this.txtSchool = new System.Windows.Forms.TextBox();
-            this.lblHR = new System.Windows.Forms.Label();
-            this.gbGrade = new System.Windows.Forms.GroupBox();
-            this.rbCollege = new System.Windows.Forms.RadioButton();
-            this.rbGrade12 = new System.Windows.Forms.RadioButton();
-            this.rbGrade11 = new System.Windows.Forms.RadioButton();
-            this.rbGrade10 = new System.Windows.Forms.RadioButton();
-            this.rbGrade9 = new System.Windows.Forms.RadioButton();
-            this.gbActive = new System.Windows.Forms.GroupBox();
-            this.rbNonActive = new System.Windows.Forms.RadioButton();
-            this.rbActive = new System.Windows.Forms.RadioButton();
-            this.lblState = new System.Windows.Forms.Label();
-            this.cmbState = new System.Windows.Forms.ComboBox();
-            this.gbSex = new System.Windows.Forms.GroupBox();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.rbMale = new System.Windows.Forms.RadioButton();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.lblMI = new System.Windows.Forms.Label();
-            this.txtMI = new System.Windows.Forms.TextBox();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.btnLogon = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -160,6 +125,41 @@
             this.cmbThirdColumn = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnlStudent = new System.Windows.Forms.Panel();
+            this.lblOptional = new System.Windows.Forms.Label();
+            this.lblComment = new System.Windows.Forms.Label();
+            this.txtJoined = new System.Windows.Forms.TextBox();
+            this.txtComment = new System.Windows.Forms.TextBox();
+            this.txtMemberNum = new System.Windows.Forms.TextBox();
+            this.lblMemNum = new System.Windows.Forms.Label();
+            this.lblJoined = new System.Windows.Forms.Label();
+            this.lblOwed = new System.Windows.Forms.Label();
+            this.txtOwed = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblSchool = new System.Windows.Forms.Label();
+            this.txtSchool = new System.Windows.Forms.TextBox();
+            this.lblHR = new System.Windows.Forms.Label();
+            this.gbGrade = new System.Windows.Forms.GroupBox();
+            this.rbCollege = new System.Windows.Forms.RadioButton();
+            this.rbGrade12 = new System.Windows.Forms.RadioButton();
+            this.rbGrade11 = new System.Windows.Forms.RadioButton();
+            this.rbGrade10 = new System.Windows.Forms.RadioButton();
+            this.rbGrade9 = new System.Windows.Forms.RadioButton();
+            this.gbActive = new System.Windows.Forms.GroupBox();
+            this.rbNonActive = new System.Windows.Forms.RadioButton();
+            this.rbActive = new System.Windows.Forms.RadioButton();
+            this.lblState = new System.Windows.Forms.Label();
+            this.cmbState = new System.Windows.Forms.ComboBox();
+            this.gbSex = new System.Windows.Forms.GroupBox();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.lblMI = new System.Windows.Forms.Label();
+            this.txtMI = new System.Windows.Forms.TextBox();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.ttOptional = new System.Windows.Forms.ToolTip(this.components);
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -168,10 +168,6 @@
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.gbStudent.SuspendLayout();
-            this.pnlStudent.SuspendLayout();
-            this.gbGrade.SuspendLayout();
-            this.gbActive.SuspendLayout();
-            this.gbSex.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlHome.SuspendLayout();
@@ -179,6 +175,10 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.pnlStudent.SuspendLayout();
+            this.gbGrade.SuspendLayout();
+            this.gbActive.SuspendLayout();
+            this.gbSex.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -658,425 +658,15 @@
             // 
             // gbStudent
             // 
-            this.gbStudent.Controls.Add(this.pnlStudent);
             this.gbStudent.Controls.Add(this.pnlLogin);
             this.gbStudent.Controls.Add(this.pnlHome);
+            this.gbStudent.Controls.Add(this.pnlStudent);
             this.gbStudent.Location = new System.Drawing.Point(12, 52);
             this.gbStudent.Name = "gbStudent";
             this.gbStudent.Size = new System.Drawing.Size(671, 438);
             this.gbStudent.TabIndex = 500;
             this.gbStudent.TabStop = false;
             this.gbStudent.Text = "Logon Screen";
-            // 
-            // pnlStudent
-            // 
-            this.pnlStudent.AutoScroll = true;
-            this.pnlStudent.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlStudent.Controls.Add(this.lblOptional);
-            this.pnlStudent.Controls.Add(this.lblComment);
-            this.pnlStudent.Controls.Add(this.txtJoined);
-            this.pnlStudent.Controls.Add(this.txtComment);
-            this.pnlStudent.Controls.Add(this.txtMemberNum);
-            this.pnlStudent.Controls.Add(this.lblMemNum);
-            this.pnlStudent.Controls.Add(this.lblJoined);
-            this.pnlStudent.Controls.Add(this.lblOwed);
-            this.pnlStudent.Controls.Add(this.txtOwed);
-            this.pnlStudent.Controls.Add(this.lblEmail);
-            this.pnlStudent.Controls.Add(this.txtEmail);
-            this.pnlStudent.Controls.Add(this.lblSchool);
-            this.pnlStudent.Controls.Add(this.txtSchool);
-            this.pnlStudent.Controls.Add(this.lblHR);
-            this.pnlStudent.Controls.Add(this.gbGrade);
-            this.pnlStudent.Controls.Add(this.gbActive);
-            this.pnlStudent.Controls.Add(this.lblState);
-            this.pnlStudent.Controls.Add(this.cmbState);
-            this.pnlStudent.Controls.Add(this.gbSex);
-            this.pnlStudent.Controls.Add(this.lblLastName);
-            this.pnlStudent.Controls.Add(this.txtLastName);
-            this.pnlStudent.Controls.Add(this.lblMI);
-            this.pnlStudent.Controls.Add(this.txtMI);
-            this.pnlStudent.Controls.Add(this.lblFirstName);
-            this.pnlStudent.Controls.Add(this.txtFirstName);
-            this.pnlStudent.Location = new System.Drawing.Point(6, 19);
-            this.pnlStudent.Name = "pnlStudent";
-            this.pnlStudent.Size = new System.Drawing.Size(657, 413);
-            this.pnlStudent.TabIndex = 0;
-            // 
-            // lblOptional
-            // 
-            this.lblOptional.AutoSize = true;
-            this.lblOptional.Location = new System.Drawing.Point(588, 392);
-            this.lblOptional.Name = "lblOptional";
-            this.lblOptional.Size = new System.Drawing.Size(56, 13);
-            this.lblOptional.TabIndex = 23;
-            this.lblOptional.Text = "*  Optional";
-            // 
-            // lblComment
-            // 
-            this.lblComment.AutoSize = true;
-            this.lblComment.Location = new System.Drawing.Point(9, 217);
-            this.lblComment.Name = "lblComment";
-            this.lblComment.Size = new System.Drawing.Size(60, 13);
-            this.lblComment.TabIndex = 22;
-            this.lblComment.Text = "Comments*";
-            // 
-            // txtJoined
-            // 
-            this.txtJoined.Location = new System.Drawing.Point(328, 143);
-            this.txtJoined.Name = "txtJoined";
-            this.txtJoined.Size = new System.Drawing.Size(34, 20);
-            this.txtJoined.TabIndex = 17;
-            this.txtJoined.Text = "2014";
-            // 
-            // txtComment
-            // 
-            this.txtComment.Location = new System.Drawing.Point(3, 233);
-            this.txtComment.Multiline = true;
-            this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(641, 156);
-            this.txtComment.TabIndex = 21;
-            // 
-            // txtMemberNum
-            // 
-            this.txtMemberNum.Location = new System.Drawing.Point(477, 159);
-            this.txtMemberNum.Name = "txtMemberNum";
-            this.txtMemberNum.Size = new System.Drawing.Size(105, 20);
-            this.txtMemberNum.TabIndex = 20;
-            this.txtMemberNum.TextChanged += new System.EventHandler(this.txtMemberNum_TextChanged);
-            // 
-            // lblMemNum
-            // 
-            this.lblMemNum.AutoSize = true;
-            this.lblMemNum.Location = new System.Drawing.Point(589, 162);
-            this.lblMemNum.Name = "lblMemNum";
-            this.lblMemNum.Size = new System.Drawing.Size(55, 13);
-            this.lblMemNum.TabIndex = 19;
-            this.lblMemNum.Text = "Member #";
-            // 
-            // lblJoined
-            // 
-            this.lblJoined.AutoSize = true;
-            this.lblJoined.Location = new System.Drawing.Point(368, 146);
-            this.lblJoined.Name = "lblJoined";
-            this.lblJoined.Size = new System.Drawing.Size(63, 13);
-            this.lblJoined.TabIndex = 18;
-            this.lblJoined.Text = "Year Joined";
-            // 
-            // lblOwed
-            // 
-            this.lblOwed.AutoSize = true;
-            this.lblOwed.Location = new System.Drawing.Point(391, 172);
-            this.lblOwed.Name = "lblOwed";
-            this.lblOwed.Size = new System.Drawing.Size(56, 13);
-            this.lblOwed.TabIndex = 16;
-            this.lblOwed.Text = " Fees Due";
-            // 
-            // txtOwed
-            // 
-            this.txtOwed.Location = new System.Drawing.Point(328, 169);
-            this.txtOwed.Name = "txtOwed";
-            this.txtOwed.Size = new System.Drawing.Size(57, 20);
-            this.txtOwed.TabIndex = 15;
-            this.txtOwed.Text = "$0.00";
-            this.txtOwed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtOwed.Enter += new System.EventHandler(this.txtOwed_Enter);
-            this.txtOwed.Leave += new System.EventHandler(this.txtOwed_Leave);
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(274, 172);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblEmail.TabIndex = 14;
-            this.lblEmail.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(3, 169);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(265, 20);
-            this.txtEmail.TabIndex = 13;
-            // 
-            // lblSchool
-            // 
-            this.lblSchool.AutoSize = true;
-            this.lblSchool.Location = new System.Drawing.Point(274, 146);
-            this.lblSchool.Name = "lblSchool";
-            this.lblSchool.Size = new System.Drawing.Size(40, 13);
-            this.lblSchool.TabIndex = 12;
-            this.lblSchool.Text = "School";
-            // 
-            // txtSchool
-            // 
-            this.txtSchool.Location = new System.Drawing.Point(3, 143);
-            this.txtSchool.Name = "txtSchool";
-            this.txtSchool.Size = new System.Drawing.Size(265, 20);
-            this.txtSchool.TabIndex = 11;
-            // 
-            // lblHR
-            // 
-            this.lblHR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblHR.Location = new System.Drawing.Point(0, 201);
-            this.lblHR.Name = "lblHR";
-            this.lblHR.Size = new System.Drawing.Size(655, 2);
-            this.lblHR.TabIndex = 10;
-            // 
-            // gbGrade
-            // 
-            this.gbGrade.Controls.Add(this.rbCollege);
-            this.gbGrade.Controls.Add(this.rbGrade12);
-            this.gbGrade.Controls.Add(this.rbGrade11);
-            this.gbGrade.Controls.Add(this.rbGrade10);
-            this.gbGrade.Controls.Add(this.rbGrade9);
-            this.gbGrade.Location = new System.Drawing.Point(441, 16);
-            this.gbGrade.Name = "gbGrade";
-            this.gbGrade.Size = new System.Drawing.Size(87, 134);
-            this.gbGrade.TabIndex = 8;
-            this.gbGrade.TabStop = false;
-            this.gbGrade.Text = "Grade";
-            // 
-            // rbCollege
-            // 
-            this.rbCollege.AutoSize = true;
-            this.rbCollege.Location = new System.Drawing.Point(12, 111);
-            this.rbCollege.Name = "rbCollege";
-            this.rbCollege.Size = new System.Drawing.Size(43, 17);
-            this.rbCollege.TabIndex = 4;
-            this.rbCollege.Text = "13+";
-            this.rbCollege.UseVisualStyleBackColor = true;
-            // 
-            // rbGrade12
-            // 
-            this.rbGrade12.AutoSize = true;
-            this.rbGrade12.Location = new System.Drawing.Point(12, 88);
-            this.rbGrade12.Name = "rbGrade12";
-            this.rbGrade12.Size = new System.Drawing.Size(37, 17);
-            this.rbGrade12.TabIndex = 3;
-            this.rbGrade12.Text = "12";
-            this.rbGrade12.UseVisualStyleBackColor = true;
-            // 
-            // rbGrade11
-            // 
-            this.rbGrade11.AutoSize = true;
-            this.rbGrade11.Location = new System.Drawing.Point(12, 65);
-            this.rbGrade11.Name = "rbGrade11";
-            this.rbGrade11.Size = new System.Drawing.Size(37, 17);
-            this.rbGrade11.TabIndex = 2;
-            this.rbGrade11.Text = "11";
-            this.rbGrade11.UseVisualStyleBackColor = true;
-            // 
-            // rbGrade10
-            // 
-            this.rbGrade10.AutoSize = true;
-            this.rbGrade10.Location = new System.Drawing.Point(12, 42);
-            this.rbGrade10.Name = "rbGrade10";
-            this.rbGrade10.Size = new System.Drawing.Size(37, 17);
-            this.rbGrade10.TabIndex = 1;
-            this.rbGrade10.Text = "10";
-            this.rbGrade10.UseVisualStyleBackColor = true;
-            // 
-            // rbGrade9
-            // 
-            this.rbGrade9.AutoSize = true;
-            this.rbGrade9.Checked = true;
-            this.rbGrade9.Location = new System.Drawing.Point(12, 19);
-            this.rbGrade9.Name = "rbGrade9";
-            this.rbGrade9.Size = new System.Drawing.Size(31, 17);
-            this.rbGrade9.TabIndex = 0;
-            this.rbGrade9.TabStop = true;
-            this.rbGrade9.Text = "9";
-            this.rbGrade9.UseVisualStyleBackColor = true;
-            // 
-            // gbActive
-            // 
-            this.gbActive.Controls.Add(this.rbNonActive);
-            this.gbActive.Controls.Add(this.rbActive);
-            this.gbActive.Location = new System.Drawing.Point(558, 16);
-            this.gbActive.Name = "gbActive";
-            this.gbActive.Size = new System.Drawing.Size(96, 118);
-            this.gbActive.TabIndex = 8;
-            this.gbActive.TabStop = false;
-            this.gbActive.Text = "Active";
-            // 
-            // rbNonActive
-            // 
-            this.rbNonActive.AutoSize = true;
-            this.rbNonActive.Location = new System.Drawing.Point(12, 75);
-            this.rbNonActive.Name = "rbNonActive";
-            this.rbNonActive.Size = new System.Drawing.Size(75, 17);
-            this.rbNonActive.TabIndex = 1;
-            this.rbNonActive.Text = "Not Active";
-            this.rbNonActive.UseVisualStyleBackColor = true;
-            // 
-            // rbActive
-            // 
-            this.rbActive.AutoSize = true;
-            this.rbActive.Checked = true;
-            this.rbActive.Location = new System.Drawing.Point(12, 29);
-            this.rbActive.Name = "rbActive";
-            this.rbActive.Size = new System.Drawing.Size(55, 17);
-            this.rbActive.TabIndex = 0;
-            this.rbActive.TabStop = true;
-            this.rbActive.Text = "Active";
-            this.rbActive.UseVisualStyleBackColor = true;
-            // 
-            // lblState
-            // 
-            this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(211, 59);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(32, 13);
-            this.lblState.TabIndex = 9;
-            this.lblState.Text = "State";
-            // 
-            // cmbState
-            // 
-            this.cmbState.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbState.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbState.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cmbState.FormattingEnabled = true;
-            this.cmbState.Items.AddRange(new object[] {
-            "AL",
-            "AK",
-            "AZ",
-            "AR",
-            "CA",
-            "CO",
-            "CT",
-            "DE",
-            "FL",
-            "GA",
-            "HI",
-            "ID",
-            "IL",
-            "IN",
-            "IA",
-            "KS",
-            "KY",
-            "LA",
-            "ME",
-            "MD",
-            "MA",
-            "MI",
-            "MN",
-            "MS",
-            "MO",
-            "MT",
-            "NE",
-            "NV",
-            "NH",
-            "NJ",
-            "NM",
-            "NY",
-            "NC",
-            "ND",
-            "OH",
-            "OK",
-            "OR",
-            "PA",
-            "RI",
-            "SC",
-            "SD",
-            "TN",
-            "TX",
-            "UT",
-            "VT",
-            "VA",
-            "WA",
-            "WV",
-            "WI",
-            "WY",
-            "Other"});
-            this.cmbState.Location = new System.Drawing.Point(131, 56);
-            this.cmbState.Name = "cmbState";
-            this.cmbState.Size = new System.Drawing.Size(74, 21);
-            this.cmbState.TabIndex = 8;
-            this.cmbState.Text = "MO";
-            this.cmbState.Enter += new System.EventHandler(this.cmbState_Enter);
-            // 
-            // gbSex
-            // 
-            this.gbSex.Controls.Add(this.rbFemale);
-            this.gbSex.Controls.Add(this.rbMale);
-            this.gbSex.Location = new System.Drawing.Point(317, 16);
-            this.gbSex.Name = "gbSex";
-            this.gbSex.Size = new System.Drawing.Size(87, 118);
-            this.gbSex.TabIndex = 7;
-            this.gbSex.TabStop = false;
-            this.gbSex.Text = "Sex";
-            // 
-            // rbFemale
-            // 
-            this.rbFemale.AutoSize = true;
-            this.rbFemale.Location = new System.Drawing.Point(12, 75);
-            this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(59, 17);
-            this.rbFemale.TabIndex = 1;
-            this.rbFemale.Text = "Female";
-            this.rbFemale.UseVisualStyleBackColor = true;
-            // 
-            // rbMale
-            // 
-            this.rbMale.AutoSize = true;
-            this.rbMale.Checked = true;
-            this.rbMale.Location = new System.Drawing.Point(11, 29);
-            this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(48, 17);
-            this.rbMale.TabIndex = 0;
-            this.rbMale.TabStop = true;
-            this.rbMale.Text = "Male";
-            this.rbMale.UseVisualStyleBackColor = true;
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(211, 104);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
-            this.lblLastName.TabIndex = 6;
-            this.lblLastName.Text = "Last Name";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(3, 101);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(202, 20);
-            this.txtLastName.TabIndex = 5;
-            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
-            // 
-            // lblMI
-            // 
-            this.lblMI.AutoSize = true;
-            this.lblMI.Location = new System.Drawing.Point(43, 59);
-            this.lblMI.Name = "lblMI";
-            this.lblMI.Size = new System.Drawing.Size(29, 13);
-            this.lblMI.TabIndex = 4;
-            this.lblMI.Text = "M.I.*";
-            // 
-            // txtMI
-            // 
-            this.txtMI.Location = new System.Drawing.Point(3, 56);
-            this.txtMI.Name = "txtMI";
-            this.txtMI.Size = new System.Drawing.Size(34, 20);
-            this.txtMI.TabIndex = 3;
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(211, 16);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
-            this.lblFirstName.TabIndex = 2;
-            this.lblFirstName.Text = "First Name";
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(3, 13);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(202, 20);
-            this.txtFirstName.TabIndex = 1;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // pnlLogin
             // 
@@ -1509,6 +1099,416 @@
             this.label2.Size = new System.Drawing.Size(2, 402);
             this.label2.TabIndex = 0;
             // 
+            // pnlStudent
+            // 
+            this.pnlStudent.AutoScroll = true;
+            this.pnlStudent.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlStudent.Controls.Add(this.lblOptional);
+            this.pnlStudent.Controls.Add(this.lblComment);
+            this.pnlStudent.Controls.Add(this.txtJoined);
+            this.pnlStudent.Controls.Add(this.txtComment);
+            this.pnlStudent.Controls.Add(this.txtMemberNum);
+            this.pnlStudent.Controls.Add(this.lblMemNum);
+            this.pnlStudent.Controls.Add(this.lblJoined);
+            this.pnlStudent.Controls.Add(this.lblOwed);
+            this.pnlStudent.Controls.Add(this.txtOwed);
+            this.pnlStudent.Controls.Add(this.lblEmail);
+            this.pnlStudent.Controls.Add(this.txtEmail);
+            this.pnlStudent.Controls.Add(this.lblSchool);
+            this.pnlStudent.Controls.Add(this.txtSchool);
+            this.pnlStudent.Controls.Add(this.lblHR);
+            this.pnlStudent.Controls.Add(this.gbGrade);
+            this.pnlStudent.Controls.Add(this.gbActive);
+            this.pnlStudent.Controls.Add(this.lblState);
+            this.pnlStudent.Controls.Add(this.cmbState);
+            this.pnlStudent.Controls.Add(this.gbSex);
+            this.pnlStudent.Controls.Add(this.lblLastName);
+            this.pnlStudent.Controls.Add(this.txtLastName);
+            this.pnlStudent.Controls.Add(this.lblMI);
+            this.pnlStudent.Controls.Add(this.txtMI);
+            this.pnlStudent.Controls.Add(this.lblFirstName);
+            this.pnlStudent.Controls.Add(this.txtFirstName);
+            this.pnlStudent.Location = new System.Drawing.Point(6, 19);
+            this.pnlStudent.Name = "pnlStudent";
+            this.pnlStudent.Size = new System.Drawing.Size(657, 413);
+            this.pnlStudent.TabIndex = 0;
+            // 
+            // lblOptional
+            // 
+            this.lblOptional.AutoSize = true;
+            this.lblOptional.Location = new System.Drawing.Point(588, 392);
+            this.lblOptional.Name = "lblOptional";
+            this.lblOptional.Size = new System.Drawing.Size(56, 13);
+            this.lblOptional.TabIndex = 23;
+            this.lblOptional.Text = "*  Optional";
+            // 
+            // lblComment
+            // 
+            this.lblComment.AutoSize = true;
+            this.lblComment.Location = new System.Drawing.Point(9, 217);
+            this.lblComment.Name = "lblComment";
+            this.lblComment.Size = new System.Drawing.Size(60, 13);
+            this.lblComment.TabIndex = 22;
+            this.lblComment.Text = "Comments*";
+            // 
+            // txtJoined
+            // 
+            this.txtJoined.Location = new System.Drawing.Point(328, 143);
+            this.txtJoined.Name = "txtJoined";
+            this.txtJoined.Size = new System.Drawing.Size(34, 20);
+            this.txtJoined.TabIndex = 17;
+            this.txtJoined.Text = "2014";
+            // 
+            // txtComment
+            // 
+            this.txtComment.Location = new System.Drawing.Point(3, 233);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(641, 156);
+            this.txtComment.TabIndex = 21;
+            // 
+            // txtMemberNum
+            // 
+            this.txtMemberNum.Location = new System.Drawing.Point(477, 159);
+            this.txtMemberNum.Name = "txtMemberNum";
+            this.txtMemberNum.Size = new System.Drawing.Size(105, 20);
+            this.txtMemberNum.TabIndex = 20;
+            this.txtMemberNum.TextChanged += new System.EventHandler(this.txtMemberNum_TextChanged);
+            // 
+            // lblMemNum
+            // 
+            this.lblMemNum.AutoSize = true;
+            this.lblMemNum.Location = new System.Drawing.Point(589, 162);
+            this.lblMemNum.Name = "lblMemNum";
+            this.lblMemNum.Size = new System.Drawing.Size(55, 13);
+            this.lblMemNum.TabIndex = 19;
+            this.lblMemNum.Text = "Member #";
+            // 
+            // lblJoined
+            // 
+            this.lblJoined.AutoSize = true;
+            this.lblJoined.Location = new System.Drawing.Point(368, 146);
+            this.lblJoined.Name = "lblJoined";
+            this.lblJoined.Size = new System.Drawing.Size(63, 13);
+            this.lblJoined.TabIndex = 18;
+            this.lblJoined.Text = "Year Joined";
+            // 
+            // lblOwed
+            // 
+            this.lblOwed.AutoSize = true;
+            this.lblOwed.Location = new System.Drawing.Point(391, 172);
+            this.lblOwed.Name = "lblOwed";
+            this.lblOwed.Size = new System.Drawing.Size(56, 13);
+            this.lblOwed.TabIndex = 16;
+            this.lblOwed.Text = " Fees Due";
+            // 
+            // txtOwed
+            // 
+            this.txtOwed.Location = new System.Drawing.Point(328, 169);
+            this.txtOwed.Name = "txtOwed";
+            this.txtOwed.Size = new System.Drawing.Size(57, 20);
+            this.txtOwed.TabIndex = 15;
+            this.txtOwed.Text = "$0.00";
+            this.txtOwed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOwed.Enter += new System.EventHandler(this.txtOwed_Enter);
+            this.txtOwed.Leave += new System.EventHandler(this.txtOwed_Leave);
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(274, 172);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 14;
+            this.lblEmail.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(3, 169);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(265, 20);
+            this.txtEmail.TabIndex = 13;
+            // 
+            // lblSchool
+            // 
+            this.lblSchool.AutoSize = true;
+            this.lblSchool.Location = new System.Drawing.Point(274, 146);
+            this.lblSchool.Name = "lblSchool";
+            this.lblSchool.Size = new System.Drawing.Size(40, 13);
+            this.lblSchool.TabIndex = 12;
+            this.lblSchool.Text = "School";
+            // 
+            // txtSchool
+            // 
+            this.txtSchool.Location = new System.Drawing.Point(3, 143);
+            this.txtSchool.Name = "txtSchool";
+            this.txtSchool.Size = new System.Drawing.Size(265, 20);
+            this.txtSchool.TabIndex = 11;
+            // 
+            // lblHR
+            // 
+            this.lblHR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblHR.Location = new System.Drawing.Point(0, 201);
+            this.lblHR.Name = "lblHR";
+            this.lblHR.Size = new System.Drawing.Size(655, 2);
+            this.lblHR.TabIndex = 10;
+            // 
+            // gbGrade
+            // 
+            this.gbGrade.Controls.Add(this.rbCollege);
+            this.gbGrade.Controls.Add(this.rbGrade12);
+            this.gbGrade.Controls.Add(this.rbGrade11);
+            this.gbGrade.Controls.Add(this.rbGrade10);
+            this.gbGrade.Controls.Add(this.rbGrade9);
+            this.gbGrade.Location = new System.Drawing.Point(441, 16);
+            this.gbGrade.Name = "gbGrade";
+            this.gbGrade.Size = new System.Drawing.Size(87, 134);
+            this.gbGrade.TabIndex = 8;
+            this.gbGrade.TabStop = false;
+            this.gbGrade.Text = "Grade";
+            // 
+            // rbCollege
+            // 
+            this.rbCollege.AutoSize = true;
+            this.rbCollege.Location = new System.Drawing.Point(12, 111);
+            this.rbCollege.Name = "rbCollege";
+            this.rbCollege.Size = new System.Drawing.Size(43, 17);
+            this.rbCollege.TabIndex = 4;
+            this.rbCollege.Text = "13+";
+            this.rbCollege.UseVisualStyleBackColor = true;
+            // 
+            // rbGrade12
+            // 
+            this.rbGrade12.AutoSize = true;
+            this.rbGrade12.Location = new System.Drawing.Point(12, 88);
+            this.rbGrade12.Name = "rbGrade12";
+            this.rbGrade12.Size = new System.Drawing.Size(37, 17);
+            this.rbGrade12.TabIndex = 3;
+            this.rbGrade12.Text = "12";
+            this.rbGrade12.UseVisualStyleBackColor = true;
+            // 
+            // rbGrade11
+            // 
+            this.rbGrade11.AutoSize = true;
+            this.rbGrade11.Location = new System.Drawing.Point(12, 65);
+            this.rbGrade11.Name = "rbGrade11";
+            this.rbGrade11.Size = new System.Drawing.Size(37, 17);
+            this.rbGrade11.TabIndex = 2;
+            this.rbGrade11.Text = "11";
+            this.rbGrade11.UseVisualStyleBackColor = true;
+            // 
+            // rbGrade10
+            // 
+            this.rbGrade10.AutoSize = true;
+            this.rbGrade10.Location = new System.Drawing.Point(12, 42);
+            this.rbGrade10.Name = "rbGrade10";
+            this.rbGrade10.Size = new System.Drawing.Size(37, 17);
+            this.rbGrade10.TabIndex = 1;
+            this.rbGrade10.Text = "10";
+            this.rbGrade10.UseVisualStyleBackColor = true;
+            // 
+            // rbGrade9
+            // 
+            this.rbGrade9.AutoSize = true;
+            this.rbGrade9.Checked = true;
+            this.rbGrade9.Location = new System.Drawing.Point(12, 19);
+            this.rbGrade9.Name = "rbGrade9";
+            this.rbGrade9.Size = new System.Drawing.Size(31, 17);
+            this.rbGrade9.TabIndex = 0;
+            this.rbGrade9.TabStop = true;
+            this.rbGrade9.Text = "9";
+            this.rbGrade9.UseVisualStyleBackColor = true;
+            // 
+            // gbActive
+            // 
+            this.gbActive.Controls.Add(this.rbNonActive);
+            this.gbActive.Controls.Add(this.rbActive);
+            this.gbActive.Location = new System.Drawing.Point(558, 16);
+            this.gbActive.Name = "gbActive";
+            this.gbActive.Size = new System.Drawing.Size(96, 118);
+            this.gbActive.TabIndex = 8;
+            this.gbActive.TabStop = false;
+            this.gbActive.Text = "Active";
+            // 
+            // rbNonActive
+            // 
+            this.rbNonActive.AutoSize = true;
+            this.rbNonActive.Location = new System.Drawing.Point(12, 75);
+            this.rbNonActive.Name = "rbNonActive";
+            this.rbNonActive.Size = new System.Drawing.Size(75, 17);
+            this.rbNonActive.TabIndex = 1;
+            this.rbNonActive.Text = "Not Active";
+            this.rbNonActive.UseVisualStyleBackColor = true;
+            // 
+            // rbActive
+            // 
+            this.rbActive.AutoSize = true;
+            this.rbActive.Checked = true;
+            this.rbActive.Location = new System.Drawing.Point(12, 29);
+            this.rbActive.Name = "rbActive";
+            this.rbActive.Size = new System.Drawing.Size(55, 17);
+            this.rbActive.TabIndex = 0;
+            this.rbActive.TabStop = true;
+            this.rbActive.Text = "Active";
+            this.rbActive.UseVisualStyleBackColor = true;
+            // 
+            // lblState
+            // 
+            this.lblState.AutoSize = true;
+            this.lblState.Location = new System.Drawing.Point(211, 59);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(32, 13);
+            this.lblState.TabIndex = 9;
+            this.lblState.Text = "State";
+            // 
+            // cmbState
+            // 
+            this.cmbState.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbState.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbState.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cmbState.FormattingEnabled = true;
+            this.cmbState.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY",
+            "Other"});
+            this.cmbState.Location = new System.Drawing.Point(131, 56);
+            this.cmbState.Name = "cmbState";
+            this.cmbState.Size = new System.Drawing.Size(74, 21);
+            this.cmbState.TabIndex = 8;
+            this.cmbState.Text = "MO";
+            this.cmbState.Enter += new System.EventHandler(this.cmbState_Enter);
+            // 
+            // gbSex
+            // 
+            this.gbSex.Controls.Add(this.rbFemale);
+            this.gbSex.Controls.Add(this.rbMale);
+            this.gbSex.Location = new System.Drawing.Point(317, 16);
+            this.gbSex.Name = "gbSex";
+            this.gbSex.Size = new System.Drawing.Size(87, 118);
+            this.gbSex.TabIndex = 7;
+            this.gbSex.TabStop = false;
+            this.gbSex.Text = "Sex";
+            // 
+            // rbFemale
+            // 
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.Location = new System.Drawing.Point(12, 75);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(59, 17);
+            this.rbFemale.TabIndex = 1;
+            this.rbFemale.Text = "Female";
+            this.rbFemale.UseVisualStyleBackColor = true;
+            // 
+            // rbMale
+            // 
+            this.rbMale.AutoSize = true;
+            this.rbMale.Checked = true;
+            this.rbMale.Location = new System.Drawing.Point(11, 29);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(48, 17);
+            this.rbMale.TabIndex = 0;
+            this.rbMale.TabStop = true;
+            this.rbMale.Text = "Male";
+            this.rbMale.UseVisualStyleBackColor = true;
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(211, 104);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(58, 13);
+            this.lblLastName.TabIndex = 6;
+            this.lblLastName.Text = "Last Name";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(3, 101);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(202, 20);
+            this.txtLastName.TabIndex = 5;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
+            // 
+            // lblMI
+            // 
+            this.lblMI.AutoSize = true;
+            this.lblMI.Location = new System.Drawing.Point(43, 59);
+            this.lblMI.Name = "lblMI";
+            this.lblMI.Size = new System.Drawing.Size(29, 13);
+            this.lblMI.TabIndex = 4;
+            this.lblMI.Text = "M.I.*";
+            // 
+            // txtMI
+            // 
+            this.txtMI.Location = new System.Drawing.Point(3, 56);
+            this.txtMI.Name = "txtMI";
+            this.txtMI.Size = new System.Drawing.Size(34, 20);
+            this.txtMI.TabIndex = 3;
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(211, 16);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.TabIndex = 2;
+            this.lblFirstName.Text = "First Name";
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(3, 13);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(202, 20);
+            this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
+            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -1543,14 +1543,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.gbStudent.ResumeLayout(false);
-            this.pnlStudent.ResumeLayout(false);
-            this.pnlStudent.PerformLayout();
-            this.gbGrade.ResumeLayout(false);
-            this.gbGrade.PerformLayout();
-            this.gbActive.ResumeLayout(false);
-            this.gbActive.PerformLayout();
-            this.gbSex.ResumeLayout(false);
-            this.gbSex.PerformLayout();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1561,6 +1553,14 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.pnlStudent.ResumeLayout(false);
+            this.pnlStudent.PerformLayout();
+            this.gbGrade.ResumeLayout(false);
+            this.gbGrade.PerformLayout();
+            this.gbActive.ResumeLayout(false);
+            this.gbActive.PerformLayout();
+            this.gbSex.ResumeLayout(false);
+            this.gbSex.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
