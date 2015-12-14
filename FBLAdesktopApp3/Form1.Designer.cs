@@ -83,13 +83,14 @@
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.gbStudent = new System.Windows.Forms.GroupBox();
-            this.pnlLogin = new System.Windows.Forms.Panel();
-            this.btnLogon = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlHome = new System.Windows.Forms.Panel();
+            this.cmbFilter = new System.Windows.Forms.ComboBox();
+            this.lblRead = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblGrades = new System.Windows.Forms.Label();
             this.lblFees = new System.Windows.Forms.Label();
             this.lblActive = new System.Windows.Forms.Label();
@@ -153,23 +154,20 @@
             this.txtMI = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btnLogon = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ttOptional = new System.Windows.Forms.ToolTip(this.components);
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.ttPrintPreview = new System.Windows.Forms.ToolTip(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFilter = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblRead = new System.Windows.Forms.Label();
-            this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.gbStudent.SuspendLayout();
-            this.pnlLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlHome.SuspendLayout();
             this.tabLogs.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -179,6 +177,8 @@
             this.gbGrade.SuspendLayout();
             this.gbActive.SuspendLayout();
             this.gbSex.SuspendLayout();
+            this.pnlLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -655,6 +655,7 @@
             this.btnEdit.Size = new System.Drawing.Size(23, 22);
             this.btnEdit.Text = "Edit";
             this.btnEdit.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // gbStudent
             // 
@@ -667,69 +668,6 @@
             this.gbStudent.TabIndex = 5000;
             this.gbStudent.TabStop = false;
             this.gbStudent.Text = "Logon Screen";
-            // 
-            // pnlLogin
-            // 
-            this.pnlLogin.Controls.Add(this.btnLogon);
-            this.pnlLogin.Controls.Add(this.label3);
-            this.pnlLogin.Controls.Add(this.txtPass);
-            this.pnlLogin.Controls.Add(this.txtUser);
-            this.pnlLogin.Controls.Add(this.pictureBox1);
-            this.pnlLogin.Location = new System.Drawing.Point(6, 19);
-            this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(659, 413);
-            this.pnlLogin.TabIndex = 24;
-            // 
-            // btnLogon
-            // 
-            this.btnLogon.Location = new System.Drawing.Point(281, 289);
-            this.btnLogon.Name = "btnLogon";
-            this.btnLogon.Size = new System.Drawing.Size(115, 21);
-            this.btnLogon.TabIndex = 3;
-            this.btnLogon.Text = "Log In";
-            this.btnLogon.UseVisualStyleBackColor = true;
-            this.btnLogon.Click += new System.EventHandler(this.btnLogon_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(222, 192);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Please Log In";
-            // 
-            // txtPass
-            // 
-            this.txtPass.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtPass.Location = new System.Drawing.Point(225, 251);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(238, 20);
-            this.txtPass.TabIndex = 2;
-            this.txtPass.Text = "Password";
-            this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
-            this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
-            // 
-            // txtUser
-            // 
-            this.txtUser.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtUser.Location = new System.Drawing.Point(225, 214);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(238, 20);
-            this.txtUser.TabIndex = 1;
-            this.txtUser.Text = "Client ID";
-            this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
-            this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(239, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 135);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // pnlHome
             // 
@@ -754,6 +692,76 @@
             this.pnlHome.Name = "pnlHome";
             this.pnlHome.Size = new System.Drawing.Size(659, 413);
             this.pnlHome.TabIndex = 1;
+            // 
+            // cmbFilter
+            // 
+            this.cmbFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFilter.FormattingEnabled = true;
+            this.cmbFilter.Items.AddRange(new object[] {
+            "Last Name",
+            "First Name",
+            "Year Joined",
+            "Member #",
+            "Email",
+            "School"});
+            this.cmbFilter.Location = new System.Drawing.Point(181, 119);
+            this.cmbFilter.Name = "cmbFilter";
+            this.cmbFilter.Size = new System.Drawing.Size(104, 24);
+            this.cmbFilter.TabIndex = 26;
+            // 
+            // lblRead
+            // 
+            this.lblRead.AutoSize = true;
+            this.lblRead.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRead.Location = new System.Drawing.Point(26, 175);
+            this.lblRead.Name = "lblRead";
+            this.lblRead.Size = new System.Drawing.Size(85, 17);
+            this.lblRead.TabIndex = 25;
+            this.lblRead.Text = "PlaceHolder";
+            // 
+            // label8
+            // 
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label8.Location = new System.Drawing.Point(8, 157);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(286, 2);
+            this.label8.TabIndex = 24;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.Location = new System.Drawing.Point(12, 116);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(163, 28);
+            this.btnFilter.TabIndex = 23;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(8, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(144, 20);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Filter Students Tab";
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(12, 90);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(273, 20);
+            this.txtFilter.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(8, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(286, 2);
+            this.label1.TabIndex = 20;
             // 
             // lblGrades
             // 
@@ -1430,6 +1438,69 @@
             this.txtFirstName.TabIndex = 1;
             this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
+            // pnlLogin
+            // 
+            this.pnlLogin.Controls.Add(this.btnLogon);
+            this.pnlLogin.Controls.Add(this.label3);
+            this.pnlLogin.Controls.Add(this.txtPass);
+            this.pnlLogin.Controls.Add(this.txtUser);
+            this.pnlLogin.Controls.Add(this.pictureBox1);
+            this.pnlLogin.Location = new System.Drawing.Point(6, 19);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(659, 413);
+            this.pnlLogin.TabIndex = 24;
+            // 
+            // btnLogon
+            // 
+            this.btnLogon.Location = new System.Drawing.Point(281, 289);
+            this.btnLogon.Name = "btnLogon";
+            this.btnLogon.Size = new System.Drawing.Size(115, 21);
+            this.btnLogon.TabIndex = 3;
+            this.btnLogon.Text = "Log In";
+            this.btnLogon.UseVisualStyleBackColor = true;
+            this.btnLogon.Click += new System.EventHandler(this.btnLogon_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(222, 192);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Please Log In";
+            // 
+            // txtPass
+            // 
+            this.txtPass.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtPass.Location = new System.Drawing.Point(225, 251);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(238, 20);
+            this.txtPass.TabIndex = 2;
+            this.txtPass.Text = "Password";
+            this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
+            this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
+            // 
+            // txtUser
+            // 
+            this.txtUser.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtUser.Location = new System.Drawing.Point(225, 214);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(238, 20);
+            this.txtUser.TabIndex = 1;
+            this.txtUser.Text = "Client ID";
+            this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
+            this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(239, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -1443,76 +1514,6 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(8, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 2);
-            this.label1.TabIndex = 20;
-            // 
-            // txtFilter
-            // 
-            this.txtFilter.Location = new System.Drawing.Point(12, 90);
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(273, 20);
-            this.txtFilter.TabIndex = 21;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 59);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 20);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Filter Students Tab";
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.Location = new System.Drawing.Point(12, 116);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(163, 28);
-            this.btnFilter.TabIndex = 23;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // label8
-            // 
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label8.Location = new System.Drawing.Point(8, 157);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(286, 2);
-            this.label8.TabIndex = 24;
-            // 
-            // lblRead
-            // 
-            this.lblRead.AutoSize = true;
-            this.lblRead.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRead.Location = new System.Drawing.Point(26, 175);
-            this.lblRead.Name = "lblRead";
-            this.lblRead.Size = new System.Drawing.Size(85, 17);
-            this.lblRead.TabIndex = 25;
-            this.lblRead.Text = "PlaceHolder";
-            // 
-            // cmbFilter
-            // 
-            this.cmbFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFilter.FormattingEnabled = true;
-            this.cmbFilter.Items.AddRange(new object[] {
-            "Last Name",
-            "First Name",
-            "Year Joined",
-            "Member #",
-            "Email",
-            "School"});
-            this.cmbFilter.Location = new System.Drawing.Point(181, 119);
-            this.cmbFilter.Name = "cmbFilter";
-            this.cmbFilter.Size = new System.Drawing.Size(104, 24);
-            this.cmbFilter.TabIndex = 26;
             // 
             // Form1
             // 
@@ -1534,9 +1535,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.gbStudent.ResumeLayout(false);
-            this.pnlLogin.ResumeLayout(false);
-            this.pnlLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlHome.ResumeLayout(false);
             this.pnlHome.PerformLayout();
             this.tabLogs.ResumeLayout(false);
@@ -1552,6 +1550,9 @@
             this.gbActive.PerformLayout();
             this.gbSex.ResumeLayout(false);
             this.gbSex.PerformLayout();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

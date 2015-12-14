@@ -31,7 +31,7 @@ namespace FBLAdesktopApp3
         String feeStr;
         int search, count, loginCount, logCount, account, active, hasFees, g9, g10, g11, g12, g13, activeStudent, grade;
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        string specificFolder, logFolder, date, activeFile, str, tempSex, tempActive, tempGrade;
+        string specificFolder, logFolder, date, activeFile, str, tempSex, tempActive, tempGrade, editStudent;
         Double feeDbl;
         String[] temp = new String[10];
         String[] temp2 = new String[20];
@@ -44,7 +44,7 @@ namespace FBLAdesktopApp3
         String[,] log = new String[50, 4];
         String[] backup = new String[10];
         DateTime now = DateTime.Now;
-        bool newForm, gradeview, disabled, firstLoad;
+        bool newForm, gradeview, disabled, firstLoad, editMode;
         // *************************************************************
 
         // ********************** User Declared Functions **********************
@@ -99,6 +99,39 @@ namespace FBLAdesktopApp3
             string notStudents = Path.Combine(folder, "FBLAapplication/backups/" + activeFile);
             logFolder = Path.Combine(folder, "FBLAapplication/log.fbla");
             date = now.Month + "/" + now.Day;
+            string firstLine = student[0, 0];
+            for (int i = 1; i <= 13; i++)
+            {
+                firstLine += "\\" + student[0, i];
+            }
+            if (editMode)
+            {
+                if (activeFile != "students.fbla") {
+                    File.WriteAllText(notStudents, firstLine);
+                    int editCount = 0;
+                    for (int i = 1; i < count; i++)
+                    {
+                        firstLine = student[i, 0];
+                        for (int j = 1; j <= 13; j++) {
+                            firstLine += "\\" + student[i, j];
+                        }
+                        if (student[i, 0] != editStudent || editCount == 2)
+                        {
+                            File.AppendAllText(notStudents, firstLine);
+                        } else
+                        {
+                            editCount = 2;
+                        }
+                    }
+                } else
+                {
+                    File.WriteAllText(specificFolder, firstLine);
+                    for (int i = 1; i < count; i++)
+                    {
+
+                    }
+                }
+            }
             if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
             {
                 checkMemNum();
@@ -149,8 +182,11 @@ namespace FBLAdesktopApp3
             btnPrint.Enabled = true;
             btnPrintDialog.Enabled = true;
             btnPrintPreview.Enabled = true;
-            newForm = true;
-            clearAll();
+            if (!editMode)
+            {
+                clearAll();
+                newForm = true;
+            }
             btnSave.Enabled = false;
             mbtnSave.Enabled = false;
             gbStudent.Text = txtFirstName.Text + " " + txtLastName.Text;
@@ -778,6 +814,7 @@ namespace FBLAdesktopApp3
 
         private void mbtnNew_Click(object sender, EventArgs e)
         {
+            editMode = false;
             newStudent();
         }
 
@@ -850,10 +887,19 @@ namespace FBLAdesktopApp3
         {
             clearAll();
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+            editStudent = txtMemberNum.Text;
+            editMode = true;
+            newStudent();
+        }
+
         //*************************************************************************************************************  
 
         // **************** txtOwed aesthetic stuff ****************************** 
-        
+
         private void txtOwed_Leave(object sender, EventArgs e)
         {
             Double.TryParse(txtOwed.Text, out feeDbl);
