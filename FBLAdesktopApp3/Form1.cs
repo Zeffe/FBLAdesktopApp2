@@ -31,7 +31,7 @@ namespace FBLAdesktopApp3
         String feeStr;
         int search, count, loginCount, logCount, account, active, hasFees, g9, g10, g11, g12, g13, activeStudent, grade;
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        string specificFolder, logFolder, date, activeFile, str, tempSex, tempActive, tempGrade, encryptOut;
+        string specificFolder, logFolder, date, activeFile, str, tempSex, tempActive, tempGrade;
         Double feeDbl;
         String[] temp = new String[10];
         String[] temp2 = new String[20];
@@ -115,7 +115,7 @@ namespace FBLAdesktopApp3
                     File.AppendAllText(specificFolder, txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text + "\r\n");
                 }
                 readToArray();
-                studentLog();
+                studentLog("");
                 logLog();
                 MessageBox.Show("Save Successful!", "Saved");
             }
@@ -371,19 +371,6 @@ namespace FBLAdesktopApp3
             }
         }
 
-        // Enables the textboxes and things to coinside with the checkboxes for full report.
-        void fullReport()
-        {
-            if (checkEmail.Checked || checkExport.Checked || checkPrint.Checked)
-            {
-                btnFullReport.Enabled = true;
-            }
-            else
-            {
-                btnFullReport.Enabled = false;
-            }
-        }
-
         void delete(int studentNum)
         {
             // TODO: Add updating to log.
@@ -501,56 +488,72 @@ namespace FBLAdesktopApp3
                 new_item.SubItems.Add(log[i, 2]);
             }
         }
+        void filterVal()
+        {
+            switch (cmbFilter.SelectedIndex)
+            {
+                case 0: search = 4; break;
+                case 1: search = 1; break;
+                case 2: search = 11; break;
+                case 3: search = 0; break;
+                case 4: search = 9; break;
+                case 5: search = 8; break;
+            }
+        }
 
-        // Writes the student array to the log on home page
-        void studentLog()
+    // Writes the student array to the log on home page
+    void studentLog(string filter)
         {
             listView1.Items.Clear();
             // Setting the variables for statistics to 0 so they can be rewritten.
             active = 0;
             hasFees = 0;
             g9 = 0; g10 = 0; g11 = 0; g12 = 0; g13 = 0;
+            filterVal();
             for (int i = 1; i < count; i++)
             {
-                ListViewItem new_item = listView1.Items.Add(student[i, 0]);
-                new_item.SubItems.Add(student[i, 1] + " " + student[i, 4]);
-                // Getting the values for statistics.
-                if (student[i, 7] == "1") active++;
-                if (student[i, 10] != "$0.00") hasFees++;
-                switch (student[i, 6])
+                if (student[i, search].Contains(filter) || filter == "")
                 {
-                    case "1": g9++; break;
-                    case "2": g10++; break;
-                    case "3": g11++; break;
-                    case "4": g12++; break; 
-                    case "5": g13++; break;
-                }
-                // Determining based on cmbThirdColumn what data member to display in third column.
-                // Occurs when cmbThirdColumn is changed.
-                switch (cmbThirdColumn.SelectedIndex)
-                {
-                    case 0: 
-                        switch(student[i, 6])
-                        {
-                            case "1": new_item.SubItems.Add("9"); break;
-                            case "2": new_item.SubItems.Add("10"); break;
-                            case "3": new_item.SubItems.Add("11"); break;
-                            case "4": new_item.SubItems.Add("12"); break;
-                            case "5": new_item.SubItems.Add("13+"); break;
-                        }
-                        break;
-                    case 1: new_item.SubItems.Add(student[i, 3]); break;
-                    case 2:
-                        if (student[i, 7] == "1") new_item.SubItems.Add("Yes");
-                        if (student[i, 7] == "2") new_item.SubItems.Add("No");
-                        break;
-                    case 3:
-                        if (student[i, 10] != "$0.00") new_item.SubItems.Add("Yes");
-                        if (student[i, 10] == "$0.00") new_item.SubItems.Add("No");
-                        break;
-                    case 4: new_item.SubItems.Add(student[i, 11]); break;
-                    case 5: new_item.SubItems.Add(student[i, 9]); break;
-                    case 6: new_item.SubItems.Add(student[i, 8]); break;
+                    ListViewItem new_item = listView1.Items.Add(student[i, 0]);
+                    new_item.SubItems.Add(student[i, 1] + " " + student[i, 4]);
+                    // Getting the values for statistics.
+                    if (student[i, 7] == "1") active++;
+                    if (student[i, 10] != "$0.00") hasFees++;
+                    switch (student[i, 6])
+                    {
+                        case "1": g9++; break;
+                        case "2": g10++; break;
+                        case "3": g11++; break;
+                        case "4": g12++; break;
+                        case "5": g13++; break;
+                    }
+                    // Determining based on cmbThirdColumn what data member to display in third column.
+                    // Occurs when cmbThirdColumn is changed.
+                    switch (cmbThirdColumn.SelectedIndex)
+                    {
+                        case 0:
+                            switch (student[i, 6])
+                            {
+                                case "1": new_item.SubItems.Add("9"); break;
+                                case "2": new_item.SubItems.Add("10"); break;
+                                case "3": new_item.SubItems.Add("11"); break;
+                                case "4": new_item.SubItems.Add("12"); break;
+                                case "5": new_item.SubItems.Add("13+"); break;
+                            }
+                            break;
+                        case 1: new_item.SubItems.Add(student[i, 3]); break;
+                        case 2:
+                            if (student[i, 7] == "1") new_item.SubItems.Add("Yes");
+                            if (student[i, 7] == "2") new_item.SubItems.Add("No");
+                            break;
+                        case 3:
+                            if (student[i, 10] != "$0.00") new_item.SubItems.Add("Yes");
+                            if (student[i, 10] == "$0.00") new_item.SubItems.Add("No");
+                            break;
+                        case 4: new_item.SubItems.Add(student[i, 11]); break;
+                        case 5: new_item.SubItems.Add(student[i, 9]); break;
+                        case 6: new_item.SubItems.Add(student[i, 8]); break;
+                    }
                 }
             }
             // Update the statistic labels.
@@ -627,16 +630,18 @@ namespace FBLAdesktopApp3
             // Read students.fbla to students array.
             readToArray();
             // Update student and admin log.
-            studentLog();
+            studentLog("");
             adminLog();
             logLog();
             feeDbl = 0.00;
             label3.Select();
             ttOptional.SetToolTip(lblMI, "Optional");
             ttOptional.SetToolTip(lblComment, "Optional");
-            ttPrintPreview.SetToolTip(btnReportPreview, "Preview report");
+            lblRead.Text = "Reading From: " + activeFile;
+            tabLogs.SelectedTab = tabPage3;
             this.Text = "FBLA - Login Screen";
             cmbSearchBy.SelectedIndex = 0;
+            cmbFilter.SelectedIndex = 0;
             txtJoined.Text = now.Year.ToString();
             pnlLogin.BringToFront();
             cmbThirdColumn.SelectedIndex = 0;
@@ -690,23 +695,6 @@ namespace FBLAdesktopApp3
             }
         }
 
-        private void txtEmailHome_Enter(object sender, EventArgs e)
-        {
-            if (txtEmailHome.Text == "Email")
-            {
-                txtEmailHome.ForeColor = SystemColors.WindowText;
-                txtEmailHome.Text = "";
-            }
-        }
-
-        private void txtEmailHome_Leave(object sender, EventArgs e)
-        {
-            if (txtEmailHome.Text == "Email" || txtEmailHome.Text == "")
-            {
-                txtEmailHome.ForeColor = SystemColors.WindowFrame;
-                txtEmailHome.Text = "Email";
-            }
-        }
         // ******************************************************
 
         // *********** Changes the group box title on new forms to reflect data being entered ***********
@@ -830,6 +818,11 @@ namespace FBLAdesktopApp3
             clearAll();
         }
 
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            studentLog(txtFilter.Text);
+        }
+
         private void mbtnClearAll_Click(object sender, EventArgs e)
         {
             clearAll();
@@ -940,7 +933,8 @@ namespace FBLAdesktopApp3
         {
             backupConfig();
             readToArray();
-            studentLog();
+            studentLog("");
+            lblRead.Text = "Reading From: " + activeFile;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -954,7 +948,7 @@ namespace FBLAdesktopApp3
                 pnlHome.BringToFront();
                 toolStripButtons(true);
                 readToArray();
-                studentLog();
+                studentLog("");
             }
         }
 
@@ -1021,25 +1015,6 @@ namespace FBLAdesktopApp3
         
         // ******************************************
 
-        // ************** Deals With Full Report Checkboxes **************
-
-        private void checkEmail_CheckedChanged(object sender, EventArgs e)
-        {
-            txtEmailHome.Enabled = checkEmail.Checked;
-            fullReport();
-        }
-
-        private void checkPrint_CheckedChanged(object sender, EventArgs e)
-        {
-            btnPrinterSettingsHome.Enabled = checkPrint.Checked;
-            fullReport();
-        }
-
-        private void checkExport_CheckedChanged(object sender, EventArgs e)
-        {
-            fullReport();
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             save();
@@ -1066,7 +1041,7 @@ namespace FBLAdesktopApp3
         private void cmbThirdColumn_SelectedIndexChanged(object sender, EventArgs e)
         {
             columnHeader9.Text = cmbThirdColumn.Text;
-            studentLog();
+            studentLog("");
         }
 
 
