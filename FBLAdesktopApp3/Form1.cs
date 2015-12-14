@@ -128,6 +128,7 @@ namespace FBLAdesktopApp3
         void viewHome()
         {
             if (btnDelete.Visible) btnDelete.Visible = false;
+            if (btnEdit.Visible) btnEdit.Visible = false;
             gbStudent.Text = "Home";
             this.Text = "FBLA - Home";
             pnlHome.BringToFront();
@@ -1005,6 +1006,7 @@ namespace FBLAdesktopApp3
         private void listView1_ItemActivate(object sender, EventArgs e)
         {
             btnDelete.Visible = true;
+            btnEdit.Visible = true;
             // Searches for a log item when double clicked.
             string stri = listView1.FocusedItem.ToString();
             // Removes extra characters to get value to be searched.

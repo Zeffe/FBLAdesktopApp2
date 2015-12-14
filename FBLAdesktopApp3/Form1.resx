@@ -254,6 +254,15 @@
         AABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC1SURBVDhPY2AgDfAAlc8G4tNAbEOaVgYGDqCGw0D8H4o/
+        k2IIyGYWIO5HMgBk0H1iXAHSDLJ5NRZD5hMyAKYZ5mxkQ2BsnGaga0Y3BOQlnEAFKLMYzb8wA0DOVsCn
+        WRUouYRczWpAjUvJ1awO1LiMXM24Agzkb4KhDQoPUIiCFMICCj3E8Ua3C1C2AIshRNkMMrkGajOyIURr
+        BhmwGcnpMEPwJhJ0/1wGCuwH4mYg9sDrWSySAK4kS8ZZi2kLAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeAAAAFACAYAAABkyK97AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1491,9 +1500,6 @@
         gCJAEaAIUAQoAhQBigBFgCJAEaAIUAQoAhQBigBFgCIwBIH/H0f8deU1/bm9AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="ttOptional.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>891, 17</value>
-  </metadata>
   <metadata name="ttOptional.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>891, 17</value>
   </metadata>
