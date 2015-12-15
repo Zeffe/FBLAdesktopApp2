@@ -98,47 +98,59 @@ namespace FBLAdesktopApp3
             specificFolder = Path.Combine(folder, "FBLAapplication/" + activeFile);
             string notStudents = Path.Combine(folder, "FBLAapplication/backups/" + activeFile);
             logFolder = Path.Combine(folder, "FBLAapplication/log.fbla");
+            String sex, grade, active;
+            if (rbMale.Checked) sex = "1"; else sex = "2";
+            if (rbGrade9.Checked) grade = "1"; else if (rbGrade10.Checked) grade = "2"; else if (rbGrade11.Checked) grade = "3"; else if (rbGrade12.Checked) grade = "4"; else grade = "5";
+            if (rbActive.Checked) active = "1"; else active = "2";
             date = now.Month + "/" + now.Day;
             string firstLine = student[0, 0];
-            for (int i = 1; i <= 13; i++)
+            for (int i = 1; i < 13; i++)
             {
                 firstLine += "\\" + student[0, i];
             }
             if (editMode)
             {
                 if (activeFile != "students.fbla") {
-                    File.WriteAllText(notStudents, firstLine);
-                    int editCount = 0;
+                    File.WriteAllText(notStudents, firstLine + "\r\n");
                     for (int i = 1; i < count; i++)
                     {
-                        firstLine = student[i, 0];
-                        for (int j = 1; j <= 13; j++) {
-                            firstLine += "\\" + student[i, j];
-                        }
-                        if (student[i, 0] != editStudent || editCount == 2)
+                        if (student[i, 0] != editStudent)
                         {
-                            File.AppendAllText(notStudents, firstLine);
+                            firstLine = student[i, 0];
+                            for (int j = 1; j < 13; j++)
+                            {
+                                firstLine += "\\" + student[i, j];
+                            }
+                            File.AppendAllText(notStudents, firstLine + "\r\n");
                         } else
                         {
-                            editCount = 2;
+                            File.AppendAllText(notStudents, txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text + "\r\n");
                         }
                     }
                 } else
                 {
-                    File.WriteAllText(specificFolder, firstLine);
+                    File.WriteAllText(specificFolder, firstLine + "\r\n");
                     for (int i = 1; i < count; i++)
                     {
-
+                        if (student[i, 0] != editStudent)
+                        {
+                            firstLine = student[i, 0];
+                            for (int j = 1; j < 13; j++)
+                            {
+                                firstLine += "\\" + student[i, j];
+                            }
+                            File.AppendAllText(specificFolder, firstLine + "\r\n");
+                        }
+                        else
+                        {
+                            File.AppendAllText(specificFolder, txtMemberNum.Text + "\\" + txtFirstName.Text + "\\" + txtMI.Text + "\\" + cmbState.Text + "\\" + txtLastName.Text + "\\" + sex + "\\" + grade + "\\" + active + "\\" + txtSchool.Text + "\\" + txtEmail.Text + "\\" + txtOwed.Text + "\\" + txtJoined.Text + "\\" + txtComment.Text + "\r\n");
+                        }
                     }
                 }
             }
-            if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
+            else if (txtFirstName.Text != "" && cmbState.Text != "" && txtLastName.Text != "" && txtSchool.Text != "" && txtEmail.Text != "" && txtJoined.Text != "" && txtMemberNum.Text != "")
             {
                 checkMemNum();
-                String sex, grade, active;
-                if (rbMale.Checked) sex = "1"; else sex = "2";
-                if (rbGrade9.Checked) grade = "1"; else if (rbGrade10.Checked) grade = "2"; else if (rbGrade11.Checked) grade = "3"; else if (rbGrade12.Checked) grade = "4"; else grade = "5";
-                if (rbActive.Checked) active = "1"; else active = "2";
                 File.AppendAllText(logFolder, date + "\\" + "[A] " + txtFirstName.Text + " " + txtLastName.Text + "\\" + logins[account, 0] + "\\" + txtMemberNum.Text + "\r\n");
                 if (activeFile != "students.fbla")
                 {

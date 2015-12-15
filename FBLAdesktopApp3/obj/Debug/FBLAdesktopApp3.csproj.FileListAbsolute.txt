@@ -1,24 +1,11 @@
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\bin\Debug\FBLAdesktopApp3.exe.config
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\bin\Debug\FBLAdesktopApp3.exe
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\bin\Debug\FBLAdesktopApp3.pdb
-C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.csprojResolveAssemblyReference.cache
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.backupForm.resources
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.Form1.resources
+C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.newSourceForm.resources
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.Properties.Resources.resources
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.quickAddForm.resources
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.csproj.GenerateResource.Cache
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.exe
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.pdb
-C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.newSourceForm.resources
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\bin\Debug\FBLAdesktopApp3.exe.config
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.exe
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.pdb
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\bin\Debug\FBLAdesktopApp3.exe
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\bin\Debug\FBLAdesktopApp3.pdb
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.csprojResolveAssemblyReference.cache
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.backupForm.resources
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.Form1.resources
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.newSourceForm.resources
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.Properties.Resources.resources
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.quickAddForm.resources
-C:\Users\SethD\Desktop\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.csproj.GenerateResource.Cache
