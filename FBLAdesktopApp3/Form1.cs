@@ -29,7 +29,7 @@ namespace FBLAdesktopApp3
 
         // ************* Variable and array initialization *************
         String feeStr;
-        int search, count, loginCount, logCount, account, active, hasFees, g9, g10, g11, g12, g13, activeStudent, grade;
+        int search, count, loginCount, logCount, account, active, hasFees, g9, g10, g11, g12, g13, activeStudent, grade, permissions;
         string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         string specificFolder, logFolder, date, activeFile, str, tempSex, tempActive, tempGrade, editStudent;
         Double feeDbl;
@@ -791,6 +791,13 @@ namespace FBLAdesktopApp3
         // ********************** These buttons handle the movement of panels and renaming of group boxes **********************
         private void btnLogon_Click(object sender, EventArgs e)
         {
+            if (Decrypt(txtPass.Text) == txtUser.Text + "1")
+            {
+                permissions = 1;
+            } else if (Decrypt(txtPass.Text) == txtUser.Text + "2")
+            {
+                permissions = 2;
+            }
             for (int i = 0; i <= loginCount; i++)
             {
                 if (logins[i, 0] == txtUser.Text && logins[i, 1] == txtPass.Text)
@@ -800,6 +807,7 @@ namespace FBLAdesktopApp3
                     pnlHome.BringToFront();
                     toolStripButtons(true);
                     account = i;
+                    permissions = 2;
                     break;
                 } else if (i == loginCount)
                 {
