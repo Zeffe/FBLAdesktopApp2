@@ -9,3 +9,4 @@ C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopA
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.csproj.GenerateResource.Cache
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.exe
 C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.pdb
+C:\Users\Seth\Documents\Visual Studio 2015\Projects\FBLAdesktopApp2\FBLAdesktopApp3\obj\Debug\FBLAdesktopApp3.csprojResolveAssemblyReference.cache
